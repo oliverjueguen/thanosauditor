@@ -1,0 +1,3671 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix thanos: <https://thanos.evolve/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+thanos: a owl:Ontology ;
+    rdfs:label "Thanos ontology: Windows Server 2022 patch triage" ;
+    rdfs:comment "Models Patch Tuesday cycles, KBs, MSUs, packages, binaries, CVEs and assessed vulnerabilities." .
+
+thanos:addressedBy a owl:ObjectProperty ;
+    rdfs:label "addressed by" ;
+    rdfs:comment "KB that fixes the CVE (the AFTER of the pair; BEFORE is the vulnerable version)." ;
+    rdfs:domain thanos:CVE ;
+    rdfs:range thanos:KB .
+
+thanos:affectsBinary a owl:ObjectProperty ;
+    rdfs:label "affects binary" ;
+    rdfs:domain thanos:CVE ;
+    rdfs:range thanos:Binary .
+
+thanos:analyzedBy a owl:DatatypeProperty ;
+    rdfs:label "analyzed by" ;
+    rdfs:comment "Alias of the team member who produced the bundle the binary comes from." ;
+    rdfs:domain thanos:Binary ;
+    rdfs:range xsd:string .
+
+thanos:arch a owl:DatatypeProperty ;
+    rdfs:comment "Architecture of the SXS package (amd64, wow64, x86...). The same DLL may exist in several." ;
+    rdfs:domain thanos:Binary ;
+    rdfs:range xsd:string .
+
+thanos:changedInCycle a owl:ObjectProperty ;
+    rdfs:label "changed in cycle" ;
+    rdfs:comment "The binary has a different SHA-256 between BEFORE and AFTER in this cycle." ;
+    rdfs:domain thanos:Binary ;
+    rdfs:range thanos:PatchCycle .
+
+thanos:concernsCVE a owl:ObjectProperty ;
+    rdfs:label "concerns CVE" ;
+    rdfs:domain thanos:Vulnerability ;
+    rdfs:range thanos:CVE .
+
+thanos:confidence a owl:DatatypeProperty ;
+    rdfs:comment "high | medium | low." ;
+    rdfs:domain thanos:Vulnerability ;
+    rdfs:range xsd:string .
+
+thanos:containsPackage a owl:ObjectProperty ;
+    rdfs:label "contains package" ;
+    rdfs:domain thanos:MSU ;
+    rdfs:range thanos:Package .
+
+thanos:cve-cve-2026-0390 a thanos:CVE ;
+    rdfs:label "CVE-2026-0390" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-0390" ;
+    thanos:cvssBaseScore 6.7 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-807" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Security Feature Bypass" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "UEFI Secure Boot Security Feature Bypass Vulnerability" .
+
+thanos:cve-cve-2026-20806 a thanos:CVE ;
+    rdfs:label "CVE-2026-20806" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-20806" ;
+    thanos:cvssBaseScore 5.5 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-843" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Information Disclosure" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows COM Server Information Disclosure Vulnerability" .
+
+thanos:cve-cve-2026-20928 a thanos:CVE ;
+    rdfs:label "CVE-2026-20928" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-20928" ;
+    thanos:cvssBaseScore 4.6 ;
+    thanos:cvssVector "CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-212" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Security Feature Bypass" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Recovery Environment Security Feature Bypass Vulnerability" .
+
+thanos:cve-cve-2026-20930 a thanos:CVE ;
+    rdfs:label "CVE-2026-20930" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-20930" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Management Services Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-23670 a thanos:CVE ;
+    rdfs:label "CVE-2026-23670" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-23670" ;
+    thanos:cvssBaseScore 5.7 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-822" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Security Feature Bypass" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Virtualization-Based Security (VBS) Security Feature Bypass Vulnerability" .
+
+thanos:cve-cve-2026-25250 a thanos:CVE ;
+    rdfs:label "CVE-2026-25250" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-25250" ;
+    thanos:cvssBaseScore 6.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-325" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Security Feature Bypass" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "MITRE: CVE-2026-25250 Secure Boot disable Eazy Fix" .
+
+thanos:cve-cve-2026-26151 a thanos:CVE ;
+    rdfs:label "CVE-2026-26151" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26151" ;
+    thanos:cvssBaseScore 7.1 ;
+    thanos:cvssVector "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-357" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Spoofing" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Remote Desktop Spoofing Vulnerability" .
+
+thanos:cve-cve-2026-26152 a thanos:CVE ;
+    rdfs:label "CVE-2026-26152" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26152" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-922" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Microsoft Cryptographic Services Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26153 a thanos:CVE ;
+    rdfs:label "CVE-2026-26153" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26153" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-125" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Encrypted File System (EFS) Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26154 a thanos:CVE ;
+    rdfs:label "CVE-2026-26154" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26154" ;
+    thanos:cvssBaseScore 7.5 ;
+    thanos:cvssVector "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-20" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Tampering" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Server Update Service (WSUS) Tampering Vulnerability" .
+
+thanos:cve-cve-2026-26155 a thanos:CVE ;
+    rdfs:label "CVE-2026-26155" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26155" ;
+    thanos:cvssBaseScore 6.5 ;
+    thanos:cvssVector "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-126" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Information Disclosure" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Microsoft Local Security Authority Subsystem Service Information Disclosure Vulnerability" .
+
+thanos:cve-cve-2026-26156 a thanos:CVE ;
+    rdfs:label "CVE-2026-26156" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26156" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-122",
+        "CWE-125",
+        "CWE-20" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Remote Code Execution" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Hyper-V Remote Code Execution Vulnerability" .
+
+thanos:cve-cve-2026-26159 a thanos:CVE ;
+    rdfs:label "CVE-2026-26159" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26159" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-306" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Remote Desktop Licensing Service Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26160 a thanos:CVE ;
+    rdfs:label "CVE-2026-26160" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26160" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-306" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Remote Desktop Licensing Service Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26162 a thanos:CVE ;
+    rdfs:label "CVE-2026-26162" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26162" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-843" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows OLE Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26163 a thanos:CVE ;
+    rdfs:label "CVE-2026-26163" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26163" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-415" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Kernel Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26165 a thanos:CVE ;
+    rdfs:label "CVE-2026-26165" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26165" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Shell Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26166 a thanos:CVE ;
+    rdfs:label "CVE-2026-26166" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26166" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-415" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Shell Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26167 a thanos:CVE ;
+    rdfs:label "CVE-2026-26167" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26167" ;
+    thanos:cvssBaseScore 8.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362",
+        "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Push Notifications Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26168 a thanos:CVE ;
+    rdfs:label "CVE-2026-26168" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26168" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362",
+        "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26169 a thanos:CVE ;
+    rdfs:label "CVE-2026-26169" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26169" ;
+    thanos:cvssBaseScore 6.1 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-126" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Information Disclosure" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Kernel Memory Information Disclosure Vulnerability" .
+
+thanos:cve-cve-2026-26170 a thanos:CVE ;
+    rdfs:label "CVE-2026-26170" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26170" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-20" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "PowerShell Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26172 a thanos:CVE ;
+    rdfs:label "CVE-2026-26172" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26172" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362",
+        "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Push Notifications Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26173 a thanos:CVE ;
+    rdfs:label "CVE-2026-26173" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26173" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362",
+        "CWE-416",
+        "CWE-476" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26174 a thanos:CVE ;
+    rdfs:label "CVE-2026-26174" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26174" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362",
+        "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Server Update Service (WSUS) Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26175 a thanos:CVE ;
+    rdfs:label "CVE-2026-26175" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26175" ;
+    thanos:cvssBaseScore 4.6 ;
+    thanos:cvssVector "CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-908" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Security Feature Bypass" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Boot Manager Security Feature Bypass Vulnerability" .
+
+thanos:cve-cve-2026-26176 a thanos:CVE ;
+    rdfs:label "CVE-2026-26176" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26176" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-122" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Client Side Caching driver (csc.sys) Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26177 a thanos:CVE ;
+    rdfs:label "CVE-2026-26177" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26177" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26180 a thanos:CVE ;
+    rdfs:label "CVE-2026-26180" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26180" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-122" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Kernel Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26182 a thanos:CVE ;
+    rdfs:label "CVE-2026-26182" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26182" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26183 a thanos:CVE ;
+    rdfs:label "CVE-2026-26183" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26183" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-284" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Remote Access Management service/API (RPC server) Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26184 a thanos:CVE ;
+    rdfs:label "CVE-2026-26184" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26184" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-126" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Projected File System Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27908 a thanos:CVE ;
+    rdfs:label "CVE-2026-27908" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27908" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows TDI Translation Driver (tdx.sys) Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27909 a thanos:CVE ;
+    rdfs:label "CVE-2026-27909" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27909" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Search Service Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27910 a thanos:CVE ;
+    rdfs:label "CVE-2026-27910" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27910" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-280" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Installer Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27911 a thanos:CVE ;
+    rdfs:label "CVE-2026-27911" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27911" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362",
+        "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows User Interface Core Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27912 a thanos:CVE ;
+    rdfs:label "CVE-2026-27912" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27912" ;
+    thanos:cvssBaseScore 8.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-285" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Kerberos Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27914 a thanos:CVE ;
+    rdfs:label "CVE-2026-27914" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27914" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-284" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Microsoft Management Console Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27917 a thanos:CVE ;
+    rdfs:label "CVE-2026-27917" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27917" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows WFP NDIS Lightweight Filter Driver (wfplwfs.sys) Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27918 a thanos:CVE ;
+    rdfs:label "CVE-2026-27918" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27918" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Shell Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27921 a thanos:CVE ;
+    rdfs:label "CVE-2026-27921" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27921" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362",
+        "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows TDI Translation Driver (tdx.sys) Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27922 a thanos:CVE ;
+    rdfs:label "CVE-2026-27922" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27922" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27926 a thanos:CVE ;
+    rdfs:label "CVE-2026-27926" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27926" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362",
+        "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Cloud Files Mini Filter Driver Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27927 a thanos:CVE ;
+    rdfs:label "CVE-2026-27927" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27927" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362",
+        "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Projected File System Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27928 a thanos:CVE ;
+    rdfs:label "CVE-2026-27928" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27928" ;
+    thanos:cvssBaseScore 8.7 ;
+    thanos:cvssVector "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-20" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Security Feature Bypass" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Hello Security Feature Bypass Vulnerability" .
+
+thanos:cve-cve-2026-27929 a thanos:CVE ;
+    rdfs:label "CVE-2026-27929" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27929" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-367" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows LUA File Virtualization Filter Driver Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27930 a thanos:CVE ;
+    rdfs:label "CVE-2026-27930" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27930" ;
+    thanos:cvssBaseScore 5.5 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-125" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Information Disclosure" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows GDI Information Disclosure Vulnerability" .
+
+thanos:cve-cve-2026-27931 a thanos:CVE ;
+    rdfs:label "CVE-2026-27931" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27931" ;
+    thanos:cvssBaseScore 5.5 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-125" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Information Disclosure" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows GDI Information Disclosure Vulnerability" .
+
+thanos:cve-cve-2026-32068 a thanos:CVE ;
+    rdfs:label "CVE-2026-32068" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32068" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Simple Search and Discovery Protocol (SSDP) Service Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32069 a thanos:CVE ;
+    rdfs:label "CVE-2026-32069" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32069" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-415" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Projected File System Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32070 a thanos:CVE ;
+    rdfs:label "CVE-2026-32070" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32070" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Common Log File System Driver Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32071 a thanos:CVE ;
+    rdfs:label "CVE-2026-32071" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32071" ;
+    thanos:cvssBaseScore 7.5 ;
+    thanos:cvssVector "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-476" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Denial of Service" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Local Security Authority Subsystem Service (LSASS) Denial of Service Vulnerability" .
+
+thanos:cve-cve-2026-32072 a thanos:CVE ;
+    rdfs:label "CVE-2026-32072" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32072" ;
+    thanos:cvssBaseScore 6.2 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-287" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Spoofing" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Active Directory Spoofing Vulnerability" .
+
+thanos:cve-cve-2026-32073 a thanos:CVE ;
+    rdfs:label "CVE-2026-32073" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32073" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32074 a thanos:CVE ;
+    rdfs:label "CVE-2026-32074" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32074" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-415" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Projected File System Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32078 a thanos:CVE ;
+    rdfs:label "CVE-2026-32078" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32078" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Projected File System Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32079 a thanos:CVE ;
+    rdfs:label "CVE-2026-32079" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32079" ;
+    thanos:cvssBaseScore 5.5 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-200" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Information Disclosure" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Web Account Manager Information Disclosure Vulnerability" .
+
+thanos:cve-cve-2026-32080 a thanos:CVE ;
+    rdfs:label "CVE-2026-32080" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32080" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows WalletService Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32081 a thanos:CVE ;
+    rdfs:label "CVE-2026-32081" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32081" ;
+    thanos:cvssBaseScore 5.5 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-200" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Information Disclosure" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Package Catalog Information Disclosure Vulnerability" .
+
+thanos:cve-cve-2026-32082 a thanos:CVE ;
+    rdfs:label "CVE-2026-32082" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32082" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Simple Search and Discovery Protocol (SSDP) Service Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32083 a thanos:CVE ;
+    rdfs:label "CVE-2026-32083" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32083" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Simple Search and Discovery Protocol (SSDP) Service Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32084 a thanos:CVE ;
+    rdfs:label "CVE-2026-32084" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32084" ;
+    thanos:cvssBaseScore 5.5 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-200" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Information Disclosure" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Print Spooler Information Disclosure Vulnerability" .
+
+thanos:cve-cve-2026-32085 a thanos:CVE ;
+    rdfs:label "CVE-2026-32085" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32085" ;
+    thanos:cvssBaseScore 5.5 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-200" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Information Disclosure" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Remote Procedure Call Information Disclosure Vulnerability" .
+
+thanos:cve-cve-2026-32086 a thanos:CVE ;
+    rdfs:label "CVE-2026-32086" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32086" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Function Discovery Service (fdwsd.dll) Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32087 a thanos:CVE ;
+    rdfs:label "CVE-2026-32087" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32087" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-122" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Function Discovery Service (fdwsd.dll) Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32088 a thanos:CVE ;
+    rdfs:label "CVE-2026-32088" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32088" ;
+    thanos:cvssBaseScore 6.1 ;
+    thanos:cvssVector "CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Security Feature Bypass" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Biometric Service Security Feature Bypass Vulnerability" .
+
+thanos:cve-cve-2026-32089 a thanos:CVE ;
+    rdfs:label "CVE-2026-32089" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32089" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362",
+        "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Speech Brokered Api Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32090 a thanos:CVE ;
+    rdfs:label "CVE-2026-32090" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32090" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362",
+        "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Speech Brokered Api Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32091 a thanos:CVE ;
+    rdfs:label "CVE-2026-32091" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32091" ;
+    thanos:cvssBaseScore 8.4 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362",
+        "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Microsoft Brokering File System Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32093 a thanos:CVE ;
+    rdfs:label "CVE-2026-32093" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32093" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-122",
+        "CWE-362",
+        "CWE-367" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Function Discovery Service (fdwsd.dll) Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32149 a thanos:CVE ;
+    rdfs:label "CVE-2026-32149" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32149" ;
+    thanos:cvssBaseScore 7.3 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-122",
+        "CWE-191",
+        "CWE-20" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Remote Code Execution" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Hyper-V Remote Code Execution Vulnerability" .
+
+thanos:cve-cve-2026-32150 a thanos:CVE ;
+    rdfs:label "CVE-2026-32150" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32150" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Function Discovery Service (fdwsd.dll) Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32151 a thanos:CVE ;
+    rdfs:label "CVE-2026-32151" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32151" ;
+    thanos:cvssBaseScore 6.5 ;
+    thanos:cvssVector "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-200" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Information Disclosure" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Shell Information Disclosure Vulnerability" .
+
+thanos:cve-cve-2026-32157 a thanos:CVE ;
+    rdfs:label "CVE-2026-32157" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32157" ;
+    thanos:cvssBaseScore 8.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Remote Code Execution" ;
+    thanos:msrcSeverity "Critical" ;
+    thanos:title "Remote Desktop Client Remote Code Execution Vulnerability" .
+
+thanos:cve-cve-2026-32158 a thanos:CVE ;
+    rdfs:label "CVE-2026-32158" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32158" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362",
+        "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Push Notifications Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32159 a thanos:CVE ;
+    rdfs:label "CVE-2026-32159" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32159" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362",
+        "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Push Notifications Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32160 a thanos:CVE ;
+    rdfs:label "CVE-2026-32160" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32160" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Push Notifications Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32162 a thanos:CVE ;
+    rdfs:label "CVE-2026-32162" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32162" ;
+    thanos:cvssBaseScore 8.4 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-349" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows COM Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32163 a thanos:CVE ;
+    rdfs:label "CVE-2026-32163" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32163" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362",
+        "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows User Interface Core Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32164 a thanos:CVE ;
+    rdfs:label "CVE-2026-32164" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32164" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows User Interface Core Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32165 a thanos:CVE ;
+    rdfs:label "CVE-2026-32165" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32165" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362",
+        "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows User Interface Core Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32181 a thanos:CVE ;
+    rdfs:label "CVE-2026-32181" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32181" ;
+    thanos:cvssBaseScore 5.5 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-269" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Denial of Service" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Connected User Experiences and Telemetry Service Denial of Service Vulnerability" .
+
+thanos:cve-cve-2026-32183 a thanos:CVE ;
+    rdfs:label "CVE-2026-32183" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32183" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-77" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Remote Code Execution" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Snipping Tool Remote Code Execution Vulnerability" .
+
+thanos:cve-cve-2026-32202 a thanos:CVE ;
+    rdfs:label "CVE-2026-32202" ;
+    thanos:addressedBy thanos:kb-kb5099540 ;
+    thanos:cveId "CVE-2026-32202" ;
+    thanos:cvssBaseScore 4.3 ;
+    thanos:cvssVector "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N/E:F/RL:O/RC:C" ;
+    thanos:cwe "CWE-693" ;
+    thanos:exploited true ;
+    thanos:fixedBuild "10.0.20348.5386" ;
+    thanos:impact "Spoofing" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Shell Spoofing Vulnerability" .
+
+thanos:cve-cve-2026-32212 a thanos:CVE ;
+    rdfs:label "CVE-2026-32212" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32212" ;
+    thanos:cvssBaseScore 5.5 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-269",
+        "CWE-59" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Information Disclosure" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Universal Plug and Play (upnp.dll) Information Disclosure Vulnerability" .
+
+thanos:cve-cve-2026-32214 a thanos:CVE ;
+    rdfs:label "CVE-2026-32214" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32214" ;
+    thanos:cvssBaseScore 5.5 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-284" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Information Disclosure" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Universal Plug and Play (upnp.dll) Information Disclosure Vulnerability" .
+
+thanos:cve-cve-2026-32215 a thanos:CVE ;
+    rdfs:label "CVE-2026-32215" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32215" ;
+    thanos:cvssBaseScore 5.5 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-532" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Information Disclosure" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Kernel Information Disclosure Vulnerability" .
+
+thanos:cve-cve-2026-32217 a thanos:CVE ;
+    rdfs:label "CVE-2026-32217" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32217" ;
+    thanos:cvssBaseScore 5.5 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-532" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Information Disclosure" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Kernel Information Disclosure Vulnerability" .
+
+thanos:cve-cve-2026-32218 a thanos:CVE ;
+    rdfs:label "CVE-2026-32218" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32218" ;
+    thanos:cvssBaseScore 5.5 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-532" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Information Disclosure" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Kernel Information Disclosure Vulnerability" .
+
+thanos:cve-cve-2026-32225 a thanos:CVE ;
+    rdfs:label "CVE-2026-32225" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32225" ;
+    thanos:cvssBaseScore 8.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-693" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Security Feature Bypass" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Shell Security Feature Bypass Vulnerability" .
+
+thanos:cve-cve-2026-33096 a thanos:CVE ;
+    rdfs:label "CVE-2026-33096" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-33096" ;
+    thanos:cvssBaseScore 7.5 ;
+    thanos:cvssVector "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-125" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Denial of Service" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "HTTP.sys Denial of Service Vulnerability" .
+
+thanos:cve-cve-2026-33098 a thanos:CVE ;
+    rdfs:label "CVE-2026-33098" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-33098" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Container Isolation FS Filter Driver Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-33099 a thanos:CVE ;
+    rdfs:label "CVE-2026-33099" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-33099" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-33100 a thanos:CVE ;
+    rdfs:label "CVE-2026-33100" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-33100" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-33104 a thanos:CVE ;
+    rdfs:label "CVE-2026-33104" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-33104" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362",
+        "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Win32k Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-33824 a thanos:CVE ;
+    rdfs:label "CVE-2026-33824" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-33824" ;
+    thanos:cvssBaseScore 9.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-415" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Remote Code Execution" ;
+    thanos:msrcSeverity "Critical" ;
+    thanos:title "Windows Internet Key Exchange (IKE) Service Extensions Remote Code Execution Vulnerability" .
+
+thanos:cve-cve-2026-33826 a thanos:CVE ;
+    rdfs:label "CVE-2026-33826" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-33826" ;
+    thanos:cvssBaseScore 8.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-20" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Remote Code Execution" ;
+    thanos:msrcSeverity "Critical" ;
+    thanos:title "Windows Active Directory Remote Code Execution Vulnerability" .
+
+thanos:cve-cve-2026-33827 a thanos:CVE ;
+    rdfs:label "CVE-2026-33827" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-33827" ;
+    thanos:cvssBaseScore 8.1 ;
+    thanos:cvssVector "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-362" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Remote Code Execution" ;
+    thanos:msrcSeverity "Critical" ;
+    thanos:title "Windows TCP/IP Remote Code Execution Vulnerability" .
+
+thanos:cve-cve-2026-33829 a thanos:CVE ;
+    rdfs:label "CVE-2026-33829" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-33829" ;
+    thanos:cvssBaseScore 4.3 ;
+    thanos:cvssVector "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-200" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Spoofing" ;
+    thanos:msrcSeverity "Moderate" ;
+    thanos:title "Windows Snipping Tool Spoofing Vulnerability" .
+
+thanos:cveId a owl:DatatypeProperty ;
+    rdfs:domain thanos:CVE ;
+    rdfs:range xsd:string .
+
+thanos:cvssBaseScore a owl:DatatypeProperty ;
+    rdfs:domain thanos:CVE ;
+    rdfs:range xsd:decimal .
+
+thanos:cvssVector a owl:DatatypeProperty ;
+    rdfs:domain thanos:CVE ;
+    rdfs:range xsd:string .
+
+thanos:cwe a owl:DatatypeProperty ;
+    rdfs:domain thanos:CVE ;
+    rdfs:range xsd:string .
+
+thanos:cycleLabel a owl:DatatypeProperty ;
+    rdfs:domain thanos:PatchCycle ;
+    rdfs:range xsd:string .
+
+thanos:exploited a owl:DatatypeProperty ;
+    rdfs:comment "MSRC reports active exploitation (Exploited:Yes)." ;
+    rdfs:domain thanos:CVE ;
+    rdfs:range xsd:boolean .
+
+thanos:exportDelta a owl:DatatypeProperty ;
+    rdfs:comment "Net change in the number of exports (EXP +/-)." ;
+    rdfs:domain thanos:Binary ;
+    rdfs:range xsd:integer .
+
+thanos:fixedBuild a owl:DatatypeProperty ;
+    rdfs:comment "Build in which it is fixed (e.g. 10.0.20348.5020)." ;
+    rdfs:domain thanos:CVE ;
+    rdfs:range xsd:string .
+
+thanos:functionDelta a owl:DatatypeProperty ;
+    rdfs:comment "Net change in the number of functions (FN +/-)." ;
+    rdfs:domain thanos:Binary ;
+    rdfs:range xsd:integer .
+
+thanos:guid a owl:DatatypeProperty ;
+    rdfs:comment "GUID resolved in the Microsoft Update Catalog." ;
+    rdfs:range xsd:string .
+
+thanos:hasBinary a owl:ObjectProperty ;
+    rdfs:label "has binary" ;
+    rdfs:domain thanos:Package ;
+    rdfs:range thanos:Binary .
+
+thanos:hasMSU a owl:ObjectProperty ;
+    rdfs:label "has MSU" ;
+    rdfs:domain thanos:KB ;
+    rdfs:range thanos:MSU .
+
+thanos:hasVulnerability a owl:ObjectProperty ;
+    rdfs:label "has vulnerability" ;
+    rdfs:domain thanos:Binary ;
+    rdfs:range thanos:Vulnerability .
+
+thanos:impact a owl:DatatypeProperty ;
+    rdfs:comment "MSRC impact (e.g. Elevation of Privilege, Remote Code Execution)." ;
+    rdfs:domain thanos:CVE ;
+    rdfs:range xsd:string .
+
+thanos:kbId a owl:DatatypeProperty ;
+    rdfs:domain thanos:KB ;
+    rdfs:range xsd:string .
+
+thanos:logicalName a owl:DatatypeProperty ;
+    rdfs:domain thanos:Binary ;
+    rdfs:range xsd:string .
+
+thanos:msrcSeverity a owl:DatatypeProperty ;
+    rdfs:comment "MSRC severity: Critical | Important | Moderate | Low." ;
+    rdfs:domain thanos:CVE ;
+    rdfs:range xsd:string .
+
+thanos:msuUrl a owl:DatatypeProperty ;
+    rdfs:domain thanos:MSU ;
+    rdfs:range xsd:anyURI .
+
+thanos:packageKey a owl:DatatypeProperty ;
+    rdfs:comment "Normalized package key (without the version segment)." ;
+    rdfs:domain thanos:Package ;
+    rdfs:range xsd:string .
+
+thanos:partOfCycle a owl:ObjectProperty ;
+    rdfs:label "part of cycle" ;
+    rdfs:domain thanos:KB ;
+    rdfs:range thanos:PatchCycle .
+
+thanos:pkg-amd64-microsoft-onecore-bluetooth-service-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-microsoft-bluetooth-service-dll ;
+    thanos:packageKey "amd64_microsoft-onecore-bluetooth-service_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-onecore-isolatedusermode-sdk-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-iumsdk-dll ;
+    thanos:packageKey "amd64_microsoft-onecore-isolatedusermode-sdk_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-onecore-windowmanagement-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windowmanagement-dll ;
+    thanos:packageKey "amd64_microsoft-onecore-windowmanagement_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-alljoyn-runtime-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-devices-alljoyn-dll ;
+    thanos:packageKey "amd64_microsoft-windows-alljoyn-runtime_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-audio-mediacontrol-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-media-mediacontrol-dll ;
+    thanos:packageKey "amd64_microsoft-windows-audio-mediacontrol_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-c-brokeredapi-desktop-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-cortana-desktop-dll ;
+    thanos:packageKey "amd64_microsoft-windows-c..brokeredapi-desktop_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-coreshell-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-coreshell-dll ;
+    thanos:packageKey "amd64_microsoft-windows-coreshell_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-creddialogcontroller-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-ui-creddialogcontroller-dll ;
+    thanos:packageKey "amd64_microsoft-windows-creddialogcontroller_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-cryptbase-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-cryptbase-dll ;
+    thanos:packageKey "amd64_microsoft-windows-cryptbase_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-d-ment-configmanager2-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-configmanager2-dll ;
+    thanos:packageKey "amd64_microsoft-windows-d..ment-configmanager2_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-d-rtcards-phone-winrt-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-devices-smartcards-phone-dll ;
+    thanos:packageKey "amd64_microsoft-windows-d..rtcards-phone-winrt_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-d-windowmanager-scene-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-dwmscene-dll ;
+    thanos:packageKey "amd64_microsoft-windows-d..windowmanager-scene_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-d-winproviders-local-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-ffuprovider-dll,
+        thanos:bin-2026-04-patch-tuesday-full-oana-amd64-imagingprovider-dll ;
+    thanos:packageKey "amd64_microsoft-windows-d..-winproviders-local_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-devices-custom-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-devices-custom-dll ;
+    thanos:packageKey "amd64_microsoft-windows-devices-custom_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-devices-haptics-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-devices-haptics-dll ;
+    thanos:packageKey "amd64_microsoft-windows-devices-haptics_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-devices-midi-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-devices-midi-dll ;
+    thanos:packageKey "amd64_microsoft-windows-devices-midi_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-devices-radios-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-devices-radios-dll ;
+    thanos:packageKey "amd64_microsoft-windows-devices-radios_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-directx-warp10-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-d3d10warp-dll ;
+    thanos:packageKey "amd64_microsoft-windows-directx-warp10_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-drvstore-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-drvstore-dll ;
+    thanos:packageKey "amd64_microsoft-windows-drvstore_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-energy-winrt-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-energy-dll ;
+    thanos:packageKey "amd64_microsoft-windows-energy-winrt_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-g-brightnessoverride-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-graphics-display-brightnessoverride-dll ;
+    thanos:packageKey "amd64_microsoft-windows-g..-brightnessoverride_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-i-ell-serviceprovider-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-immersiveshell-serviceprovider-dll ;
+    thanos:packageKey "amd64_microsoft-windows-i..ell-serviceprovider_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-i-sedsetup-media-base-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-antonio-amd64-arunres-dll,
+        thanos:bin-2026-04-patch-tuesday-antonio-amd64-diagnostic-dll,
+        thanos:bin-2026-04-patch-tuesday-antonio-amd64-pnpibs-dll,
+        thanos:bin-2026-04-patch-tuesday-antonio-amd64-spwizeng-dll,
+        thanos:bin-2026-04-patch-tuesday-antonio-amd64-uxlibres-dll,
+        thanos:bin-2026-04-patch-tuesday-antonio-amd64-wdsclient-dll,
+        thanos:bin-2026-04-patch-tuesday-full-oana-amd64-diagnostic-dll,
+        thanos:bin-2026-04-patch-tuesday-full-oana-amd64-smiengine-dll,
+        thanos:bin-2026-04-patch-tuesday-full-oana-amd64-spprgrss-dll,
+        thanos:bin-2026-04-patch-tuesday-full-oana-amd64-w32uiimg-dll,
+        thanos:bin-2026-04-patch-tuesday-full-oana-amd64-wdsclient-dll,
+        thanos:bin-2026-04-patch-tuesday-full-oana-amd64-winsetup-dll ;
+    thanos:packageKey "amd64_microsoft-windows-i..sedsetup-media-base_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-m-d-experience-smsapi-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-mbsmsapi-dll ;
+    thanos:packageKey "amd64_microsoft-windows-m..d-experience-smsapi_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-m-ftaccount-extension-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-microsoftaccountextension-dll ;
+    thanos:packageKey "amd64_microsoft-windows-m..ftaccount-extension_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-o-re-security-webauth-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-authbroker-dll ;
+    thanos:packageKey "amd64_microsoft-windows-o..re-security-webauth_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-printing3d-winrt-core-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-graphics-printing-3d-dll ;
+    thanos:packageKey "amd64_microsoft-windows-printing3d-winrt-core_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-pshed-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-pshed-dll ;
+    thanos:packageKey "amd64_microsoft-windows-pshed_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-r-ndows-media-renewal-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-media-renewal-dll ;
+    thanos:packageKey "amd64_microsoft-windows-r..ndows-media-renewal_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-rasplap-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-rasplap-dll ;
+    thanos:packageKey "amd64_microsoft-windows-rasplap_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-s-mily-authentication-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-family-authentication-dll ;
+    thanos:packageKey "amd64_microsoft-windows-s..mily-authentication_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-sensordataservice-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-mediafoundation-defaultperceptionprovider-dll ;
+    thanos:packageKey "amd64_microsoft-windows-sensordataservice_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-sensors-universal-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-devices-sensors-dll ;
+    thanos:packageKey "amd64_microsoft-windows-sensors-universal_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-speechcommon-onecore-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-sapi-onecore-dll ;
+    thanos:packageKey "amd64_microsoft-windows-speechcommon-onecore_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-switcherdatamodel-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-switcherdatamodel-dll ;
+    thanos:packageKey "amd64_microsoft-windows-switcherdatamodel_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-systemmanagement-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-system-systemmanagement-dll ;
+    thanos:packageKey "amd64_microsoft-windows-systemmanagement_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-u-access-userdataapis-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-chatapis-dll,
+        thanos:bin-2026-04-patch-tuesday-full-oana-amd64-contactapis-dll,
+        thanos:bin-2026-04-patch-tuesday-full-oana-amd64-emailapis-dll,
+        thanos:bin-2026-04-patch-tuesday-full-oana-amd64-userdataaccountapis-dll ;
+    thanos:packageKey "amd64_microsoft-windows-u..access-userdataapis_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-upnpdevicehost-server-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-upnphost-dll ;
+    thanos:packageKey "amd64_microsoft-windows-upnpdevicehost-server_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-usermodensi-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-nsi-dll ;
+    thanos:packageKey "amd64_microsoft-windows-usermodensi_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-w-indowsuiinputinking-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-ui-input-inking-dll ;
+    thanos:packageKey "amd64_microsoft-windows-w..indowsuiinputinking_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-workplace-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-management-workplace-dll ;
+    thanos:packageKey "amd64_microsoft-windows-workplace_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-microsoft-windows-wow64-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-wow64cpu-dll ;
+    thanos:packageKey "amd64_microsoft-windows-wow64_31bf3856ad364e35_none" .
+
+thanos:pkg-amd64-windows-storage-applicationdata-winrt-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-storage-applicationdata-dll ;
+    thanos:packageKey "amd64_windows-storage-applicationdata-winrt_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-onecore-a-nmodel-datatransfer-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-applicationmodel-datatransfer-dll ;
+    thanos:packageKey "wow64_microsoft-onecore-a..nmodel-datatransfer_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-onecore-c-experiencehost-user-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-cloudexperiencehostuser-dll ;
+    thanos:packageKey "wow64_microsoft-onecore-c..experiencehost-user_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-system-user-component-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-usermgrproxy-dll ;
+    thanos:packageKey "wow64_microsoft-system-user-component_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-a-ionmodel-lockscreen-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-applicationmodel-lockscreen-dll ;
+    thanos:packageKey "wow64_microsoft-windows-a..ionmodel-lockscreen_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-bcrypt-dll-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-bcrypt-dll ;
+    thanos:packageKey "wow64_microsoft-windows-bcrypt-dll_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-cameracaptureui-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-cameracaptureui-dll ;
+    thanos:packageKey "wow64_microsoft-windows-cameracaptureui_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-dataexchange-api-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-dataexchange-dll ;
+    thanos:packageKey "wow64_microsoft-windows-dataexchange-api_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-dial-client-dll-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-dialclient-dll ;
+    thanos:packageKey "wow64_microsoft-windows-dial-client-dll_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-msasn1-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-msasn1-dll ;
+    thanos:packageKey "wow64_microsoft-windows-msasn1_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-n-backgroundtransfer-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-networking-backgroundtransfer-dll ;
+    thanos:packageKey "wow64_microsoft-windows-n..-backgroundtransfer_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-networking-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-networking-dll ;
+    thanos:packageKey "wow64_microsoft-windows-networking_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-p-mitymessaging-rtapi-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-networking-proximity-dll ;
+    thanos:packageKey "wow64_microsoft-windows-p..mitymessaging-rtapi_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-payments-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-payments-dll ;
+    thanos:packageKey "wow64_microsoft-windows-payments_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-playtomanager-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-playtomanager-dll ;
+    thanos:packageKey "wow64_microsoft-windows-playtomanager_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-s-ertificates-utility-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-fvecerts-dll ;
+    thanos:packageKey "wow64_microsoft-windows-s..ertificates-utility_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-s-on-onlineid-runtime-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-security-authentication-onlineid-dll ;
+    thanos:packageKey "wow64_microsoft-windows-s..on-onlineid-runtime_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-scripting-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-scrobj-dll,
+        thanos:bin-2026-04-patch-tuesday-full-oana-wow64-wshcon-dll ;
+    thanos:packageKey "wow64_microsoft-windows-scripting_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-security-ntlmshared-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-ntlmshared-dll ;
+    thanos:packageKey "wow64_microsoft-windows-security-ntlmshared_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-security-vault-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-vaultcli-dll ;
+    thanos:packageKey "wow64_microsoft-windows-security-vault_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-telephony-phoneom-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-phoneom-dll ;
+    thanos:packageKey "wow64_microsoft-windows-telephony-phoneom_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-tpm-tbs-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-tbs-dll ;
+    thanos:packageKey "wow64_microsoft-windows-tpm-tbs_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-twinapi-appcore-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-twinapi-appcore-dll ;
+    thanos:packageKey "wow64_microsoft-windows-twinapi-appcore_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-u-access-userdataapis-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-peopleapis-dll,
+        thanos:bin-2026-04-patch-tuesday-full-oana-wow64-taskapis-dll ;
+    thanos:packageKey "wow64_microsoft-windows-u..access-userdataapis_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-ucrt-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-msvcp-win-dll,
+        thanos:bin-2026-04-patch-tuesday-full-oana-wow64-ucrtbase-dll ;
+    thanos:packageKey "wow64_microsoft-windows-ucrt_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-ui-xaml-maps-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-ui-xaml-maps-dll ;
+    thanos:packageKey "wow64_microsoft-windows-ui-xaml-maps_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-w-ows-web-diagnostics-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-web-diagnostics-dll ;
+    thanos:packageKey "wow64_microsoft-windows-w..ows-web-diagnostics_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-microsoft-windows-web-http-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-web-http-dll ;
+    thanos:packageKey "wow64_microsoft-windows-web-http_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-multimedia-windows-rotection-playready-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-antonio-wow64-windows-media-protection-playready-dll ;
+    thanos:packageKey "wow64_multimedia-windows-..rotection-playready_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-windows-application-appextension-winrt-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-appextension-dll ;
+    thanos:packageKey "wow64_windows-application..-appextension-winrt_31bf3856ad364e35_none" .
+
+thanos:pkg-wow64-windows-applicationmodel-clipboardserver-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-wow64-clipboardserver-dll ;
+    thanos:packageKey "wow64_windows-applicationmodel-clipboardserver_31bf3856ad364e35_none" .
+
+thanos:pkg-x86-microsoft-windows-d-winproviders-local-31bf3856ad364e35-none a thanos:Package ;
+    thanos:hasBinary thanos:bin-2026-04-patch-tuesday-full-oana-x86-wimprovider-dll ;
+    thanos:packageKey "x86_microsoft-windows-d..-winproviders-local_31bf3856ad364e35_none" .
+
+thanos:priority a owl:DatatypeProperty ;
+    rdfs:comment "P1 | P2 | P3 | P4." ;
+    rdfs:domain thanos:Vulnerability ;
+    rdfs:range xsd:string .
+
+thanos:priorityLabel a owl:DatatypeProperty ;
+    rdfs:comment "Review priority P1 to P4 computed by the core scoring." ;
+    rdfs:domain thanos:Binary ;
+    rdfs:range xsd:string .
+
+thanos:rationale a owl:DatatypeProperty ;
+    rdfs:comment "Textual rationale for the finding." ;
+    rdfs:domain thanos:Vulnerability ;
+    rdfs:range xsd:string .
+
+thanos:score a owl:DatatypeProperty ;
+    rdfs:comment "Aggregated criticality score of the binary in the dashboard." ;
+    rdfs:domain thanos:Binary ;
+    rdfs:range xsd:integer .
+
+thanos:severity a owl:DatatypeProperty ;
+    rdfs:comment "critical | high | medium | low." ;
+    rdfs:domain thanos:Vulnerability ;
+    rdfs:range xsd:string .
+
+thanos:sha256After a owl:DatatypeProperty ;
+    rdfs:domain thanos:Binary ;
+    rdfs:range xsd:string .
+
+thanos:sha256Before a owl:DatatypeProperty ;
+    rdfs:domain thanos:Binary ;
+    rdfs:range xsd:string .
+
+thanos:sizeDelta a owl:DatatypeProperty ;
+    rdfs:comment "Size difference (bytes) between AFTER and BEFORE." ;
+    rdfs:domain thanos:Binary ;
+    rdfs:range xsd:integer .
+
+thanos:supersedes a owl:ObjectProperty ;
+    rdfs:label "supersedes" ;
+    rdfs:comment "The AFTER KB supersedes the BEFORE KB of the cycle pair." ;
+    rdfs:domain thanos:KB ;
+    rdfs:range thanos:KB .
+
+thanos:targetBuild a owl:DatatypeProperty ;
+    rdfs:comment "Target build, e.g. 20348.5020." ;
+    rdfs:range xsd:string .
+
+thanos:targetProduct a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+thanos:title a owl:DatatypeProperty ;
+    rdfs:comment "Title published by MSRC." ;
+    rdfs:domain thanos:CVE ;
+    rdfs:range xsd:string .
+
+thanos:versionAfter a owl:DatatypeProperty ;
+    rdfs:domain thanos:Binary ;
+    rdfs:range xsd:string .
+
+thanos:versionBefore a owl:DatatypeProperty ;
+    rdfs:domain thanos:Binary ;
+    rdfs:range xsd:string .
+
+thanos:bin-2026-04-patch-tuesday-antonio-amd64-arunres-dll a thanos:Binary ;
+    rdfs:label "arunres.dll" ;
+    thanos:analyzedBy "antonio" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "arunres.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "8c0408108521a68e278289c950ca5199a426fd4ac801c3c6b9e9962987192f9a" ;
+    thanos:sha256Before "e43c865e622cd5d45728e8c53d69351fd41ddcc71006a592441c26494def30b8" ;
+    thanos:sizeDelta 80 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4893 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-antonio-amd64-diagnostic-dll a thanos:Binary ;
+    rdfs:label "diagnostic.dll" ;
+    thanos:analyzedBy "antonio" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "diagnostic.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "6b21fd61ddeb0c6a056f08a71a229b8202ab673e4b1274dc685d31c135f1c53e" ;
+    thanos:sha256Before "31efe93a9fb434f35e017820e08e95eece6798f57287d10a68a3b0302d2de4a1" ;
+    thanos:sizeDelta 80 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4893 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-antonio-amd64-pnpibs-dll a thanos:Binary ;
+    rdfs:label "pnpibs.dll" ;
+    thanos:analyzedBy "antonio" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "pnpibs.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "40772a22452cb28ddb6d4da8c33550c4a21acdc2c072acad32649e78e0d68132" ;
+    thanos:sha256Before "b2875090f6684a23f32995b4dc13e2435e3de82cca873175ac5c02ce90a043d4" ;
+    thanos:sizeDelta 88 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4893 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-antonio-amd64-spwizeng-dll a thanos:Binary ;
+    rdfs:label "spwizeng.dll" ;
+    thanos:analyzedBy "antonio" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "spwizeng.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "93b63b6710a0f3062e0820f81f85fa66ec6b2a2d0ceb4a88ad7523788ac6ef5e" ;
+    thanos:sha256Before "38d3bc60513c39e62c3a4f5860ada008d059f63b21b6b23e17342828e80d0c27" ;
+    thanos:sizeDelta 40 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4893 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-antonio-amd64-uxlibres-dll a thanos:Binary ;
+    rdfs:label "uxlibres.dll" ;
+    thanos:analyzedBy "antonio" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "uxlibres.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "39e091cc260c8b5fe0f9f34b4ff4a792e999c91b284dbbbde93a586d199880fa" ;
+    thanos:sha256Before "fe04e5f2744f4ddacafb9182ba2cce6d810517a64a350e16ecf18345394ac293" ;
+    thanos:sizeDelta 40 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4893 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-antonio-amd64-wdsclient-dll a thanos:Binary ;
+    rdfs:label "wdsclient.dll" ;
+    thanos:analyzedBy "antonio" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "wdsclient.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "c731fda10fabb70bd218479624832ae568ffeb110760d0a5694952150541be2d" ;
+    thanos:sha256Before "a2cfaa323fbdb2f40b0b1b0486540634a8086b37f18b3a33b4d67bfc7784890e" ;
+    thanos:sizeDelta 120 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4893 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-antonio-wow64-windows-media-protection-playready-dll a thanos:Binary ;
+    rdfs:label "windows.media.protection.playready.dll" ;
+    thanos:analyzedBy "antonio" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta -15 ;
+    thanos:logicalName "windows.media.protection.playready.dll" ;
+    thanos:priorityLabel "P3" ;
+    thanos:score 22 ;
+    thanos:sha256After "baa4b6343615ce58d3a13aba6e1e491a7c68986b29684c340058e5aa350bb9c4" ;
+    thanos:sha256Before "1c9de060e5d0375c8e3b6582f43a319962fb63805238993045c7cb11da0f2de5" ;
+    thanos:sizeDelta -1480 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4893 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-authbroker-dll a thanos:Binary ;
+    rdfs:label "authbroker.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 1 ;
+    thanos:logicalName "authbroker.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "bf99ad17dc425bfd3f2b17bd555e6591cc290ef2b61fa7e58ebc747820a03e30" ;
+    thanos:sha256Before "07f9ee03486774009b84a54d21130659beddb717b6791ee1e6ef9f2e7c1f1797" ;
+    thanos:sizeDelta 4096 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3451 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-chatapis-dll a thanos:Binary ;
+    rdfs:label "chatapis.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "chatapis.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "6a104e1019dda3b87caa8550f589713c2ab95928d3cafb2ade1a41d814a54292" ;
+    thanos:sha256Before "89227040f447d4ba910968c49703ff97e1b441925b446c4bd51df72ef1095c5a" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-configmanager2-dll a thanos:Binary ;
+    rdfs:label "configmanager2.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta -4 ;
+    thanos:logicalName "configmanager2.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 4 ;
+    thanos:sha256After "7dc4b1e7e02883f3419c4659c6008c6109b1574feb149fd540fbb68d9f5b99fb" ;
+    thanos:sha256Before "058f9928978becf231cbf8dab2dd7212b1c432cdb073d1742e58697b30e26a84" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4647 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-contactapis-dll a thanos:Binary ;
+    rdfs:label "contactapis.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta -3 ;
+    thanos:logicalName "contactapis.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 3 ;
+    thanos:sha256After "12d640a0cc9a9447bc519168fcfcb45b3b285487d4d33f2fc63e661d52661911" ;
+    thanos:sha256Before "1c3fd2f5202b09f479051459b497d77146fcae539bc526dde42a0ceada540782" ;
+    thanos:sizeDelta 4096 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-coreshell-dll a thanos:Binary ;
+    rdfs:label "coreshell.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 1 ;
+    thanos:logicalName "coreshell.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "c0e3ab62275eb774174c52c0c591dd1e1b8dc04b88529a68c1e4cc4641eba668" ;
+    thanos:sha256Before "6b408fa9170e7579ea0e31cb6e5b57e6d1c01c40dbd52723c472d27e61419bb8" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3692 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-cryptbase-dll a thanos:Binary ;
+    rdfs:label "cryptbase.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "cryptbase.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "cd41f862709254fc599990e14e4547ef6175788a812e62990f9cf031b27347a0" ;
+    thanos:sha256Before "a0c3dbe6c4eeb2af939806203c451396368d86a4264e494896841778859cf167" ;
+    thanos:sizeDelta 88 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4648 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-d3d10warp-dll a thanos:Binary ;
+    rdfs:label "d3d10warp.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 3 ;
+    thanos:hasVulnerability thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-d3d10warp-dll-cve-2026-26178 ;
+    thanos:logicalName "d3d10warp.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 7 ;
+    thanos:sha256After "05b629573fb7b682b07a2a86a7bfbe1b7e829c45a2bda917d204f943bbc5f79c" ;
+    thanos:sha256Before "62d0048d6056d7ec64d17662ee320726b5a399ef2ea3a36f5920ed2064de8770" ;
+    thanos:sizeDelta -24 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3451 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-diagnostic-dll a thanos:Binary ;
+    rdfs:label "diagnostic.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "diagnostic.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "6b21fd61ddeb0c6a056f08a71a229b8202ab673e4b1274dc685d31c135f1c53e" ;
+    thanos:sha256Before "31efe93a9fb434f35e017820e08e95eece6798f57287d10a68a3b0302d2de4a1" ;
+    thanos:sizeDelta 80 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4893 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-drvstore-dll a thanos:Binary ;
+    rdfs:label "drvstore.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "drvstore.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 13 ;
+    thanos:sha256After "f799d13586066ec06253c509559fe005e97f6862cea9319794eaba911276f251" ;
+    thanos:sha256Before "e9782108796c686f7686429c25f308300a7b09c3441b742995ba11eb4799785c" ;
+    thanos:sizeDelta 8184 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3451 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-dwmscene-dll a thanos:Binary ;
+    rdfs:label "dwmscene.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta -92 ;
+    thanos:hasVulnerability thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-dwmscene-dll-cve-2026-27923,
+        thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-dwmscene-dll-cve-2026-27924,
+        thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-dwmscene-dll-cve-2026-32152,
+        thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-dwmscene-dll-cve-2026-32154,
+        thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-dwmscene-dll-cve-2026-32155 ;
+    thanos:logicalName "dwmscene.dll" ;
+    thanos:priorityLabel "P2" ;
+    thanos:score 140 ;
+    thanos:sha256After "d74d88f43c3177fa30003b31f096fd24d2f9a9d6fe7411ef19721fb8dff2375a" ;
+    thanos:sha256Before "d3ae451421a25a6a7985a2c10997252732f0719ede32a49ab718ef2b7b7f6a00" ;
+    thanos:sizeDelta -24576 .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-emailapis-dll a thanos:Binary ;
+    rdfs:label "emailapis.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta -4 ;
+    thanos:logicalName "emailapis.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 4 ;
+    thanos:sha256After "7baf0f409aa1a24e45c883688a8ec8c972caf6b653d3006f5e07e884958bdc61" ;
+    thanos:sha256Before "d871f81e48a6a845826c951ee47ec86d533d04107a1d40c151daa0910db015fc" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-family-authentication-dll a thanos:Binary ;
+    rdfs:label "family.authentication.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "family.authentication.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "abeee7be43a3ec18d0b375787bfd65585858dd22cccc85473a0737bbcbd0e1fc" ;
+    thanos:sha256Before "8669ebc03f23566688ca0e77af922ff1d01fcfb9de9a0146d0cf9b2310a6485f" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-ffuprovider-dll a thanos:Binary ;
+    rdfs:label "ffuprovider.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "ffuprovider.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "c4883a4f3e29c3328d0f696b6b5fc97ebaa366d9b626b9f894ff896f80f9ba1b" ;
+    thanos:sha256Before "66d134f85b7a1b18b778b2fb4027eedf30ee4b3ca19eb46a9d16310e02f1ef95" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-imagingprovider-dll a thanos:Binary ;
+    rdfs:label "imagingprovider.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "imagingprovider.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "bba8dbdd1fe28234d7324167b752a7eafb3e878e282d301510c5aa9a86da6c85" ;
+    thanos:sha256Before "3eccf49d2884cd2b997ec4212fc236272187c2d31510c6a9a8f5b9049c760665" ;
+    thanos:sizeDelta -8 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-iumsdk-dll a thanos:Binary ;
+    rdfs:label "iumsdk.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "iumsdk.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "bc0f3c111b7ab1d488f67ace7452680a2722dd1bfc4b8a2fe3e06b83de846ca0" ;
+    thanos:sha256Before "26c300720ca490638933330a85d262ed24e51d281a14b2210e1a6375a751b532" ;
+    thanos:sizeDelta 80 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4648 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-mbsmsapi-dll a thanos:Binary ;
+    rdfs:label "mbsmsapi.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "mbsmsapi.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "7a9a8604b54ccc576f8e5072a204a6bd7cdfca084f15e8755327d0336e046d6f" ;
+    thanos:sha256Before "1af458946ab92a888729bd6b011f2f904686da0e1bdcbc9ff90d0038085d86f8" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-mediafoundation-defaultperceptionprovider-dll a thanos:Binary ;
+    rdfs:label "mediafoundation.defaultperceptionprovider.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:hasVulnerability thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-mediafoundation-defaultperceptionprovider-dll-cve-2026-26161 ;
+    thanos:logicalName "mediafoundation.defaultperceptionprovider.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "851a32f4ed2448a06b198ab967dec1a65794b9cc85d86934f6e5bf2ce9639461" ;
+    thanos:sha256Before "6cd06715ed7ef99411f61fad76b4da2464f976a28c1ad54be738b36ab6b3c8de" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-microsoft-bluetooth-service-dll a thanos:Binary ;
+    rdfs:label "microsoft.bluetooth.service.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "microsoft.bluetooth.service.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "125df07d52f3304f21a87628b65073fcaea61a88f9d9953bcd32ab4447f2d090" ;
+    thanos:sha256Before "9d342ec2b4df22eba5a85c9698661f51e82782989348965295f7ce36bbf445a7" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4647 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-microsoftaccountextension-dll a thanos:Binary ;
+    rdfs:label "microsoftaccountextension.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "microsoftaccountextension.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "7c03f5d7cd367f6b643e6fd98201e674a68d1325780f6e2bffdc78f82d823883" ;
+    thanos:sha256Before "3d4e2a17526745a5257d87ca137f0ec65bf5bb71a982f07e9acfa9ed0879b41a" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3451 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-nsi-dll a thanos:Binary ;
+    rdfs:label "nsi.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "nsi.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "0c623f94286dc51979b7115a7ec6a8b83477f6358c39d76a483a70f5625f2b65" ;
+    thanos:sha256Before "f038e93dd91dacc44d67c1faf7d69015c2bbb08a89ad54647f5eb8360dacc05b" ;
+    thanos:sizeDelta 120 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4648 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-pshed-dll a thanos:Binary ;
+    rdfs:label "pshed.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "pshed.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "37dbd3090342e2406973967a71a6a0b1b8ac29b97d508eca557c6f9318ebec06" ;
+    thanos:sha256Before "127da5274e073e2ef7133f0172d34ed4c51f80f013295e803d0802eab2549b7a" ;
+    thanos:sizeDelta 80 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4647 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-rasplap-dll a thanos:Binary ;
+    rdfs:label "rasplap.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "rasplap.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "b3902f4c07b28e19ffc763f9efd7bed3927634a9049e44e2bead0339fa68d845" ;
+    thanos:sha256Before "a16fe27217e56b9da2a97837cedf9a50f78b0244706216047603991e74abb10d" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4767 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-sapi-onecore-dll a thanos:Binary ;
+    rdfs:label "sapi_onecore.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 1 ;
+    thanos:logicalName "sapi_onecore.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "82ebdd4385262683d8bff3ec2ce379efc0750628d5eb9337055fcc4381658ff9" ;
+    thanos:sha256Before "a49bbcee249e34a3906cdc61e43c9712dcb1cf18b67ec49d8f72d6d3058d78b7" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "5.3.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "5.3.20348.4647 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-smiengine-dll a thanos:Binary ;
+    rdfs:label "smiengine.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "smiengine.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "ef0b6feb898f4f7b996a4fb0b1a092307aaf47b6220b2b96df587d26aaf971a5" ;
+    thanos:sha256Before "418c7d825cb3d466abc0d5afe9f320aee7dc5f01938b8aaf687999b60a6a6126" ;
+    thanos:sizeDelta 88 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4893 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-spprgrss-dll a thanos:Binary ;
+    rdfs:label "spprgrss.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "spprgrss.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "a6b08fbe2f17cb4e513c45ad589ad816c8a78f5709c2a9a5cb60f9df09c00849" ;
+    thanos:sha256Before "637d1c0709ed48cc01209090ab384836dce67b3a1cd23d7a8182701520241ea0" ;
+    thanos:sizeDelta 80 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4893 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-switcherdatamodel-dll a thanos:Binary ;
+    rdfs:label "switcherdatamodel.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "switcherdatamodel.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "0fe490a95551526d83d1d345f851cfec8b2cd1e3cbcd83b8328ac9a313aa6449" ;
+    thanos:sha256Before "7193da22eac169f75675deced6e479ac59f049a8029ad5edb62af2399783cf96" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-upnphost-dll a thanos:Binary ;
+    rdfs:label "upnphost.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 155 ;
+    thanos:hasVulnerability thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-upnphost-dll-cve-2026-27915,
+        thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-upnphost-dll-cve-2026-27916,
+        thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-upnphost-dll-cve-2026-27919,
+        thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-upnphost-dll-cve-2026-27920,
+        thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-upnphost-dll-cve-2026-27925,
+        thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-upnphost-dll-cve-2026-32075,
+        thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-upnphost-dll-cve-2026-32077,
+        thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-upnphost-dll-cve-2026-32156 ;
+    thanos:logicalName "upnphost.dll" ;
+    thanos:priorityLabel "P1" ;
+    thanos:score 379 ;
+    thanos:sha256After "311678f03285c18047caef0576a53e79f82b57448c1f667dfafd3ffb796808be" ;
+    thanos:sha256Before "72d92991cd433bcae5fb8979e8ad0063cc649955d706b3672aae908642659446" ;
+    thanos:sizeDelta 32768 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3932 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-userdataaccountapis-dll a thanos:Binary ;
+    rdfs:label "userdataaccountapis.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "userdataaccountapis.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "81f96ec19dc1a8c60c1c6026732c8589fdebcb7f018321848bd072ecfedcd675" ;
+    thanos:sha256Before "2038522571963d78bf2dd6bd7de166a8308f8fee1243a19802b29eff567adbba" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-w32uiimg-dll a thanos:Binary ;
+    rdfs:label "w32uiimg.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "w32uiimg.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "61ea073a5692626fa511465d827dd7bded3e0fc0bfe97b73487f76746c1bdf22" ;
+    thanos:sha256Before "67791469963ce8e1efa04f3af1b617634a840fdd5ac96f219ccecc98515ba3d1" ;
+    thanos:sizeDelta 120 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4893 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-wdsclient-dll a thanos:Binary ;
+    rdfs:label "wdsclient.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "wdsclient.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "c731fda10fabb70bd218479624832ae568ffeb110760d0a5694952150541be2d" ;
+    thanos:sha256Before "a2cfaa323fbdb2f40b0b1b0486540634a8086b37f18b3a33b4d67bfc7784890e" ;
+    thanos:sizeDelta 120 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4893 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windowmanagement-dll a thanos:Binary ;
+    rdfs:label "windowmanagement.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta -59 ;
+    thanos:logicalName "windowmanagement.dll" ;
+    thanos:priorityLabel "P3" ;
+    thanos:score 59 ;
+    thanos:sha256After "1538d62bfb00200d388b47fd4dd0f0c6ba81058cd0c3bb2c759cc04f24223849" ;
+    thanos:sha256Before "afcb0016ab60a21a21c501155975da73c6bf8d459499fe65c8aba47423e96a60" ;
+    thanos:sizeDelta -12288 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4647 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-cortana-desktop-dll a thanos:Binary ;
+    rdfs:label "windows.cortana.desktop.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 4 ;
+    thanos:logicalName "windows.cortana.desktop.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 4 ;
+    thanos:sha256After "253f7697b83e0cebdb4ef01b3f347de69da19d6227958561b8f810ed32d89ff2" ;
+    thanos:sha256Before "9ea57b1da6ece81a78bdb9d1324b13aafc7ddaedb162add389a1f2b2f0f64eda" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3451 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-devices-alljoyn-dll a thanos:Binary ;
+    rdfs:label "windows.devices.alljoyn.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "windows.devices.alljoyn.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "de98655368e40c8bcbf955101e4fcef75471ff3e5e3fa8945c1448fb38f75f65" ;
+    thanos:sha256Before "c3554a589c287d2c84e7ef44449fe49db3eaa6052f1d848483b3284d411edebe" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-devices-custom-dll a thanos:Binary ;
+    rdfs:label "windows.devices.custom.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "windows.devices.custom.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "adf52546c47c66e922ac3d192d0c58c30fc3d8b1163be665dc0f32448e26c2e0" ;
+    thanos:sha256Before "6f8a167d5d898e96067492cde881fc6b59eed2354228b5e709b71c0b6b358573" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3451 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-devices-haptics-dll a thanos:Binary ;
+    rdfs:label "windows.devices.haptics.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "windows.devices.haptics.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "1f3dc4e97babf3a40f1693aaa3f87edc2602732500f7c240e6fe95f27ee02506" ;
+    thanos:sha256Before "fc68233af4f72b6a559215074e4f6d412a6eca7352c9f2e34b4f63f56e03617a" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-devices-midi-dll a thanos:Binary ;
+    rdfs:label "windows.devices.midi.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "windows.devices.midi.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "01acccadc80b8dca258343349e5ae3690182ed1279b8d28e0c97e2562ba9719d" ;
+    thanos:sha256Before "dfc2b52c0f0b190d3acb1422a53bfc0327c63ab5a6723c79e533167b70d5154c" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-devices-radios-dll a thanos:Binary ;
+    rdfs:label "windows.devices.radios.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "windows.devices.radios.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "b9f317dcecb828a5d4b3fc8d0683ada3cb4f80b4ddbcf47e0972ee98ee2c1c14" ;
+    thanos:sha256Before "4f1e67ccbcd3c732c1a27858429167fb4c72e3208156127cc023fc9dfcd52689" ;
+    thanos:sizeDelta 4096 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3207 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-devices-sensors-dll a thanos:Binary ;
+    rdfs:label "windows.devices.sensors.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 1 ;
+    thanos:logicalName "windows.devices.sensors.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "8338ccb3ee05527ba52f84232ebbc07e0924ca73c68066d9e2e7b88b1c2e51d2" ;
+    thanos:sha256Before "bbeee7e1aac29d7f877d6f38e6b8d16e4c53c622853ec40dd903f728438b4179" ;
+    thanos:sizeDelta -24 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3451 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-devices-smartcards-phone-dll a thanos:Binary ;
+    rdfs:label "windows.devices.smartcards.phone.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "windows.devices.smartcards.phone.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "bf8725d15aa3d8b270d14d7c1c92d723514e0df2229d86c28d202ee0e4d885e5" ;
+    thanos:sha256Before "a2180b23852c8e6bed52038a2c870519753ebc339ac137a5c578cd981928bf80" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-energy-dll a thanos:Binary ;
+    rdfs:label "windows.energy.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "windows.energy.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "db430029f197821593da23994fd17916c0edb84c23c694f82b5ec666e84e3ad5" ;
+    thanos:sha256Before "d3e42bee040bcc11589902e72277ba735f7b39a5deba1d7a8c720348357a4108" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3451 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-graphics-display-brightnessoverride-dll a thanos:Binary ;
+    rdfs:label "windows.graphics.display.brightnessoverride.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "windows.graphics.display.brightnessoverride.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "b989702d5d0372277376c046184794b3eb16a00ea730e720f4d70af2dc5c5345" ;
+    thanos:sha256Before "eff019deefeacf48c76b74cfe4ae4266be8960d26fdb54648d6229a9914f0f4c" ;
+    thanos:sizeDelta 16 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-graphics-printing-3d-dll a thanos:Binary ;
+    rdfs:label "windows.graphics.printing.3d.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "windows.graphics.printing.3d.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "654d78bf96f46fe6de02cbb1aee1a74a6e1dfff6d76e4cd64fa46010c5748afd" ;
+    thanos:sha256Before "c85e91fe7e43141cd3ddc1378554f3a9045d6b7a9a7768f33b8d82683e7211d4" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3451 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-immersiveshell-serviceprovider-dll a thanos:Binary ;
+    rdfs:label "windows.immersiveshell.serviceprovider.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 1 ;
+    thanos:logicalName "windows.immersiveshell.serviceprovider.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "022e8fb4a6ebfdc26db29167592efcee70d2ad78b76df3ada17d0fbe3d18aaec" ;
+    thanos:sha256Before "97b5fcdb446f35d4e5a43bb33a8a451eddc47e168644170c2a533ba0a9d038f6" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4893 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-management-workplace-dll a thanos:Binary ;
+    rdfs:label "windows.management.workplace.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "windows.management.workplace.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "b13d8e710537ab0130300f29b12a5bca30f903efa03624349a65e1fb9a424ef0" ;
+    thanos:sha256Before "edb7e5ea088037d393fb106b6406d2b8f18199bb84ee6f5d48f16b95ca169930" ;
+    thanos:sizeDelta 64 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3692 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-media-mediacontrol-dll a thanos:Binary ;
+    rdfs:label "windows.media.mediacontrol.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 1 ;
+    thanos:logicalName "windows.media.mediacontrol.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "62bb8eb35dbbad272501024d39f154632c97ff2399938418f717b77b37cc6634" ;
+    thanos:sha256Before "2044a8f03c6fa3fa556a84bdc5a4b59bebca09711c55f00a6c0f23951f7b738f" ;
+    thanos:sizeDelta 64 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3692 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-media-renewal-dll a thanos:Binary ;
+    rdfs:label "windows.media.renewal.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "windows.media.renewal.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "3f5c5e0d3fee8813e9ee9ec21fee592c00b115a6ef8442047cff885fdf03ea60" ;
+    thanos:sha256Before "12a2c665153ce83e21a0aebffd6c1410d905d6c3982352feec43056020199c02" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3692 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-storage-applicationdata-dll a thanos:Binary ;
+    rdfs:label "windows.storage.applicationdata.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 186 ;
+    thanos:logicalName "windows.storage.applicationdata.dll" ;
+    thanos:priorityLabel "P1" ;
+    thanos:score 326 ;
+    thanos:sha256After "931f45486ea3c89486e2160d8aa168d765ce09879c75088922892ccac136cdd3" ;
+    thanos:sha256Before "b42260c86f3b5286bdd40a3c9417b93a67d6f20d54ebbf214f5c10606b3bd2b9" ;
+    thanos:sizeDelta 28944 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-system-systemmanagement-dll a thanos:Binary ;
+    rdfs:label "windows.system.systemmanagement.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "windows.system.systemmanagement.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "c7ff6172500ace74d6e4ed602c9dc840c2221f00ec25637bdadb1414a26b056f" ;
+    thanos:sha256Before "57bbf35f300e7a517860eec321bcc95437d50b028f2b05065a3166b2b09e085d" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3692 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-ui-creddialogcontroller-dll a thanos:Binary ;
+    rdfs:label "windows.ui.creddialogcontroller.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "windows.ui.creddialogcontroller.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "62e6a264a168e5132b73168209116808657be009ae5347e26c220aed535aae3c" ;
+    thanos:sha256Before "904895e248fce5dcdc5a9bb0b4c2cec7f5f5498624bab09e21b0ca9cb2edc983" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4651 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-windows-ui-input-inking-dll a thanos:Binary ;
+    rdfs:label "windows.ui.input.inking.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "windows.ui.input.inking.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "7ac0fc3f1494a75afeb3e3b74745bffe3d08094f5bc9f2bafde142e6c3a30a8b" ;
+    thanos:sha256Before "5bbef4d45e617c7561fc9321eb1346dc7e93c1e00f882baaf556780aa200c039" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3451 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-winsetup-dll a thanos:Binary ;
+    rdfs:label "winsetup.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "winsetup.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "977d52b94927eae176e214ec2e06cb5ffaa985116b1c551bb79ff687a9139752" ;
+    thanos:sha256Before "4c308fef66a2ad19967dd1e5df3f1642130fc8d85b62d458792b7f44e6a938cd" ;
+    thanos:sizeDelta 88 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4893 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-amd64-wow64cpu-dll a thanos:Binary ;
+    rdfs:label "wow64cpu.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "amd64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "wow64cpu.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "f9cce3742f8a0d12e436fcd9e6651020f3dda957a67de452203fe3d7bfbca40d" ;
+    thanos:sha256Before "08f05af1f7ccd0b45d4869fdb7d686ce4a5a2513767e778226382330fba00c87" ;
+    thanos:sizeDelta 80 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4648 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-appextension-dll a thanos:Binary ;
+    rdfs:label "appextension.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "appextension.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "fd32011c77fcbcea853923e5427a2f5ecd51587933c9d2a05cfacf1e7198330c" ;
+    thanos:sha256Before "294f8629f3838e427b7f690a3d8af0df82b851aefb6c91879477fc52887c0be0" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-bcrypt-dll a thanos:Binary ;
+    rdfs:label "bcrypt.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "bcrypt.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "bea8c67bb22d16c01ceecea5e11ab6ce0fb152accd3734d559cdbeae9529872c" ;
+    thanos:sha256Before "3e362ab12692feafe5769862aa0b1537cb70245ac63acc4aaae25b59b1455b1d" ;
+    thanos:sizeDelta 88 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4648 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-cameracaptureui-dll a thanos:Binary ;
+    rdfs:label "cameracaptureui.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "cameracaptureui.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 2 ;
+    thanos:sha256After "eb8bafce4b0b255510091ebb5af3e617edb4bbf861c9cbe230f8ab9909d97d39" ;
+    thanos:sha256Before "e6495f6095e4358e14adf934dab51c49831cdd993d9ffec9ca1985c3c531a55d" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3451 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-clipboardserver-dll a thanos:Binary ;
+    rdfs:label "clipboardserver.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta -151 ;
+    thanos:logicalName "clipboardserver.dll" ;
+    thanos:priorityLabel "P2" ;
+    thanos:score 193 ;
+    thanos:sha256After "6f6b56cb954bc49dcc38f9d57ef0787e69bca5fb2bffee630fc943941b3fb4c9" ;
+    thanos:sha256Before "fa35136c683bd69d05304fa4a7e989645ce9136610a506a1a18e5861c8795d6c" ;
+    thanos:sizeDelta -16896 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4647 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-cloudexperiencehostuser-dll a thanos:Binary ;
+    rdfs:label "cloudexperiencehostuser.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "cloudexperiencehostuser.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "1e742272512846a4b381ffd0d229098bd27ff88fe1758a02faa6ab8e362d6521" ;
+    thanos:sha256Before "3c0281c852cc2d76f4f186d1fef5adda7f2c4ca1e4ce50d66ddf863750a2a481" ;
+    thanos:sizeDelta 32 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-dataexchange-dll a thanos:Binary ;
+    rdfs:label "dataexchange.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "dataexchange.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "580debad397731565f65ae90ba9a7d9ad9a060660a3411b50f85d183be37fb27" ;
+    thanos:sha256Before "e361197ff8f0fcc34ce550cc01ae1e7a23188d02eb92e920eebad782d9440201" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4647 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-dialclient-dll a thanos:Binary ;
+    rdfs:label "dialclient.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 1 ;
+    thanos:logicalName "dialclient.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "6863a06655dca1916dd541a7bb8f7bfe98c33ad0784e293688d8cba39edca13f" ;
+    thanos:sha256Before "5aa7803e3b2f9b07ba3632ac914ae70a1bd1c98c07c8f761b0f0654b9bbdb39c" ;
+    thanos:sizeDelta 512 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-fvecerts-dll a thanos:Binary ;
+    rdfs:label "fvecerts.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 82 ;
+    thanos:hasVulnerability thanos:vuln-bin-2026-04-patch-tuesday-full-oana-wow64-fvecerts-dll-cve-2026-27913 ;
+    thanos:logicalName "fvecerts.dll" ;
+    thanos:priorityLabel "P1" ;
+    thanos:score 206 ;
+    thanos:sha256After "b4d87798518f8afa5587c69e553734c8f6c770c9c08545aa9d657f9e1cc5a2d5" ;
+    thanos:sha256Before "6b5fd57cea9be48ff470f19eb0d77e75c4c864fa8ffc37e9c758d43b2dbb0c37" ;
+    thanos:sizeDelta 11264 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4647 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-msasn1-dll a thanos:Binary ;
+    rdfs:label "msasn1.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "msasn1.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "072aa6e4e0e933f32e3ba22c714df87ff9e480537c3830407a2e774593114d6a" ;
+    thanos:sha256Before "11f63ff38c787026d2d30afb88c6c957239dd817eec0234b3f4dc9ee14e65123" ;
+    thanos:sizeDelta 128 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4648 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-msvcp-win-dll a thanos:Binary ;
+    rdfs:label "msvcp_win.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "msvcp_win.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "3a712bfe5ee127221dbe3b7a2e15aebe0c2307afb40ad346ef1f86b6b206590f" ;
+    thanos:sha256Before "fe672d5590a1c93173ae76b20e3400c2b302edbb03b84243baa6ed9821036aca" ;
+    thanos:sizeDelta 80 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4648 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-ntlmshared-dll a thanos:Binary ;
+    rdfs:label "ntlmshared.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "ntlmshared.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "6dbd012b784f6b5556adba18638c258fa9ebeba8a0237a6e7375741509fb9bd9" ;
+    thanos:sha256Before "43989656652b36a6b12a949d546ae97b483350dfbc69969e6d1bb6c763dd5c6d" ;
+    thanos:sizeDelta 80 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4767 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-peopleapis-dll a thanos:Binary ;
+    rdfs:label "peopleapis.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "peopleapis.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "aa3ccd1da85e72cb03da9747aabd94bd624761cdde4a2b59f5112cb28ecec765" ;
+    thanos:sha256Before "62c5590ae5ca614fe56b08d15a04f23770d95c028bce5eb47b439d2533cd9107" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-phoneom-dll a thanos:Binary ;
+    rdfs:label "phoneom.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 1 ;
+    thanos:logicalName "phoneom.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "fb6190f91663f214b5218665281ac3d190143ef391f0bb7aeeb8fec3ed4d8535" ;
+    thanos:sha256Before "f8cfe396b421f03661c5e68da3c16b86e9d339a04356fb5d68fbae37c146cf9a" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-playtomanager-dll a thanos:Binary ;
+    rdfs:label "playtomanager.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 1 ;
+    thanos:logicalName "playtomanager.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "d42b6a4ec240f080bcd3b297476060055ccc8c2647888587a6be2cd086f7bbd5" ;
+    thanos:sha256Before "b1f196843ced729cb437a2353df73d5e83b873b92a08ebd9d7b06675af66846e" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-scrobj-dll a thanos:Binary ;
+    rdfs:label "scrobj.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "scrobj.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "18cb018749b66eddac85eda37037206c2527bfee068808b3cf8f465e892354c4" ;
+    thanos:sha256Before "b3946aa0d6ca9b3b8bf8a20724f8bb637f53f42c85a8fc681086e14683765714" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020" ;
+    thanos:versionBefore "10.0.20348.4294" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-taskapis-dll a thanos:Binary ;
+    rdfs:label "taskapis.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta -4 ;
+    thanos:logicalName "taskapis.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 4 ;
+    thanos:sha256After "e56a962e0d6d207d2e3f81698cf03740fd18a4ad8d12d867ee30a61284b20556" ;
+    thanos:sha256Before "55fff1c4342f6cd4b037755fa004b5f78cb4274b191d8cb6e13798c91e7a260e" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-tbs-dll a thanos:Binary ;
+    rdfs:label "tbs.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "tbs.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "9a1668f5987f4c489ef95c842dc5917d0ecf16339f8bd3c576c02decf8036153" ;
+    thanos:sha256Before "8ccf3c482bb2b649711dba54b520cf026d102f63d68658ecc42b908f290fc256" ;
+    thanos:sizeDelta 40 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4648 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-twinapi-appcore-dll a thanos:Binary ;
+    rdfs:label "twinapi.appcore.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 3 ;
+    thanos:logicalName "twinapi.appcore.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 4 ;
+    thanos:sha256After "1bb181c7f2f3237dbd7ffcf00c3e254a132980ac57fa005d8522b64166fa4962" ;
+    thanos:sha256Before "78bd34dd8c54df98555bb600f247acc3f2d75572f93cf11c652e46866bc8551e" ;
+    thanos:sizeDelta 632 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3692 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-ucrtbase-dll a thanos:Binary ;
+    rdfs:label "ucrtbase.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "ucrtbase.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "50b84449ab7da14752bac22e4b366c4c3f84e71c5ecd99845dfac1b615da5b3f" ;
+    thanos:sha256Before "10fcd4fd0b7aea204b330a68028dbaae5a70e2fb37843097d1590fdfadefcf8e" ;
+    thanos:sizeDelta 88 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4648 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-usermgrproxy-dll a thanos:Binary ;
+    rdfs:label "usermgrproxy.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 3 ;
+    thanos:logicalName "usermgrproxy.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 3 ;
+    thanos:sha256After "b6344e65fc290b3a9b5e6889ba1bf913119197c5deaf4b2c723086d36bbf3b1c" ;
+    thanos:sha256Before "4e179f8a5b7fb87be8eef3aee46e0f2ab3135c94c7b91937cce371f4ebdd819a" ;
+    thanos:sizeDelta 512 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4163 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-vaultcli-dll a thanos:Binary ;
+    rdfs:label "vaultcli.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 2 ;
+    thanos:logicalName "vaultcli.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 2 ;
+    thanos:sha256After "c8eceffc53e79cf6c23f6c57dc43d234f8aad856fea3886eac3c8f7651eff905" ;
+    thanos:sha256Before "a76ee8b8f07c80efc4efc82540e0cd770cffe7f7d146a21f8ce49fbfa3998dca" ;
+    thanos:sizeDelta 512 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-applicationmodel-datatransfer-dll a thanos:Binary ;
+    rdfs:label "windows.applicationmodel.datatransfer.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "windows.applicationmodel.datatransfer.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "08419c6368aaee5c52be5d1bf9768555dacff507fb1fe376dd3e9de6a77f668f" ;
+    thanos:sha256Before "d0cf229ef559227e4549d5ff450cc78f12193922ec20c2b79e728a311a19b098" ;
+    thanos:sizeDelta 552 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3451 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-applicationmodel-lockscreen-dll a thanos:Binary ;
+    rdfs:label "windows.applicationmodel.lockscreen.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 1 ;
+    thanos:logicalName "windows.applicationmodel.lockscreen.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "39a588acf49494cb66c61c8a672e3453692cf09c406f2fcaa490f8af4653977f" ;
+    thanos:sha256Before "1f3423b4284a4c59cf61b57d861a0ba30bd4285ad0dbe2770923b82d40cafdd5" ;
+    thanos:sizeDelta 512 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4647 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-networking-backgroundtransfer-dll a thanos:Binary ;
+    rdfs:label "windows.networking.backgroundtransfer.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 5 ;
+    thanos:logicalName "windows.networking.backgroundtransfer.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 5 ;
+    thanos:sha256After "bb26e06561deb8e96ebebddd8f250c8dcf852c0f3e439f7598229cf7954ede01" ;
+    thanos:sha256Before "bbf9ca1d515ea3733f63497d1a6cfafa9df2603252e46160e712faabd33daadb" ;
+    thanos:sizeDelta 512 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3692 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-networking-dll a thanos:Binary ;
+    rdfs:label "windows.networking.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 9 ;
+    thanos:logicalName "windows.networking.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 9 ;
+    thanos:sha256After "492557fbef239290ed896438c5a859a5709c1a9ffcb65b4e80ad505efea73c49" ;
+    thanos:sha256Before "091c7821c8f2dd92de4f05c8774ededea2a6da4cb884bc363c958bb18e8927de" ;
+    thanos:sizeDelta 1024 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4405 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-networking-proximity-dll a thanos:Binary ;
+    rdfs:label "windows.networking.proximity.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "windows.networking.proximity.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "9975fedc24ba8fbae2cc29b4e8274c65f33aac723aaea510165d5701f45f69fa" ;
+    thanos:sha256Before "476341d929cb8e648dc6d36fe522714739b48e78da7ef6a410829351a0439347" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-payments-dll a thanos:Binary ;
+    rdfs:label "windows.payments.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "windows.payments.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "a719f87a1d286e52039e6c2fa4a0b468eb8e9365f94910a3b85216b36e3bbcdb" ;
+    thanos:sha256Before "cad6a1b975ab661b75b143c02f458dfc627210829cf700572ae919c3e213690c" ;
+    thanos:sizeDelta 512 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3207 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-security-authentication-onlineid-dll a thanos:Binary ;
+    rdfs:label "windows.security.authentication.onlineid.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 3 ;
+    thanos:logicalName "windows.security.authentication.onlineid.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 3 ;
+    thanos:sha256After "d77e82935ca844c4b852957653ccdaf5926a241720b8109192cf8bdc41aa0ae6" ;
+    thanos:sha256Before "076a58195d7d8fc831aae15ea2362177b446b93a4c470ea7c5c63d358e14e368" ;
+    thanos:sizeDelta 512 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3451 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-ui-xaml-maps-dll a thanos:Binary ;
+    rdfs:label "windows.ui.xaml.maps.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "windows.ui.xaml.maps.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "f23dfda64322340a1c6e58a643493157821b509267c3429beb28d878dfe4312b" ;
+    thanos:sha256Before "8f3ffeee0e9215beea1629555424f832a5abf102e42c79d1d229b704566e7cce" ;
+    thanos:sizeDelta 512 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.4767 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-web-diagnostics-dll a thanos:Binary ;
+    rdfs:label "windows.web.diagnostics.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "windows.web.diagnostics.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "45d822f0c6c06be4990046f8e2a76afecbf2c97ff8affe92d43b81121d696773" ;
+    thanos:sha256Before "d2105c4ddf928654a2d8aa6b611a10d2fa15ad4e9df694ebda9eb2586538250b" ;
+    thanos:sizeDelta 512 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-windows-web-http-dll a thanos:Binary ;
+    rdfs:label "windows.web.http.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 2 ;
+    thanos:logicalName "windows.web.http.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 3 ;
+    thanos:sha256After "87eb9d58976d826f914c8223b55271c289b9b8be325dc7058c075224243c645f" ;
+    thanos:sha256Before "988dc2c291a430ce38dcb4a970ba51b81658ef9f560eba643da1a3361a865fc8" ;
+    thanos:sizeDelta 512 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.3451 (WinBuild.160101.0800)" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-wow64-wshcon-dll a thanos:Binary ;
+    rdfs:label "wshcon.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "wow64" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "wshcon.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 0 ;
+    thanos:sha256After "80f1f3c41bb7cc1605fb49ee93b7a874ad98167180d051a67da80f30e9f527c5" ;
+    thanos:sha256Before "2cad0dbecbabfe0883696296916dc02da25c122846845c1f170e0a1f044a14ff" ;
+    thanos:sizeDelta 0 ;
+    thanos:versionAfter "10.0.20348.5020" ;
+    thanos:versionBefore "10.0.20348.4294" .
+
+thanos:bin-2026-04-patch-tuesday-full-oana-x86-wimprovider-dll a thanos:Binary ;
+    rdfs:label "wimprovider.dll" ;
+    thanos:analyzedBy "oana" ;
+    thanos:arch "x86" ;
+    thanos:changedInCycle thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:exportDelta 0 ;
+    thanos:functionDelta 0 ;
+    thanos:logicalName "wimprovider.dll" ;
+    thanos:priorityLabel "P4" ;
+    thanos:score 1 ;
+    thanos:sha256After "d892cc1b0fd2c0d59a4b455c4d880b16ebbb2c281115ff0280c807870094eedc" ;
+    thanos:sha256Before "6366106a3ba117edcffb4f0cfa7b9092d8bb8e6fee6b089937b8ca046e65593c" ;
+    thanos:sizeDelta 32 ;
+    thanos:versionAfter "10.0.20348.5020 (WinBuild.160101.0800)" ;
+    thanos:versionBefore "10.0.20348.2849 (WinBuild.160101.0800)" .
+
+thanos:cve-cve-2026-26161 a thanos:CVE ;
+    rdfs:label "CVE-2026-26161" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26161" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-20",
+        "CWE-822" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Sensor Data Service Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-26178 a thanos:CVE ;
+    rdfs:label "CVE-2026-26178" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-26178" ;
+    thanos:cvssBaseScore 8.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-190",
+        "CWE-681" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows Advanced Rasterization Platform Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27913 a thanos:CVE ;
+    rdfs:label "CVE-2026-27913" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27913" ;
+    thanos:cvssBaseScore 7.7 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-20" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Security Feature Bypass" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows BitLocker Security Feature Bypass Vulnerability" .
+
+thanos:cve-cve-2026-27915 a thanos:CVE ;
+    rdfs:label "CVE-2026-27915" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27915" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows UPnP Device Host Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27916 a thanos:CVE ;
+    rdfs:label "CVE-2026-27916" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27916" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows UPnP Device Host Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27919 a thanos:CVE ;
+    rdfs:label "CVE-2026-27919" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27919" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-822" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows UPnP Device Host Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27920 a thanos:CVE ;
+    rdfs:label "CVE-2026-27920" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27920" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-822" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows UPnP Device Host Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27923 a thanos:CVE ;
+    rdfs:label "CVE-2026-27923" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27923" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Desktop Window Manager Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27924 a thanos:CVE ;
+    rdfs:label "CVE-2026-27924" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27924" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Desktop Window Manager Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-27925 a thanos:CVE ;
+    rdfs:label "CVE-2026-27925" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-27925" ;
+    thanos:cvssBaseScore 6.5 ;
+    thanos:cvssVector "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Information Disclosure" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows UPnP Device Host Information Disclosure Vulnerability" .
+
+thanos:cve-cve-2026-32075 a thanos:CVE ;
+    rdfs:label "CVE-2026-32075" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32075" ;
+    thanos:cvssBaseScore 7.0 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows UPnP Device Host Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32077 a thanos:CVE ;
+    rdfs:label "CVE-2026-32077" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32077" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-822" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows UPnP Device Host Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32152 a thanos:CVE ;
+    rdfs:label "CVE-2026-32152" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32152" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Desktop Window Manager Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32154 a thanos:CVE ;
+    rdfs:label "CVE-2026-32154" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32154" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Desktop Window Manager Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32155 a thanos:CVE ;
+    rdfs:label "CVE-2026-32155" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32155" ;
+    thanos:cvssBaseScore 7.8 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Elevation of Privilege" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Desktop Window Manager Elevation of Privilege Vulnerability" .
+
+thanos:cve-cve-2026-32156 a thanos:CVE ;
+    rdfs:label "CVE-2026-32156" ;
+    thanos:addressedBy thanos:kb-kb5082142 ;
+    thanos:cveId "CVE-2026-32156" ;
+    thanos:cvssBaseScore 7.4 ;
+    thanos:cvssVector "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C" ;
+    thanos:cwe "CWE-416" ;
+    thanos:exploited false ;
+    thanos:fixedBuild "10.0.20348.5020" ;
+    thanos:impact "Remote Code Execution" ;
+    thanos:msrcSeverity "Important" ;
+    thanos:title "Windows UPnP Device Host Remote Code Execution Vulnerability" .
+
+thanos:kb-kb5078766 a thanos:KB ;
+    rdfs:label "KB5078766" ;
+    thanos:kbId "KB5078766" ;
+    thanos:partOfCycle thanos:cycle-2026-04-patch-tuesday,
+        thanos:cycle-2026-04-patch-tuesday-full .
+
+thanos:kb-kb5094128 a thanos:KB ;
+    rdfs:label "KB5094128" ;
+    thanos:kbId "KB5094128" .
+
+thanos:kb-kb5099540 a thanos:KB ;
+    rdfs:label "KB5099540" ;
+    thanos:kbId "KB5099540" ;
+    thanos:supersedes thanos:kb-kb5094128 .
+
+thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-d3d10warp-dll-cve-2026-26178 a thanos:Vulnerability ;
+    thanos:concernsCVE thanos:cve-cve-2026-26178 ;
+    thanos:confidence "medium" ;
+    thanos:rationale "Hypothesis based on the component name (WARP is the Direct3D software rasterizer (d3d10warp.dll, package directx-warp10)); Microsoft does not publish CVE-to-file mappings." .
+
+thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-dwmscene-dll-cve-2026-27923 a thanos:Vulnerability ;
+    thanos:concernsCVE thanos:cve-cve-2026-27923 ;
+    thanos:confidence "medium" ;
+    thanos:rationale "Hypothesis based on the component name (Desktop Window Manager component (package desktopwindowmanager)); Microsoft does not publish CVE-to-file mappings." .
+
+thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-dwmscene-dll-cve-2026-27924 a thanos:Vulnerability ;
+    thanos:concernsCVE thanos:cve-cve-2026-27924 ;
+    thanos:confidence "medium" ;
+    thanos:rationale "Hypothesis based on the component name (Desktop Window Manager component (package desktopwindowmanager)); Microsoft does not publish CVE-to-file mappings." .
+
+thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-dwmscene-dll-cve-2026-32152 a thanos:Vulnerability ;
+    thanos:concernsCVE thanos:cve-cve-2026-32152 ;
+    thanos:confidence "medium" ;
+    thanos:rationale "Hypothesis based on the component name (Desktop Window Manager component (package desktopwindowmanager)); Microsoft does not publish CVE-to-file mappings." .
+
+thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-dwmscene-dll-cve-2026-32154 a thanos:Vulnerability ;
+    thanos:concernsCVE thanos:cve-cve-2026-32154 ;
+    thanos:confidence "medium" ;
+    thanos:rationale "Hypothesis based on the component name (Desktop Window Manager component (package desktopwindowmanager)); Microsoft does not publish CVE-to-file mappings." .
+
+thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-dwmscene-dll-cve-2026-32155 a thanos:Vulnerability ;
+    thanos:concernsCVE thanos:cve-cve-2026-32155 ;
+    thanos:confidence "medium" ;
+    thanos:rationale "Hypothesis based on the component name (Desktop Window Manager component (package desktopwindowmanager)); Microsoft does not publish CVE-to-file mappings." .
+
+thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-mediafoundation-defaultperceptionprovider-dll-cve-2026-26161 a thanos:Vulnerability ;
+    thanos:concernsCVE thanos:cve-cve-2026-26161 ;
+    thanos:confidence "medium" ;
+    thanos:rationale "Hypothesis based on the component name (binary of the sensordataservice package); Microsoft does not publish CVE-to-file mappings." .
+
+thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-upnphost-dll-cve-2026-27915 a thanos:Vulnerability ;
+    thanos:concernsCVE thanos:cve-cve-2026-27915 ;
+    thanos:confidence "medium" ;
+    thanos:rationale "Hypothesis based on the component name (the UPnP Device Host service is implemented in upnphost.dll (package upnpdevicehost)); Microsoft does not publish CVE-to-file mappings." .
+
+thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-upnphost-dll-cve-2026-27916 a thanos:Vulnerability ;
+    thanos:concernsCVE thanos:cve-cve-2026-27916 ;
+    thanos:confidence "medium" ;
+    thanos:rationale "Hypothesis based on the component name (the UPnP Device Host service is implemented in upnphost.dll (package upnpdevicehost)); Microsoft does not publish CVE-to-file mappings." .
+
+thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-upnphost-dll-cve-2026-27919 a thanos:Vulnerability ;
+    thanos:concernsCVE thanos:cve-cve-2026-27919 ;
+    thanos:confidence "medium" ;
+    thanos:rationale "Hypothesis based on the component name (the UPnP Device Host service is implemented in upnphost.dll (package upnpdevicehost)); Microsoft does not publish CVE-to-file mappings." .
+
+thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-upnphost-dll-cve-2026-27920 a thanos:Vulnerability ;
+    thanos:concernsCVE thanos:cve-cve-2026-27920 ;
+    thanos:confidence "medium" ;
+    thanos:rationale "Hypothesis based on the component name (the UPnP Device Host service is implemented in upnphost.dll (package upnpdevicehost)); Microsoft does not publish CVE-to-file mappings." .
+
+thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-upnphost-dll-cve-2026-27925 a thanos:Vulnerability ;
+    thanos:concernsCVE thanos:cve-cve-2026-27925 ;
+    thanos:confidence "medium" ;
+    thanos:rationale "Hypothesis based on the component name (the UPnP Device Host service is implemented in upnphost.dll (package upnpdevicehost)); Microsoft does not publish CVE-to-file mappings." .
+
+thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-upnphost-dll-cve-2026-32075 a thanos:Vulnerability ;
+    thanos:concernsCVE thanos:cve-cve-2026-32075 ;
+    thanos:confidence "medium" ;
+    thanos:rationale "Hypothesis based on the component name (the UPnP Device Host service is implemented in upnphost.dll (package upnpdevicehost)); Microsoft does not publish CVE-to-file mappings." .
+
+thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-upnphost-dll-cve-2026-32077 a thanos:Vulnerability ;
+    thanos:concernsCVE thanos:cve-cve-2026-32077 ;
+    thanos:confidence "medium" ;
+    thanos:rationale "Hypothesis based on the component name (the UPnP Device Host service is implemented in upnphost.dll (package upnpdevicehost)); Microsoft does not publish CVE-to-file mappings." .
+
+thanos:vuln-bin-2026-04-patch-tuesday-full-oana-amd64-upnphost-dll-cve-2026-32156 a thanos:Vulnerability ;
+    thanos:concernsCVE thanos:cve-cve-2026-32156 ;
+    thanos:confidence "medium" ;
+    thanos:rationale "Hypothesis based on the component name (the UPnP Device Host service is implemented in upnphost.dll (package upnpdevicehost)); Microsoft does not publish CVE-to-file mappings." .
+
+thanos:vuln-bin-2026-04-patch-tuesday-full-oana-wow64-fvecerts-dll-cve-2026-27913 a thanos:Vulnerability ;
+    thanos:concernsCVE thanos:cve-cve-2026-27913 ;
+    thanos:confidence "medium" ;
+    thanos:rationale "Hypothesis based on the component name (FVE (Full Volume Encryption) is the internal name of BitLocker); Microsoft does not publish CVE-to-file mappings." .
+
+thanos:MSU a owl:Class ;
+    rdfs:label "MSU package" ;
+    rdfs:comment "The downloadable .msu file associated with a KB." .
+
+thanos:PatchCycle a owl:Class ;
+    rdfs:label "Patch Tuesday cycle" ;
+    rdfs:comment "A monthly update cycle, e.g. '2026-04 Patch Tuesday'." .
+
+thanos:cycle-2026-04-patch-tuesday a thanos:PatchCycle ;
+    rdfs:label "2026-04 Patch Tuesday" ;
+    thanos:cycleLabel "2026-04 Patch Tuesday" ;
+    thanos:targetBuild "20348.5020" ;
+    thanos:targetProduct "Windows Server 2022" .
+
+thanos:KB a owl:Class ;
+    rdfs:label "Knowledge Base update" ;
+    rdfs:comment "A cumulative update identified by its KB id (e.g. KB5078766)." .
+
+thanos:Vulnerability a owl:Class ;
+    rdfs:label "Assessed vulnerability" ;
+    rdfs:comment "Finding prioritized by Thanos Auditor for a binary (severity, priority, confidence)." .
+
+thanos:Package a owl:Class ;
+    rdfs:label "SXS package" ;
+    rdfs:comment "A component package (SXS folder) that groups binaries." .
+
+thanos:cycle-2026-04-patch-tuesday-full a thanos:PatchCycle ;
+    rdfs:label "2026-04 Patch Tuesday FULL" ;
+    thanos:cycleLabel "2026-04 Patch Tuesday FULL" ;
+    thanos:targetBuild "20348.5020" ;
+    thanos:targetProduct "Windows Server 2022" .
+
+thanos:Binary a owl:Class ;
+    rdfs:label "Binary (DLL)" ;
+    rdfs:comment "A rebuilt binary whose content changes between two cycles." .
+
+thanos:kb-kb5082142 a thanos:KB ;
+    rdfs:label "KB5082142" ;
+    thanos:kbId "KB5082142" ;
+    thanos:partOfCycle thanos:cycle-2026-04-patch-tuesday,
+        thanos:cycle-2026-04-patch-tuesday-full ;
+    thanos:supersedes thanos:kb-kb5078766 .
+
+thanos:CVE a owl:Class ;
+    rdfs:label "CVE" ;
+    rdfs:comment "A public vulnerability identifier (e.g. CVE-2026-1234)." .
+

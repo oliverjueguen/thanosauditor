@@ -1,0 +1,33 @@
+# ============================================================================
+# config.example.yaml: executor configuration (RF-11).
+# The coordinator ships it preconfigured in each ZIP. Usually only
+# `ghidra_support_dir` needs editing. Copy this file to `config.yaml` (do NOT commit it).
+# ============================================================================
+
+# Executor identifier (team member).
+executor_id: executor1
+
+# Cycle being analyzed.
+patch_cycle: "2026-04 Patch Tuesday FULL"
+target_product: "Windows Server 2022"
+target_build: "20348.5020"
+
+# BEFORE/AFTER pair of the cycle.
+kb_ids:
+  - KB5078766   # BEFORE
+  - KB5082142   # AFTER
+
+# Known CVEs of the cycle (optional).
+cve_ids: []
+
+# >>> THE ONLY FIELD THAT USUALLY NEEDS EDITING <<<
+# Path to the `support` folder of the Ghidra installation (contains analyzeHeadless).
+# Use SINGLE quotes for Windows paths (inside double quotes, "\" is a YAML escape).
+ghidra_support_dir: 'C:\ghidra_11.0.3_PUBLIC\support'
+
+# Optional: JDK 17+ for Ghidra to use if the `java` on PATH is not a JDK.
+# java_home: 'C:\Program Files\Eclipse Adoptium\jdk-17'
+
+# Working directories (relative to the root of the extracted ZIP).
+input_dir: "input"       # input/before and input/after
+output_dir: "output"     # <run_id>.bundle.json is written here

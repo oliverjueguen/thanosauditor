@@ -1,0 +1,13 @@
+# Core dependencies (ontology + web dashboard + configuration).
+# Reproducible install with the tested versions:
+#   pip install -r requirements.txt -c constraints.txt
+# Thanos Auditor (Claude Agent SDK) and the development tools are installed separately:
+#   pip install -e ".[auditor]" -c constraints.txt   # Thanos Auditor with Claude
+#   pip install -e ".[dev]" -c constraints.txt       # tests and audit
+
+rdflib>=7.1,<8.0
+fastapi>=0.120,<1.0
+uvicorn[standard]>=0.32,<1.0
+python-multipart>=0.0.31
+python-dotenv>=1.0,<2.0
+pyyaml>=6.0,<7.0

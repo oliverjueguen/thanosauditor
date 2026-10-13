@@ -1,0 +1,10 @@
+# docker compose up --build   -> dashboard at http://127.0.0.1:8000 (loopback only)
+services:
+  panel:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      THANOS_PANEL_SEED: "1"
+      # THANOS_PANEL_TOKEN: "put-a-token-here"   # requires a token to upload bundles
+    restart: unless-stopped

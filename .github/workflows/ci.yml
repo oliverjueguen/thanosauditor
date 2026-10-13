@@ -1,0 +1,48 @@
+# Continuous integration: tests on Linux and Windows, dependency audit and lint.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    name: pytest (${{ matrix.os }}, Python ${{ matrix.python }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python: ["3.10", "3.12"]
+        include:
+          - os: windows-latest
+            python: "3.12"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install (versions pinned in constraints.txt)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt -c constraints.txt
+          pip install -e ".[dev,auditor]" -c constraints.txt
+      - name: Tests
+        run: pytest -q
+
+  audit:
+    name: pip-audit + ruff
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt -c constraints.txt && pip install -e ".[dev]" -c constraints.txt
+      - name: Known vulnerabilities in dependencies
+        run: pip-audit -r requirements.txt
+      - name: Lint
+        run: ruff check .

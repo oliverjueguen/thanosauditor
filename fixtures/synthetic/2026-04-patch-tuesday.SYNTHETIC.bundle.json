@@ -1,0 +1,100 @@
+{
+  "bundle_version": "1.0",
+  "synthetic": true,
+  "synthetic_note": "SYNTHETIC bundle for automated tests (aggregation of several people in one cycle). Made-up hashes and counts; they do not reproduce any real row from Practice 1 (P1).",
+  "run_id": "2026-04-patch-tuesday-full-synthetic",
+  "created_at": "2026-05-07T18:14:23.004512+00:00",
+  "target_product": "Windows Server 2022",
+  "target_build": "20348.5020",
+  "patch_cycle": "2026-04 Patch Tuesday FULL",
+  "analysis_goal": "Triage security-relevant changes in DLLs reconstructed from Patch Tuesday MSU deltas.",
+  "kb_ids": [
+    "KB5078766",
+    "KB5082142"
+  ],
+  "cve_ids": [],
+  "person": "synthetic",
+  "artifacts": [
+    {
+      "evidence_id": "ev_bin_001",
+      "kind": "binary_metadata",
+      "logical_name": "configmanager2.dll",
+      "package_id": "amd64_microsoft-windows-configmanager2_31bf3856ad364e35_10.0.20348.5020_none_7b2e1a9c4d5f0011",
+      "version_before": "10.0.20348.4647 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "a1b2c3d4e5f60718293a4b5c6d7e8f901122334455667788990011223344556f",
+      "sha256_after": "f6655443322110099887766554433221100ffeeddccbbaa99887766554433221",
+      "size_before": 184320,
+      "size_after": 184320,
+      "summary_before": {
+        "library_count": 22,
+        "total_imports": 410,
+        "export_count": 18,
+        "function_count": 1870,
+        "string_count": 980
+      },
+      "summary_after": {
+        "library_count": 22,
+        "total_imports": 410,
+        "export_count": 18,
+        "function_count": 1990,
+        "string_count": 980
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_002",
+      "kind": "binary_metadata",
+      "logical_name": "windows.media.protection.playready.dll",
+      "package_id": "amd64_microsoft-windows-media-protection-playready_31bf3856ad364e35_10.0.20348.5020_none_0c2e119f3a4b7788",
+      "version_before": "10.0.20348.4647 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "0011223344556677889900aabbccddeeff00112233445566778899aabbccddee",
+      "sha256_after": "ffeeddccbbaa0099887766554433221100ffeeddccbbaa00998877665544332f",
+      "size_before": 2510848,
+      "size_after": 2510336,
+      "summary_before": {
+        "library_count": 54,
+        "total_imports": 712,
+        "export_count": 40,
+        "function_count": 9120,
+        "string_count": 3301
+      },
+      "summary_after": {
+        "library_count": 54,
+        "total_imports": 712,
+        "export_count": 40,
+        "function_count": 9124,
+        "string_count": 3305
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_003",
+      "kind": "binary_metadata",
+      "logical_name": "microsoft.networkcontroller.fwlmocv2.dll",
+      "package_id": "amd64_microsoft-windows-networkcontroller-fwlmocv2_31bf3856ad364e35_10.0.20348.4767_none_3f1aa2b7c8d9e012",
+      "version_before": "10.0.20348.4767 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0",
+      "sha256_after": "0fedcba9876543210fedcba9876543210fedcba9876543210fedcba987654321",
+      "size_before": 96256,
+      "size_after": 96256,
+      "summary_before": {
+        "library_count": 16,
+        "total_imports": 240,
+        "export_count": 12,
+        "function_count": 1440,
+        "string_count": 610
+      },
+      "summary_after": {
+        "library_count": 16,
+        "total_imports": 240,
+        "export_count": 12,
+        "function_count": 1440,
+        "string_count": 610
+      },
+      "notes": "SHA-256 difiere pero sin cambios netos en funciones/exports: candidato a ruido."
+    }
+  ]
+}

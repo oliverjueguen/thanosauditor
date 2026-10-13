@@ -1,0 +1,169 @@
+{
+  "bundle_version": "1.0",
+  "run_id": "demo-winsxs-26100-8875-26100-9444-demo-local",
+  "created_at": "2026-10-13T18:58:17.796786+00:00",
+  "target_product": "Windows 11 24H2 (equipo local, demo del ejecutor)",
+  "target_build": "26100.9444",
+  "patch_cycle": "Demo WinSxS 26100.8875 -> 26100.9444",
+  "analysis_goal": "Triage security-relevant changes in DLLs reconstructed from Patch Tuesday MSU deltas.",
+  "kb_ids": [],
+  "cve_ids": [],
+  "person": "demo-local",
+  "artifacts": [
+    {
+      "evidence_id": "ev_bin_001",
+      "kind": "binary_metadata",
+      "logical_name": "cryptbase.dll",
+      "package_id": "",
+      "version_before": "",
+      "version_after": "",
+      "sha256_before": "a3d2cc015de11fc08beb54a08827fee2f63fd8cec9c58273a9120e37fb111c9d",
+      "sha256_after": "d77b19df871b5a2f02e826ebeb5de86735f5cd0806294fe9143ba138c964ee16",
+      "size_before": 59392,
+      "size_after": 59392,
+      "summary_before": {
+        "library_count": 12,
+        "total_imports": 40,
+        "export_count": 12,
+        "function_count": 46,
+        "string_count": 89
+      },
+      "summary_after": {
+        "library_count": 12,
+        "total_imports": 40,
+        "export_count": 12,
+        "function_count": 46,
+        "string_count": 89
+      },
+      "notes": "Analyzed by Ghidra headless (thanos ExportFacts.java)."
+    },
+    {
+      "evidence_id": "ev_bin_002",
+      "kind": "binary_metadata",
+      "logical_name": "msasn1.dll",
+      "package_id": "",
+      "version_before": "",
+      "version_after": "",
+      "sha256_before": "aa5e878caf3d462e8776803cfd078924d36131267e1d081b0c29d092bd600e67",
+      "sha256_after": "f71f74438165a374feeaffbad9e4d4cff9473be726c0781f248405a7d46c2f81",
+      "size_before": 88336,
+      "size_after": 88312,
+      "summary_before": {
+        "library_count": 10,
+        "total_imports": 35,
+        "export_count": 127,
+        "function_count": 164,
+        "string_count": 239
+      },
+      "summary_after": {
+        "library_count": 10,
+        "total_imports": 35,
+        "export_count": 127,
+        "function_count": 164,
+        "string_count": 239
+      },
+      "notes": "Analyzed by Ghidra headless (thanos ExportFacts.java)."
+    },
+    {
+      "evidence_id": "ev_bin_003",
+      "kind": "binary_metadata",
+      "logical_name": "nsi.dll",
+      "package_id": "",
+      "version_before": "",
+      "version_after": "",
+      "sha256_before": "8093f7ce25d08cd7c6307b8e3ca4382451f27d3f2f9a8ecef19479a01a2e17d0",
+      "sha256_after": "d22f4cc243548dda81e274f95e92433ae8187eddfde39adaaf5996985bb41ef3",
+      "size_before": 51120,
+      "size_after": 51128,
+      "summary_before": {
+        "library_count": 8,
+        "total_imports": 18,
+        "export_count": 27,
+        "function_count": 41,
+        "string_count": 83
+      },
+      "summary_after": {
+        "library_count": 8,
+        "total_imports": 18,
+        "export_count": 27,
+        "function_count": 41,
+        "string_count": 83
+      },
+      "notes": "Analyzed by Ghidra headless (thanos ExportFacts.java)."
+    }
+  ],
+  "changes": [
+    {
+      "change_id": "chg_001",
+      "binary": "cryptbase.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_001"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 46,
+        "after_function_count": 46,
+        "before_export_count": 12,
+        "after_export_count": 12
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_002",
+      "binary": "msasn1.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_002"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 164,
+        "after_function_count": 164,
+        "before_export_count": 127,
+        "after_export_count": 127
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_003",
+      "binary": "nsi.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_003"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 41,
+        "after_function_count": 41,
+        "before_export_count": 27,
+        "after_export_count": 27
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    }
+  ],
+  "analyst_notes": [
+    "Pair count discovered: 3; pairs with sha256 delta: 3.",
+    "Function/export deltas are name-set diffs over the full function list; not a control-flow diff."
+  ],
+  "questions": [
+    "Which functions added/removed sit on externally reachable code paths?",
+    "Are added exports backed by new validation or new attack surface?",
+    "Do removed functions correlate with deprecated unsafe paths?"
+  ]
+}

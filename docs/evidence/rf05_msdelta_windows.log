@@ -1,0 +1,147 @@
+# RF-05: PA30 reconstruction with msdelta.dll on real Windows (audit of 2026-10-13)
+# Machine: Windows 11 24H2 (build 26100), Windows Python running thanos/coordinator/reconstruct.py.
+# PA30 deltas generated with msdelta (CreateDeltaB) from real WinSxS binaries;
+# T5: apply_delta rebuilds the binary with an identical SHA-256, with and without the CRC32 prefix.
+# T1-T3: the Windows 11 24H2 'r/' deltas are PA31 (UpdateCompression.dll), out of scope (WS2022 uses PA30).
+# The raw output below is kept verbatim as captured (field names and messages in Spanish).
+
+modulo: \\wsl.localhost\Ubuntu\home\turbo\projects\project_thanos\output\audit-win\repo\thanos\coordinator\reconstruct.py
+{
+ "hotpatchutil": {
+  "10.0.26100.8972": {
+   "full_sha256": "9707ed2b7e0aba7acee45418a0e064dd378e1ac10b4d8ab2ebfe597f1461978d",
+   "full_version_pe": null,
+   "r_delta_magic": "9150858750413331 (b'PA31')",
+   "T1_strip": "ReconstructionError: el delta no empieza por PA30 tras retirar el prefijo CRC32",
+   "T2_apply_delta_proyecto": "ReconstructionError: el delta no empieza por PA30 tras retirar el prefijo CRC32",
+   "T3_msdelta_PA31": "FALLA GetLastError=13",
+   "T4_updatecompression_PA31": "OK base sha256=2a2c28b286cbb0956dc925feb305821445ed9f9d9245e961a9b3f405eb5cf9a8 size=81920 version_pe=None",
+   "T5_pa30_sinhash_magic": "PA30 len=20982",
+   "T5_f_sinhash_sin_prefijo": "sha_igual=True (0.9 ms)",
+   "T5_f_sinhash_con_crc32": "sha_igual=True (0.9 ms)",
+   "T5_pa30_md5_magic": "PA30 len=21000",
+   "T5_f_md5_sin_prefijo": "sha_igual=True (1.0 ms)",
+   "T5_f_md5_con_crc32": "sha_igual=True (1.0 ms)"
+  },
+  "10.0.26100.9278": {
+   "full_sha256": "4a709f8dc20c1c4bb925648a212726ad36f05c52532b251858e5c3245bbc79d3",
+   "full_version_pe": null,
+   "r_delta_magic": "837cea1050413331 (b'PA31')",
+   "T1_strip": "ReconstructionError: el delta no empieza por PA30 tras retirar el prefijo CRC32",
+   "T2_apply_delta_proyecto": "ReconstructionError: el delta no empieza por PA30 tras retirar el prefijo CRC32",
+   "T3_msdelta_PA31": "FALLA GetLastError=13",
+   "T4_updatecompression_PA31": "OK base sha256=2a2c28b286cbb0956dc925feb305821445ed9f9d9245e961a9b3f405eb5cf9a8 size=81920 version_pe=None",
+   "T5_pa30_sinhash_magic": "PA30 len=21184",
+   "T5_f_sinhash_sin_prefijo": "sha_igual=True (0.9 ms)",
+   "T5_f_sinhash_con_crc32": "sha_igual=True (0.8 ms)",
+   "T5_pa30_md5_magic": "PA30 len=21202",
+   "T5_f_md5_sin_prefijo": "sha_igual=True (1.0 ms)",
+   "T5_f_md5_con_crc32": "sha_igual=True (1.0 ms)"
+  },
+  "bases_coinciden_entre_versiones": true,
+  "T6_n_null_delta": "sha_igual=True delta_len=38702",
+  "T7_cuerpo_corrupto_md5": "proyecto -> ReconstructionError: ApplyDeltaB fall\u00f3 (GetLastError=0) | error real (use_last_error=True) = 13",
+  "T7_cuerpo_corrupto_sinhash": "proyecto -> ReconstructionError: ApplyDeltaB fall\u00f3 (GetLastError=13) | error real (use_last_error=True) = 13",
+  "T7_truncado": "proyecto -> ReconstructionError: ApplyDeltaB fall\u00f3 (GetLastError=13) | error real (use_last_error=True) = 13",
+  "T7_fuente_equivocada_md5": "proyecto -> ReconstructionError: ApplyDeltaB fall\u00f3 (GetLastError=13) | error real = 13",
+  "T7_fuente_equivocada_sinhash": "proyecto -> ReconstructionError: ApplyDeltaB fall\u00f3 (GetLastError=13) | error real = 13"
+ },
+ "httpapi": {
+  "10.0.26100.8737": {
+   "full_sha256": "bfe4590933896844298491efcf0d427b38b89955b260f4886d8e2a0788ae8f81",
+   "full_version_pe": "10.0.26100.8737",
+   "r_delta_magic": "75f4e5ad50413331 (b'PA31')",
+   "T1_strip": "ReconstructionError: el delta no empieza por PA30 tras retirar el prefijo CRC32",
+   "T2_apply_delta_proyecto": "ReconstructionError: el delta no empieza por PA30 tras retirar el prefijo CRC32",
+   "T3_msdelta_PA31": "FALLA GetLastError=13",
+   "T4_updatecompression_PA31": "OK base sha256=bba21190f0da2aeb75f5f7c6458e541aefe81917a1d25915fa13916861f70e2e size=100648 version_pe=10.0.26100.1591",
+   "T5_pa30_sinhash_magic": "PA30 len=15751",
+   "T5_f_sinhash_sin_prefijo": "sha_igual=True (0.7 ms)",
+   "T5_f_sinhash_con_crc32": "sha_igual=True (0.7 ms)",
+   "T5_pa30_md5_magic": "PA30 len=15769",
+   "T5_f_md5_sin_prefijo": "sha_igual=True (0.9 ms)",
+   "T5_f_md5_con_crc32": "sha_igual=True (0.9 ms)"
+  },
+  "10.0.26100.9278": {
+   "full_sha256": "289a8d53cd48807750ed900eafc65cbb52a82c3afd49da8c6ee3ef1bfb2d695a",
+   "full_version_pe": "10.0.26100.9278",
+   "r_delta_magic": "c0960e1750413331 (b'PA31')",
+   "T1_strip": "ReconstructionError: el delta no empieza por PA30 tras retirar el prefijo CRC32",
+   "T2_apply_delta_proyecto": "ReconstructionError: el delta no empieza por PA30 tras retirar el prefijo CRC32",
+   "T3_msdelta_PA31": "FALLA GetLastError=13",
+   "T4_updatecompression_PA31": "OK base sha256=bba21190f0da2aeb75f5f7c6458e541aefe81917a1d25915fa13916861f70e2e size=100648 version_pe=10.0.26100.1591",
+   "T5_pa30_sinhash_magic": "PA30 len=15794",
+   "T5_f_sinhash_sin_prefijo": "sha_igual=True (0.8 ms)",
+   "T5_f_sinhash_con_crc32": "sha_igual=True (0.7 ms)",
+   "T5_pa30_md5_magic": "PA30 len=15812",
+   "T5_f_md5_sin_prefijo": "sha_igual=True (0.9 ms)",
+   "T5_f_md5_con_crc32": "sha_igual=True (0.9 ms)"
+  },
+  "bases_coinciden_entre_versiones": true,
+  "T6_n_null_delta": "sha_igual=True delta_len=36900",
+  "T7_cuerpo_corrupto_md5": "proyecto -> ReconstructionError: ApplyDeltaB fall\u00f3 (GetLastError=0) | error real (use_last_error=True) = 13",
+  "T7_cuerpo_corrupto_sinhash": "proyecto -> ReconstructionError: ApplyDeltaB fall\u00f3 (GetLastError=13) | error real (use_last_error=True) = 13",
+  "T7_truncado": "proyecto -> ReconstructionError: ApplyDeltaB fall\u00f3 (GetLastError=13) | error real (use_last_error=True) = 13",
+  "T7_fuente_equivocada_md5": "proyecto -> ReconstructionError: ApplyDeltaB fall\u00f3 (GetLastError=13) | error real = 13",
+  "T7_fuente_equivocada_sinhash": "proyecto -> ReconstructionError: ApplyDeltaB fall\u00f3 (GetLastError=13) | error real = 13"
+ },
+ "pcacli": {
+  "10.0.26100.9168": {
+   "full_sha256": "51a57c3167107eb98c4b2b7d13c5ccf8bbb8ab4b6ccc3dc10b09159d756be5c9",
+   "full_version_pe": "10.0.26100.9168",
+   "r_delta_magic": "6156c89e50413331 (b'PA31')",
+   "T1_strip": "ReconstructionError: el delta no empieza por PA30 tras retirar el prefijo CRC32",
+   "T2_apply_delta_proyecto": "ReconstructionError: el delta no empieza por PA30 tras retirar el prefijo CRC32",
+   "T3_msdelta_PA31": "FALLA GetLastError=13",
+   "T4_updatecompression_PA31": "OK base sha256=d0dbc986ef293caae32936a1577d789fac36ad66fe1af01e70bf81f680524741 size=98304 version_pe=10.0.26100.712",
+   "T5_pa30_sinhash_magic": "PA30 len=13147",
+   "T5_f_sinhash_sin_prefijo": "sha_igual=True (0.8 ms)",
+   "T5_f_sinhash_con_crc32": "sha_igual=True (0.7 ms)",
+   "T5_pa30_md5_magic": "PA30 len=13165",
+   "T5_f_md5_sin_prefijo": "sha_igual=True (0.9 ms)",
+   "T5_f_md5_con_crc32": "sha_igual=True (0.8 ms)"
+  },
+  "10.0.26100.9444": {
+   "full_sha256": "15fb89bc351dc350fb43ebcce3554a19a3ef96344e6bbfbea9928238b907c928",
+   "full_version_pe": "10.0.26100.9278",
+   "r_delta_magic": "a8e2485c50413331 (b'PA31')",
+   "T1_strip": "ReconstructionError: el delta no empieza por PA30 tras retirar el prefijo CRC32",
+   "T2_apply_delta_proyecto": "ReconstructionError: el delta no empieza por PA30 tras retirar el prefijo CRC32",
+   "T3_msdelta_PA31": "FALLA GetLastError=13",
+   "T4_updatecompression_PA31": "OK base sha256=d0dbc986ef293caae32936a1577d789fac36ad66fe1af01e70bf81f680524741 size=98304 version_pe=10.0.26100.712",
+   "T5_pa30_sinhash_magic": "PA30 len=13104",
+   "T5_f_sinhash_sin_prefijo": "sha_igual=True (0.7 ms)",
+   "T5_f_sinhash_con_crc32": "sha_igual=True (0.7 ms)",
+   "T5_pa30_md5_magic": "PA30 len=13122",
+   "T5_f_md5_sin_prefijo": "sha_igual=True (0.8 ms)",
+   "T5_f_md5_con_crc32": "sha_igual=True (0.8 ms)"
+  },
+  "bases_coinciden_entre_versiones": true,
+  "T6_n_null_delta": "sha_igual=True delta_len=36103",
+  "T7_cuerpo_corrupto_md5": "proyecto -> ReconstructionError: ApplyDeltaB fall\u00f3 (GetLastError=0) | error real (use_last_error=True) = 13",
+  "T7_cuerpo_corrupto_sinhash": "proyecto -> ReconstructionError: ApplyDeltaB fall\u00f3 (GetLastError=13) | error real (use_last_error=True) = 13",
+  "T7_truncado": "proyecto -> ReconstructionError: ApplyDeltaB fall\u00f3 (GetLastError=13) | error real (use_last_error=True) = 13",
+  "T7_fuente_equivocada_md5": "proyecto -> ReconstructionError: ApplyDeltaB fall\u00f3 (GetLastError=13) | error real = 13",
+  "T7_fuente_equivocada_sinhash": "NO detecta: devuelve 102400 bytes, sha_igual=False"
+ },
+ "T8_fugas": "500 aplicaciones de httpapi: PrivateUsage 43.8 MB -> 107.2 MB (delta +63.4 MB), 0.87 ms/iter",
+ "T9_grande_shell32": "size=7.6 MB delta=661 B sha_igual=True 45 ms"
+}
+
+exit=0
+
+# Fugas de memoria en 2500 aplicaciones (PrivateUsage por bloques de 500):
+intento 0: ApplyDeltaB falló (GetLastError=0)
+intento 1: ApplyDeltaB falló (GetLastError=0)
+intento 2: ApplyDeltaB falló (GetLastError=0)
+delta basura con cabecera PA30: ApplyDeltaB falló (GetLastError=0)
+GetLastError() real del hilo tras el fallo (kernel32 directo): 13
+
+proyecto: PrivateUsage MB por bloques de 500 -> 27.6, 30.6, 30.8, 30.9, 30.9 | crecimiento/iter = 1.7 KB
+
+raw: PrivateUsage MB por bloques de 500 -> 26.1, 27.4, 28.3, 27.7, 28.2 | crecimiento/iter = 1.1 KB
+
+raw_sin_free: PrivateUsage MB por bloques de 500 -> 28.6, 79.6, 131.0, 183.7, 234.1 | crecimiento/iter = 105.2 KB
+
+solo_clases: PrivateUsage MB por bloques de 500 -> 26.2, 29.2, 29.7, 29.2, 29.8 | crecimiento/iter = 1.8 KB
+

@@ -1,0 +1,2225 @@
+{
+ "source": "https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2026-Apr",
+ "document": "2026-Apr",
+ "document_release": "2026-10-12T02:13:33",
+ "retrieved": "2026-10-13",
+ "products": [
+  "Windows Server 2022",
+  "Windows Server 2022 (Server Core installation)"
+ ],
+ "count": 115,
+ "cves": [
+  {
+   "cve": "CVE-2026-0390",
+   "title": "UEFI Secure Boot Security Feature Bypass Vulnerability",
+   "severity": "Important",
+   "impact": "Security Feature Bypass",
+   "cvss": 6.7,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-807"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-20806",
+   "title": "Windows COM Server Information Disclosure Vulnerability",
+   "severity": "Important",
+   "impact": "Information Disclosure",
+   "cvss": 5.5,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-843"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-20928",
+   "title": "Windows Recovery Environment Security Feature Bypass Vulnerability",
+   "severity": "Important",
+   "impact": "Security Feature Bypass",
+   "cvss": 4.6,
+   "vector": "CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-212"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-20930",
+   "title": "Windows Management Services Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-23670",
+   "title": "Windows Virtualization-Based Security (VBS) Security Feature Bypass Vulnerability",
+   "severity": "Important",
+   "impact": "Security Feature Bypass",
+   "cvss": 5.7,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-822"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-25250",
+   "title": "MITRE: CVE-2026-25250 Secure Boot disable Eazy Fix",
+   "severity": "Important",
+   "impact": "Security Feature Bypass",
+   "cvss": 6.0,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-325"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26151",
+   "title": "Remote Desktop Spoofing Vulnerability",
+   "severity": "Important",
+   "impact": "Spoofing",
+   "cvss": 7.1,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-357"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26152",
+   "title": "Microsoft Cryptographic Services Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-922"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26153",
+   "title": "Windows Encrypted File System (EFS) Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-125"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26154",
+   "title": "Windows Server Update Service (WSUS) Tampering Vulnerability",
+   "severity": "Important",
+   "impact": "Tampering",
+   "cvss": 7.5,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-20"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26155",
+   "title": "Microsoft Local Security Authority Subsystem Service Information Disclosure Vulnerability",
+   "severity": "Important",
+   "impact": "Information Disclosure",
+   "cvss": 6.5,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-126"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26156",
+   "title": "Windows Hyper-V Remote Code Execution Vulnerability",
+   "severity": "Important",
+   "impact": "Remote Code Execution",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-122",
+    "CWE-125",
+    "CWE-20"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26159",
+   "title": "Remote Desktop Licensing Service Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-306"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26160",
+   "title": "Remote Desktop Licensing Service Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-306"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26161",
+   "title": "Windows Sensor Data Service Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-822",
+    "CWE-20"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26162",
+   "title": "Windows OLE Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-843"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26163",
+   "title": "Windows Kernel Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-415"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26165",
+   "title": "Windows Shell Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26166",
+   "title": "Windows Shell Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-415"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26167",
+   "title": "Windows Push Notifications Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 8.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362",
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26168",
+   "title": "Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362",
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26169",
+   "title": "Windows Kernel Memory Information Disclosure Vulnerability",
+   "severity": "Important",
+   "impact": "Information Disclosure",
+   "cvss": 6.1,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-126"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26170",
+   "title": "PowerShell Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-20"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26172",
+   "title": "Windows Push Notifications Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362",
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26173",
+   "title": "Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362",
+    "CWE-416",
+    "CWE-476"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26174",
+   "title": "Windows Server Update Service (WSUS) Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362",
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26175",
+   "title": "Windows Boot Manager Security Feature Bypass Vulnerability",
+   "severity": "Important",
+   "impact": "Security Feature Bypass",
+   "cvss": 4.6,
+   "vector": "CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-908"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26176",
+   "title": "Windows Client Side Caching driver (csc.sys) Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-122"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26177",
+   "title": "Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26178",
+   "title": "Windows Advanced Rasterization Platform Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 8.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-681",
+    "CWE-190"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26180",
+   "title": "Windows Kernel Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-122"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26182",
+   "title": "Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26183",
+   "title": "Remote Access Management service/API (RPC server) Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-284"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-26184",
+   "title": "Windows Projected File System Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-126"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27908",
+   "title": "Windows TDI Translation Driver (tdx.sys) Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27909",
+   "title": "Windows Search Service Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27910",
+   "title": "Windows Installer Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-280"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27911",
+   "title": "Windows User Interface Core Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362",
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27912",
+   "title": "Windows Kerberos Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 8.0,
+   "vector": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-285"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27913",
+   "title": "Windows BitLocker Security Feature Bypass Vulnerability",
+   "severity": "Important",
+   "impact": "Security Feature Bypass",
+   "cvss": 7.7,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-20"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27914",
+   "title": "Microsoft Management Console Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-284"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27915",
+   "title": "Windows UPnP Device Host Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27916",
+   "title": "Windows UPnP Device Host Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27917",
+   "title": "Windows WFP NDIS Lightweight Filter Driver (wfplwfs.sys) Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27918",
+   "title": "Windows Shell Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27919",
+   "title": "Windows UPnP Device Host Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-822"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27920",
+   "title": "Windows UPnP Device Host Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-822"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27921",
+   "title": "Windows TDI Translation Driver (tdx.sys) Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362",
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27922",
+   "title": "Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27923",
+   "title": "Desktop Window Manager Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27924",
+   "title": "Desktop Window Manager Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27925",
+   "title": "Windows UPnP Device Host Information Disclosure Vulnerability",
+   "severity": "Important",
+   "impact": "Information Disclosure",
+   "cvss": 6.5,
+   "vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27926",
+   "title": "Windows Cloud Files Mini Filter Driver Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362",
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27927",
+   "title": "Windows Projected File System Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362",
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27928",
+   "title": "Windows Hello Security Feature Bypass Vulnerability",
+   "severity": "Important",
+   "impact": "Security Feature Bypass",
+   "cvss": 8.7,
+   "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-20"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27929",
+   "title": "Windows LUA File Virtualization Filter Driver Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-367"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27930",
+   "title": "Windows GDI Information Disclosure Vulnerability",
+   "severity": "Important",
+   "impact": "Information Disclosure",
+   "cvss": 5.5,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-125"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-27931",
+   "title": "Windows GDI Information Disclosure Vulnerability",
+   "severity": "Important",
+   "impact": "Information Disclosure",
+   "cvss": 5.5,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-125"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32068",
+   "title": "Windows Simple Search and Discovery Protocol (SSDP) Service Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32069",
+   "title": "Windows Projected File System Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-415"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32070",
+   "title": "Windows Common Log File System Driver Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32071",
+   "title": "Windows Local Security Authority Subsystem Service (LSASS) Denial of Service Vulnerability",
+   "severity": "Important",
+   "impact": "Denial of Service",
+   "cvss": 7.5,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-476"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32072",
+   "title": "Active Directory Spoofing Vulnerability",
+   "severity": "Important",
+   "impact": "Spoofing",
+   "cvss": 6.2,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-287"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32073",
+   "title": "Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32074",
+   "title": "Windows Projected File System Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-415"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32075",
+   "title": "Windows UPnP Device Host Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32077",
+   "title": "Windows UPnP Device Host Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-822"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32078",
+   "title": "Windows Projected File System Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32079",
+   "title": "Web Account Manager Information Disclosure Vulnerability",
+   "severity": "Important",
+   "impact": "Information Disclosure",
+   "cvss": 5.5,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-200"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32080",
+   "title": "Windows WalletService Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32081",
+   "title": "Package Catalog Information Disclosure Vulnerability",
+   "severity": "Important",
+   "impact": "Information Disclosure",
+   "cvss": 5.5,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-200"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32082",
+   "title": "Windows Simple Search and Discovery Protocol (SSDP) Service Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32083",
+   "title": "Windows Simple Search and Discovery Protocol (SSDP) Service Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32084",
+   "title": "Windows Print Spooler Information Disclosure Vulnerability",
+   "severity": "Important",
+   "impact": "Information Disclosure",
+   "cvss": 5.5,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-200"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32085",
+   "title": "Remote Procedure Call Information Disclosure Vulnerability",
+   "severity": "Important",
+   "impact": "Information Disclosure",
+   "cvss": 5.5,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-200"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32086",
+   "title": "Windows Function Discovery Service (fdwsd.dll) Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32087",
+   "title": "Windows Function Discovery Service (fdwsd.dll) Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-122"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32088",
+   "title": "Windows Biometric Service Security Feature Bypass Vulnerability",
+   "severity": "Important",
+   "impact": "Security Feature Bypass",
+   "cvss": 6.1,
+   "vector": "CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32089",
+   "title": "Windows Speech Brokered Api Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416",
+    "CWE-362"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32090",
+   "title": "Windows Speech Brokered Api Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362",
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32091",
+   "title": "Microsoft Brokering File System Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 8.4,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362",
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32093",
+   "title": "Windows Function Discovery Service (fdwsd.dll) Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362",
+    "CWE-367",
+    "CWE-122"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32149",
+   "title": "Windows Hyper-V Remote Code Execution Vulnerability",
+   "severity": "Important",
+   "impact": "Remote Code Execution",
+   "cvss": 7.3,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-20",
+    "CWE-191",
+    "CWE-122"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32150",
+   "title": "Windows Function Discovery Service (fdwsd.dll) Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32151",
+   "title": "Windows Shell Information Disclosure Vulnerability",
+   "severity": "Important",
+   "impact": "Information Disclosure",
+   "cvss": 6.5,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-200"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32152",
+   "title": "Desktop Window Manager Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32154",
+   "title": "Desktop Window Manager Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32155",
+   "title": "Desktop Window Manager Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32156",
+   "title": "Windows UPnP Device Host Remote Code Execution Vulnerability",
+   "severity": "Important",
+   "impact": "Remote Code Execution",
+   "cvss": 7.4,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32157",
+   "title": "Remote Desktop Client Remote Code Execution Vulnerability",
+   "severity": "Critical",
+   "impact": "Remote Code Execution",
+   "cvss": 8.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32158",
+   "title": "Windows Push Notifications Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362",
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32159",
+   "title": "Windows Push Notifications Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362",
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32160",
+   "title": "Windows Push Notifications Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32162",
+   "title": "Windows COM Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 8.4,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-349"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32163",
+   "title": "Windows User Interface Core Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362",
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32164",
+   "title": "Windows User Interface Core Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32165",
+   "title": "Windows User Interface Core Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416",
+    "CWE-362"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32181",
+   "title": "Connected User Experiences and Telemetry Service Denial of Service Vulnerability",
+   "severity": "Important",
+   "impact": "Denial of Service",
+   "cvss": 5.5,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-269"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32183",
+   "title": "Windows Snipping Tool Remote Code Execution Vulnerability",
+   "severity": "Important",
+   "impact": "Remote Code Execution",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-77"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32202",
+   "title": "Windows Shell Spoofing Vulnerability",
+   "severity": "Important",
+   "impact": "Spoofing",
+   "cvss": 4.3,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N/E:F/RL:O/RC:C",
+   "cwe": [
+    "CWE-693"
+   ],
+   "exploited": true,
+   "kbs": [
+    "KB5099540"
+   ],
+   "supersedes": [
+    "KB5094128"
+   ],
+   "fixed_build": "10.0.20348.5386"
+  },
+  {
+   "cve": "CVE-2026-32212",
+   "title": "Universal Plug and Play (upnp.dll) Information Disclosure Vulnerability",
+   "severity": "Important",
+   "impact": "Information Disclosure",
+   "cvss": 5.5,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-59",
+    "CWE-269"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32214",
+   "title": "Universal Plug and Play (upnp.dll) Information Disclosure Vulnerability",
+   "severity": "Important",
+   "impact": "Information Disclosure",
+   "cvss": 5.5,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-284"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32215",
+   "title": "Windows Kernel Information Disclosure Vulnerability",
+   "severity": "Important",
+   "impact": "Information Disclosure",
+   "cvss": 5.5,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-532"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32217",
+   "title": "Windows Kernel Information Disclosure Vulnerability",
+   "severity": "Important",
+   "impact": "Information Disclosure",
+   "cvss": 5.5,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-532"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32218",
+   "title": "Windows Kernel Information Disclosure Vulnerability",
+   "severity": "Important",
+   "impact": "Information Disclosure",
+   "cvss": 5.5,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-532"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-32225",
+   "title": "Windows Shell Security Feature Bypass Vulnerability",
+   "severity": "Important",
+   "impact": "Security Feature Bypass",
+   "cvss": 8.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-693"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-33096",
+   "title": "HTTP.sys Denial of Service Vulnerability",
+   "severity": "Important",
+   "impact": "Denial of Service",
+   "cvss": 7.5,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-125"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-33098",
+   "title": "Windows Container Isolation FS Filter Driver Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.8,
+   "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-33099",
+   "title": "Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-33100",
+   "title": "Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-33104",
+   "title": "Win32k Elevation of Privilege Vulnerability",
+   "severity": "Important",
+   "impact": "Elevation of Privilege",
+   "cvss": 7.0,
+   "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362",
+    "CWE-416"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-33824",
+   "title": "Windows Internet Key Exchange (IKE) Service Extensions Remote Code Execution Vulnerability",
+   "severity": "Critical",
+   "impact": "Remote Code Execution",
+   "cvss": 9.8,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-415"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-33826",
+   "title": "Windows Active Directory Remote Code Execution Vulnerability",
+   "severity": "Critical",
+   "impact": "Remote Code Execution",
+   "cvss": 8.0,
+   "vector": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-20"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-33827",
+   "title": "Windows TCP/IP Remote Code Execution Vulnerability",
+   "severity": "Critical",
+   "impact": "Remote Code Execution",
+   "cvss": 8.1,
+   "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-362"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  },
+  {
+   "cve": "CVE-2026-33829",
+   "title": "Windows Snipping Tool Spoofing Vulnerability",
+   "severity": "Moderate",
+   "impact": "Spoofing",
+   "cvss": 4.3,
+   "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N/E:U/RL:O/RC:C",
+   "cwe": [
+    "CWE-200"
+   ],
+   "exploited": false,
+   "kbs": [
+    "KB5082142"
+   ],
+   "supersedes": [
+    "KB5078766"
+   ],
+   "fixed_build": "10.0.20348.5020"
+  }
+ ]
+}

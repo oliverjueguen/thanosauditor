@@ -1,0 +1,4628 @@
+{
+  "bundle_version": "1.0",
+  "run_id": "2026-04-patch-tuesday-full-oana",
+  "created_at": "2026-05-07T21:57:42.021778+00:00",
+  "target_product": "Windows Server 2022",
+  "target_build": 20348.502,
+  "patch_cycle": "2026-04 Patch Tuesday FULL",
+  "analysis_goal": "Triage security-relevant changes in DLLs reconstructed from Patch Tuesday MSU deltas.",
+  "kb_ids": [
+    "KB5078766",
+    "KB5082142"
+  ],
+  "cve_ids": [],
+  "person": "oana",
+  "artifacts": [
+    {
+      "evidence_id": "ev_bin_001",
+      "kind": "binary_metadata",
+      "logical_name": "microsoft.bluetooth.service.dll",
+      "package_id": "amd64_microsoft-onecore-bluetooth-service_31bf3856ad364e35_10.0.20348.5020_none_94e481d2ef38b09b",
+      "version_before": "10.0.20348.4647 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "9d342ec2b4df22eba5a85c9698661f51e82782989348965295f7ce36bbf445a7",
+      "sha256_after": "125df07d52f3304f21a87628b65073fcaea61a88f9d9953bcd32ab4447f2d090",
+      "size_before": 3862528,
+      "size_after": 3862528,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\microsoft.bluetooth.service.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\microsoft.bluetooth.service.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 67,
+        "total_imports": 352,
+        "export_count": 2,
+        "function_count": 14749,
+        "string_count": 1654
+      },
+      "summary_after": {
+        "library_count": 67,
+        "total_imports": 352,
+        "export_count": 2,
+        "function_count": 14749,
+        "string_count": 1654
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_002",
+      "kind": "binary_metadata",
+      "logical_name": "iumsdk.dll",
+      "package_id": "amd64_microsoft-onecore-isolatedusermode-sdk_31bf3856ad364e35_10.0.20348.5020_none_1a33bd1b2f2b9607",
+      "version_before": "10.0.20348.4648 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "26c300720ca490638933330a85d262ed24e51d281a14b2210e1a6375a751b532",
+      "sha256_after": "bc0f3c111b7ab1d488f67ace7452680a2722dd1bfc4b8a2fe3e06b83de846ca0",
+      "size_before": 30448,
+      "size_after": 30528,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\iumsdk.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\iumsdk.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 4,
+        "total_imports": 198,
+        "export_count": 199,
+        "function_count": 0,
+        "string_count": 419
+      },
+      "summary_after": {
+        "library_count": 4,
+        "total_imports": 198,
+        "export_count": 199,
+        "function_count": 0,
+        "string_count": 419
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_003",
+      "kind": "binary_metadata",
+      "logical_name": "windowmanagement.dll",
+      "package_id": "amd64_microsoft-onecore-windowmanagement_31bf3856ad364e35_10.0.20348.5020_none_fbbdf3e70261ed14",
+      "version_before": "10.0.20348.4647 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "afcb0016ab60a21a21c501155975da73c6bf8d459499fe65c8aba47423e96a60",
+      "sha256_after": "1538d62bfb00200d388b47fd4dd0f0c6ba81058cd0c3bb2c759cc04f24223849",
+      "size_before": 2617344,
+      "size_after": 2605056,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windowmanagement.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windowmanagement.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 59,
+        "total_imports": 230,
+        "export_count": 3,
+        "function_count": 14916,
+        "string_count": 1720
+      },
+      "summary_after": {
+        "library_count": 59,
+        "total_imports": 230,
+        "export_count": 3,
+        "function_count": 14857,
+        "string_count": 1720
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_004",
+      "kind": "binary_metadata",
+      "logical_name": "windows.devices.alljoyn.dll",
+      "package_id": "amd64_microsoft-windows-alljoyn-runtime_31bf3856ad364e35_10.0.20348.5020_none_9b6b5cc04a33eccf",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "c3554a589c287d2c84e7ef44449fe49db3eaa6052f1d848483b3284d411edebe",
+      "sha256_after": "de98655368e40c8bcbf955101e4fcef75471ff3e5e3fa8945c1448fb38f75f65",
+      "size_before": 708608,
+      "size_after": 708608,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.devices.alljoyn.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.devices.alljoyn.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 44,
+        "total_imports": 350,
+        "export_count": 7,
+        "function_count": 2857,
+        "string_count": 973
+      },
+      "summary_after": {
+        "library_count": 44,
+        "total_imports": 350,
+        "export_count": 7,
+        "function_count": 2857,
+        "string_count": 973
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_005",
+      "kind": "binary_metadata",
+      "logical_name": "windows.media.mediacontrol.dll",
+      "package_id": "amd64_microsoft-windows-audio-mediacontrol_31bf3856ad364e35_10.0.20348.5020_none_776618a05417244b",
+      "version_before": "10.0.20348.3692 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "2044a8f03c6fa3fa556a84bdc5a4b59bebca09711c55f00a6c0f23951f7b738f",
+      "sha256_after": "62bb8eb35dbbad272501024d39f154632c97ff2399938418f717b77b37cc6634",
+      "size_before": 637808,
+      "size_after": 637872,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.media.mediacontrol.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.media.mediacontrol.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 51,
+        "total_imports": 279,
+        "export_count": 12,
+        "function_count": 3097,
+        "string_count": 934
+      },
+      "summary_after": {
+        "library_count": 51,
+        "total_imports": 279,
+        "export_count": 12,
+        "function_count": 3098,
+        "string_count": 934
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_006",
+      "kind": "binary_metadata",
+      "logical_name": "windows.cortana.desktop.dll",
+      "package_id": "amd64_microsoft-windows-c..brokeredapi-desktop_31bf3856ad364e35_10.0.20348.5020_none_70c86ebbc75e9203",
+      "version_before": "10.0.20348.3451 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "9ea57b1da6ece81a78bdb9d1324b13aafc7ddaedb162add389a1f2b2f0f64eda",
+      "sha256_after": "253f7697b83e0cebdb4ef01b3f347de69da19d6227958561b8f810ed32d89ff2",
+      "size_before": 614400,
+      "size_after": 614400,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.cortana.desktop.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.cortana.desktop.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 79,
+        "total_imports": 297,
+        "export_count": 4,
+        "function_count": 3242,
+        "string_count": 934
+      },
+      "summary_after": {
+        "library_count": 79,
+        "total_imports": 297,
+        "export_count": 4,
+        "function_count": 3246,
+        "string_count": 934
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_007",
+      "kind": "binary_metadata",
+      "logical_name": "coreshell.dll",
+      "package_id": "amd64_microsoft-windows-coreshell_31bf3856ad364e35_10.0.20348.5020_none_ea8a03df8d5b54c0",
+      "version_before": "10.0.20348.3692 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "6b408fa9170e7579ea0e31cb6e5b57e6d1c01c40dbd52723c472d27e61419bb8",
+      "sha256_after": "c0e3ab62275eb774174c52c0c591dd1e1b8dc04b88529a68c1e4cc4641eba668",
+      "size_before": 2437120,
+      "size_after": 2437120,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\coreshell.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\coreshell.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 51,
+        "total_imports": 234,
+        "export_count": 4,
+        "function_count": 10627,
+        "string_count": 4857
+      },
+      "summary_after": {
+        "library_count": 51,
+        "total_imports": 234,
+        "export_count": 4,
+        "function_count": 10628,
+        "string_count": 4857
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_008",
+      "kind": "binary_metadata",
+      "logical_name": "windows.ui.creddialogcontroller.dll",
+      "package_id": "amd64_microsoft-windows-creddialogcontroller_31bf3856ad364e35_10.0.20348.5020_none_d59bf5bd95674f65",
+      "version_before": "10.0.20348.4651 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "904895e248fce5dcdc5a9bb0b4c2cec7f5f5498624bab09e21b0ca9cb2edc983",
+      "sha256_after": "62e6a264a168e5132b73168209116808657be009ae5347e26c220aed535aae3c",
+      "size_before": 368640,
+      "size_after": 368640,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.ui.creddialogcontroller.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.ui.creddialogcontroller.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 61,
+        "total_imports": 234,
+        "export_count": 3,
+        "function_count": 1319,
+        "string_count": 719
+      },
+      "summary_after": {
+        "library_count": 61,
+        "total_imports": 234,
+        "export_count": 3,
+        "function_count": 1319,
+        "string_count": 719
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_009",
+      "kind": "binary_metadata",
+      "logical_name": "cryptbase.dll",
+      "package_id": "amd64_microsoft-windows-cryptbase_31bf3856ad364e35_10.0.20348.5020_none_0dfd01a6e018534e",
+      "version_before": "10.0.20348.4648 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "a0c3dbe6c4eeb2af939806203c451396368d86a4264e494896841778859cf167",
+      "sha256_after": "cd41f862709254fc599990e14e4547ef6175788a812e62990f9cf031b27347a0",
+      "size_before": 59336,
+      "size_after": 59424,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\cryptbase.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\cryptbase.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 10,
+        "total_imports": 39,
+        "export_count": 12,
+        "function_count": 49,
+        "string_count": 83
+      },
+      "summary_after": {
+        "library_count": 10,
+        "total_imports": 39,
+        "export_count": 12,
+        "function_count": 49,
+        "string_count": 83
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_010",
+      "kind": "binary_metadata",
+      "logical_name": "ffuprovider.dll",
+      "package_id": "amd64_microsoft-windows-d..-winproviders-local_31bf3856ad364e35_10.0.20348.5020_none_ccc418b8b79d53ca",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "66d134f85b7a1b18b778b2fb4027eedf30ee4b3ca19eb46a9d16310e02f1ef95",
+      "sha256_after": "c4883a4f3e29c3328d0f696b6b5fc97ebaa366d9b626b9f894ff896f80f9ba1b",
+      "size_before": 696320,
+      "size_after": 696320,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\ffuprovider.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\ffuprovider.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 13,
+        "total_imports": 250,
+        "export_count": 6,
+        "function_count": 1527,
+        "string_count": 1742
+      },
+      "summary_after": {
+        "library_count": 13,
+        "total_imports": 250,
+        "export_count": 6,
+        "function_count": 1527,
+        "string_count": 1742
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_011",
+      "kind": "binary_metadata",
+      "logical_name": "imagingprovider.dll",
+      "package_id": "amd64_microsoft-windows-d..-winproviders-local_31bf3856ad364e35_10.0.20348.5020_none_ccc418b8b79d53ca",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "3eccf49d2884cd2b997ec4212fc236272187c2d31510c6a9a8f5b9049c760665",
+      "sha256_after": "bba8dbdd1fe28234d7324167b752a7eafb3e878e282d301510c5aa9a86da6c85",
+      "size_before": 251384,
+      "size_after": 251376,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\imagingprovider.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\imagingprovider.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 7,
+        "total_imports": 122,
+        "export_count": 6,
+        "function_count": 577,
+        "string_count": 610
+      },
+      "summary_after": {
+        "library_count": 7,
+        "total_imports": 122,
+        "export_count": 6,
+        "function_count": 577,
+        "string_count": 610
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_012",
+      "kind": "binary_metadata",
+      "logical_name": "configmanager2.dll",
+      "package_id": "amd64_microsoft-windows-d..ment-configmanager2_31bf3856ad364e35_10.0.20348.5020_none_bb655c3ed7127f64",
+      "version_before": "10.0.20348.4647 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "058f9928978becf231cbf8dab2dd7212b1c432cdb073d1742e58697b30e26a84",
+      "sha256_after": "7dc4b1e7e02883f3419c4659c6008c6109b1574feb149fd540fbb68d9f5b99fb",
+      "size_before": 733184,
+      "size_after": 733184,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\configmanager2.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\configmanager2.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 50,
+        "total_imports": 285,
+        "export_count": 5,
+        "function_count": 2168,
+        "string_count": 1617
+      },
+      "summary_after": {
+        "library_count": 50,
+        "total_imports": 285,
+        "export_count": 5,
+        "function_count": 2164,
+        "string_count": 1617
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_013",
+      "kind": "binary_metadata",
+      "logical_name": "windows.devices.smartcards.phone.dll",
+      "package_id": "amd64_microsoft-windows-d..rtcards-phone-winrt_31bf3856ad364e35_10.0.20348.5020_none_0a955113d83e7cb5",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "a2180b23852c8e6bed52038a2c870519753ebc339ac137a5c578cd981928bf80",
+      "sha256_after": "bf8725d15aa3d8b270d14d7c1c92d723514e0df2229d86c28d202ee0e4d885e5",
+      "size_before": 659456,
+      "size_after": 659456,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.devices.smartcards.phone.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.devices.smartcards.phone.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 37,
+        "total_imports": 147,
+        "export_count": 4,
+        "function_count": 3006,
+        "string_count": 500
+      },
+      "summary_after": {
+        "library_count": 37,
+        "total_imports": 147,
+        "export_count": 4,
+        "function_count": 3006,
+        "string_count": 500
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_014",
+      "kind": "binary_metadata",
+      "logical_name": "dwmscene.dll",
+      "package_id": "amd64_microsoft-windows-d..windowmanager-scene_31bf3856ad364e35_10.0.20348.5020_none_c1e9218eafd1f5b5",
+      "version_before": null,
+      "version_after": null,
+      "sha256_before": "d3ae451421a25a6a7985a2c10997252732f0719ede32a49ab718ef2b7b7f6a00",
+      "sha256_after": "d74d88f43c3177fa30003b31f096fd24d2f9a9d6fe7411ef19721fb8dff2375a",
+      "size_before": 2166784,
+      "size_after": 2142208,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\dwmscene.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\dwmscene.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 28,
+        "total_imports": 168,
+        "export_count": 4,
+        "function_count": 6096,
+        "string_count": 5654
+      },
+      "summary_after": {
+        "library_count": 27,
+        "total_imports": 159,
+        "export_count": 4,
+        "function_count": 6004,
+        "string_count": 5633
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_015",
+      "kind": "binary_metadata",
+      "logical_name": "windows.devices.custom.dll",
+      "package_id": "amd64_microsoft-windows-devices-custom_31bf3856ad364e35_10.0.20348.5020_none_3f59179d08cfe3e4",
+      "version_before": "10.0.20348.3451 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "6f8a167d5d898e96067492cde881fc6b59eed2354228b5e709b71c0b6b358573",
+      "sha256_after": "adf52546c47c66e922ac3d192d0c58c30fc3d8b1163be665dc0f32448e26c2e0",
+      "size_before": 126976,
+      "size_after": 126976,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.devices.custom.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.devices.custom.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 25,
+        "total_imports": 121,
+        "export_count": 4,
+        "function_count": 583,
+        "string_count": 222
+      },
+      "summary_after": {
+        "library_count": 25,
+        "total_imports": 121,
+        "export_count": 4,
+        "function_count": 583,
+        "string_count": 222
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_016",
+      "kind": "binary_metadata",
+      "logical_name": "windows.devices.haptics.dll",
+      "package_id": "amd64_microsoft-windows-devices-haptics_31bf3856ad364e35_10.0.20348.5020_none_ed6b45193c652ff9",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "fc68233af4f72b6a559215074e4f6d412a6eca7352c9f2e34b4f63f56e03617a",
+      "sha256_after": "1f3dc4e97babf3a40f1693aaa3f87edc2602732500f7c240e6fe95f27ee02506",
+      "size_before": 221184,
+      "size_after": 221184,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.devices.haptics.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.devices.haptics.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 34,
+        "total_imports": 182,
+        "export_count": 4,
+        "function_count": 822,
+        "string_count": 805
+      },
+      "summary_after": {
+        "library_count": 34,
+        "total_imports": 182,
+        "export_count": 4,
+        "function_count": 822,
+        "string_count": 805
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_017",
+      "kind": "binary_metadata",
+      "logical_name": "windows.devices.midi.dll",
+      "package_id": "amd64_microsoft-windows-devices-midi_31bf3856ad364e35_10.0.20348.5020_none_93714f90cdc56bda",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "dfc2b52c0f0b190d3acb1422a53bfc0327c63ab5a6723c79e533167b70d5154c",
+      "sha256_after": "01acccadc80b8dca258343349e5ae3690182ed1279b8d28e0c97e2562ba9719d",
+      "size_before": 475136,
+      "size_after": 475136,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.devices.midi.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.devices.midi.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 47,
+        "total_imports": 236,
+        "export_count": 4,
+        "function_count": 1776,
+        "string_count": 905
+      },
+      "summary_after": {
+        "library_count": 47,
+        "total_imports": 236,
+        "export_count": 4,
+        "function_count": 1776,
+        "string_count": 905
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_018",
+      "kind": "binary_metadata",
+      "logical_name": "windows.devices.radios.dll",
+      "package_id": "amd64_microsoft-windows-devices-radios_31bf3856ad364e35_10.0.20348.5020_none_0940c3d984716c21",
+      "version_before": "10.0.20348.3207 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "4f1e67ccbcd3c732c1a27858429167fb4c72e3208156127cc023fc9dfcd52689",
+      "sha256_after": "b9f317dcecb828a5d4b3fc8d0683ada3cb4f80b4ddbcf47e0972ee98ee2c1c14",
+      "size_before": 253952,
+      "size_after": 258048,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.devices.radios.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.devices.radios.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 41,
+        "total_imports": 215,
+        "export_count": 13,
+        "function_count": 1065,
+        "string_count": 445
+      },
+      "summary_after": {
+        "library_count": 41,
+        "total_imports": 215,
+        "export_count": 13,
+        "function_count": 1065,
+        "string_count": 445
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_019",
+      "kind": "binary_metadata",
+      "logical_name": "d3d10warp.dll",
+      "package_id": "amd64_microsoft-windows-directx-warp10_31bf3856ad364e35_10.0.20348.5020_none_92fad01288caba9a",
+      "version_before": "10.0.20348.3451 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "62d0048d6056d7ec64d17662ee320726b5a399ef2ea3a36f5920ed2064de8770",
+      "sha256_after": "05b629573fb7b682b07a2a86a7bfbe1b7e829c45a2bda917d204f943bbc5f79c",
+      "size_before": 7315216,
+      "size_after": 7315192,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\d3d10warp.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\d3d10warp.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 56,
+        "total_imports": 296,
+        "export_count": 11,
+        "function_count": 12473,
+        "string_count": 2531
+      },
+      "summary_after": {
+        "library_count": 56,
+        "total_imports": 296,
+        "export_count": 11,
+        "function_count": 12476,
+        "string_count": 2535
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_020",
+      "kind": "binary_metadata",
+      "logical_name": "drvstore.dll",
+      "package_id": "amd64_microsoft-windows-drvstore_31bf3856ad364e35_10.0.20348.5020_none_998b815975a389a2",
+      "version_before": "10.0.20348.3451 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "e9782108796c686f7686429c25f308300a7b09c3441b742995ba11eb4799785c",
+      "sha256_after": "f799d13586066ec06253c509559fe005e97f6862cea9319794eaba911276f251",
+      "size_before": 1316344,
+      "size_after": 1324528,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\drvstore.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\drvstore.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 43,
+        "total_imports": 382,
+        "export_count": 57,
+        "function_count": 2963,
+        "string_count": 3658
+      },
+      "summary_after": {
+        "library_count": 43,
+        "total_imports": 382,
+        "export_count": 57,
+        "function_count": 2963,
+        "string_count": 3671
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_021",
+      "kind": "binary_metadata",
+      "logical_name": "windows.energy.dll",
+      "package_id": "amd64_microsoft-windows-energy-winrt_31bf3856ad364e35_10.0.20348.5020_none_b64b6b40f6877632",
+      "version_before": "10.0.20348.3451 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "d3e42bee040bcc11589902e72277ba735f7b39a5deba1d7a8c720348357a4108",
+      "sha256_after": "db430029f197821593da23994fd17916c0edb84c23c694f82b5ec666e84e3ad5",
+      "size_before": 229376,
+      "size_after": 229376,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.energy.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.energy.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 35,
+        "total_imports": 194,
+        "export_count": 6,
+        "function_count": 805,
+        "string_count": 1092
+      },
+      "summary_after": {
+        "library_count": 35,
+        "total_imports": 194,
+        "export_count": 6,
+        "function_count": 805,
+        "string_count": 1092
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_022",
+      "kind": "binary_metadata",
+      "logical_name": "windows.graphics.display.brightnessoverride.dll",
+      "package_id": "amd64_microsoft-windows-g..-brightnessoverride_31bf3856ad364e35_10.0.20348.5020_none_3998af41ffdf0e2b",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "eff019deefeacf48c76b74cfe4ae4266be8960d26fdb54648d6229a9914f0f4c",
+      "sha256_after": "b989702d5d0372277376c046184794b3eb16a00ea730e720f4d70af2dc5c5345",
+      "size_before": 179208,
+      "size_after": 179224,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.graphics.display.brightnessoverride.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.graphics.display.brightnessoverride.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 36,
+        "total_imports": 202,
+        "export_count": 4,
+        "function_count": 741,
+        "string_count": 439
+      },
+      "summary_after": {
+        "library_count": 36,
+        "total_imports": 202,
+        "export_count": 4,
+        "function_count": 741,
+        "string_count": 439
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_023",
+      "kind": "binary_metadata",
+      "logical_name": "windows.immersiveshell.serviceprovider.dll",
+      "package_id": "amd64_microsoft-windows-i..ell-serviceprovider_31bf3856ad364e35_10.0.20348.5020_none_699defaa11a4788d",
+      "version_before": "10.0.20348.4893 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "97b5fcdb446f35d4e5a43bb33a8a451eddc47e168644170c2a533ba0a9d038f6",
+      "sha256_after": "022e8fb4a6ebfdc26db29167592efcee70d2ad78b76df3ada17d0fbe3d18aaec",
+      "size_before": 745472,
+      "size_after": 745472,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.immersiveshell.serviceprovider.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.immersiveshell.serviceprovider.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 77,
+        "total_imports": 311,
+        "export_count": 3,
+        "function_count": 3300,
+        "string_count": 1289
+      },
+      "summary_after": {
+        "library_count": 77,
+        "total_imports": 311,
+        "export_count": 3,
+        "function_count": 3301,
+        "string_count": 1289
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_024",
+      "kind": "binary_metadata",
+      "logical_name": "diagnostic.dll",
+      "package_id": "amd64_microsoft-windows-i..sedsetup-media-base_31bf3856ad364e35_10.0.20348.5020_none_3ef26d7c5b1fdaef",
+      "version_before": "10.0.20348.4893 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "31efe93a9fb434f35e017820e08e95eece6798f57287d10a68a3b0302d2de4a1",
+      "sha256_after": "6b21fd61ddeb0c6a056f08a71a229b8202ab673e4b1274dc685d31c135f1c53e",
+      "size_before": 214432,
+      "size_after": 214512,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\diagnostic.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\diagnostic.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 17,
+        "total_imports": 256,
+        "export_count": 163,
+        "function_count": 537,
+        "string_count": 1107
+      },
+      "summary_after": {
+        "library_count": 17,
+        "total_imports": 256,
+        "export_count": 163,
+        "function_count": 537,
+        "string_count": 1107
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_025",
+      "kind": "binary_metadata",
+      "logical_name": "smiengine.dll",
+      "package_id": "amd64_microsoft-windows-i..sedsetup-media-base_31bf3856ad364e35_10.0.20348.5020_none_3ef26d7c5b1fdaef",
+      "version_before": "10.0.20348.4893 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "418c7d825cb3d466abc0d5afe9f320aee7dc5f01938b8aaf687999b60a6a6126",
+      "sha256_after": "ef0b6feb898f4f7b996a4fb0b1a092307aaf47b6220b2b96df587d26aaf971a5",
+      "size_before": 976288,
+      "size_after": 976376,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\smiengine.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\smiengine.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 28,
+        "total_imports": 201,
+        "export_count": 14,
+        "function_count": 2592,
+        "string_count": 1646
+      },
+      "summary_after": {
+        "library_count": 28,
+        "total_imports": 201,
+        "export_count": 14,
+        "function_count": 2592,
+        "string_count": 1646
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_026",
+      "kind": "binary_metadata",
+      "logical_name": "spprgrss.dll",
+      "package_id": "amd64_microsoft-windows-i..sedsetup-media-base_31bf3856ad364e35_10.0.20348.5020_none_3ef26d7c5b1fdaef",
+      "version_before": "10.0.20348.4893 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "637d1c0709ed48cc01209090ab384836dce67b3a1cd23d7a8182701520241ea0",
+      "sha256_after": "a6b08fbe2f17cb4e513c45ad589ad816c8a78f5709c2a9a5cb60f9df09c00849",
+      "size_before": 79264,
+      "size_after": 79344,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\spprgrss.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\spprgrss.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 6,
+        "total_imports": 63,
+        "export_count": 12,
+        "function_count": 155,
+        "string_count": 196
+      },
+      "summary_after": {
+        "library_count": 6,
+        "total_imports": 63,
+        "export_count": 12,
+        "function_count": 155,
+        "string_count": 196
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_027",
+      "kind": "binary_metadata",
+      "logical_name": "w32uiimg.dll",
+      "package_id": "amd64_microsoft-windows-i..sedsetup-media-base_31bf3856ad364e35_10.0.20348.5020_none_3ef26d7c5b1fdaef",
+      "version_before": "10.0.20348.4893 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "67791469963ce8e1efa04f3af1b617634a840fdd5ac96f219ccecc98515ba3d1",
+      "sha256_after": "61ea073a5692626fa511465d827dd7bded3e0fc0bfe97b73487f76746c1bdf22",
+      "size_before": 1430944,
+      "size_after": 1431064,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\w32uiimg.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\w32uiimg.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 0,
+        "total_imports": 0,
+        "export_count": 1,
+        "function_count": 0,
+        "string_count": 21
+      },
+      "summary_after": {
+        "library_count": 0,
+        "total_imports": 0,
+        "export_count": 1,
+        "function_count": 0,
+        "string_count": 21
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_028",
+      "kind": "binary_metadata",
+      "logical_name": "wdsclient.dll",
+      "package_id": "amd64_microsoft-windows-i..sedsetup-media-base_31bf3856ad364e35_10.0.20348.5020_none_3ef26d7c5b1fdaef",
+      "version_before": "10.0.20348.4893 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "a2cfaa323fbdb2f40b0b1b0486540634a8086b37f18b3a33b4d67bfc7784890e",
+      "sha256_after": "c731fda10fabb70bd218479624832ae568ffeb110760d0a5694952150541be2d",
+      "size_before": 1235320,
+      "size_after": 1235440,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\wdsclient.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\wdsclient.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 30,
+        "total_imports": 503,
+        "export_count": 8,
+        "function_count": 2238,
+        "string_count": 2971
+      },
+      "summary_after": {
+        "library_count": 30,
+        "total_imports": 503,
+        "export_count": 8,
+        "function_count": 2238,
+        "string_count": 2971
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_029",
+      "kind": "binary_metadata",
+      "logical_name": "winsetup.dll",
+      "package_id": "amd64_microsoft-windows-i..sedsetup-media-base_31bf3856ad364e35_10.0.20348.5020_none_3ef26d7c5b1fdaef",
+      "version_before": "10.0.20348.4893 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "4c308fef66a2ad19967dd1e5df3f1642130fc8d85b62d458792b7f44e6a938cd",
+      "sha256_after": "977d52b94927eae176e214ec2e06cb5ffaa985116b1c551bb79ff687a9139752",
+      "size_before": 2999752,
+      "size_after": 2999840,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\winsetup.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\winsetup.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 31,
+        "total_imports": 714,
+        "export_count": 67,
+        "function_count": 4120,
+        "string_count": 13201
+      },
+      "summary_after": {
+        "library_count": 31,
+        "total_imports": 714,
+        "export_count": 67,
+        "function_count": 4120,
+        "string_count": 13202
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_030",
+      "kind": "binary_metadata",
+      "logical_name": "mbsmsapi.dll",
+      "package_id": "amd64_microsoft-windows-m..d-experience-smsapi_31bf3856ad364e35_10.0.20348.5020_none_9fab408058f40a4c",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "1af458946ab92a888729bd6b011f2f904686da0e1bdcbc9ff90d0038085d86f8",
+      "sha256_after": "7a9a8604b54ccc576f8e5072a204a6bd7cdfca084f15e8755327d0336e046d6f",
+      "size_before": 720896,
+      "size_after": 720896,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\mbsmsapi.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\mbsmsapi.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 51,
+        "total_imports": 298,
+        "export_count": 4,
+        "function_count": 2726,
+        "string_count": 733
+      },
+      "summary_after": {
+        "library_count": 51,
+        "total_imports": 298,
+        "export_count": 4,
+        "function_count": 2726,
+        "string_count": 733
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_031",
+      "kind": "binary_metadata",
+      "logical_name": "microsoftaccountextension.dll",
+      "package_id": "amd64_microsoft-windows-m..ftaccount-extension_31bf3856ad364e35_10.0.20348.5020_none_a58db0af47e86a18",
+      "version_before": "10.0.20348.3451 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "3d4e2a17526745a5257d87ca137f0ec65bf5bb71a982f07e9acfa9ed0879b41a",
+      "sha256_after": "7c03f5d7cd367f6b643e6fd98201e674a68d1325780f6e2bffdc78f82d823883",
+      "size_before": 491520,
+      "size_after": 491520,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\microsoftaccountextension.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\microsoftaccountextension.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 67,
+        "total_imports": 330,
+        "export_count": 4,
+        "function_count": 1532,
+        "string_count": 1712
+      },
+      "summary_after": {
+        "library_count": 67,
+        "total_imports": 330,
+        "export_count": 4,
+        "function_count": 1532,
+        "string_count": 1712
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_032",
+      "kind": "binary_metadata",
+      "logical_name": "authbroker.dll",
+      "package_id": "amd64_microsoft-windows-o..re-security-webauth_31bf3856ad364e35_10.0.20348.5020_none_0074f148e5a5ea2e",
+      "version_before": "10.0.20348.3451 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "07f9ee03486774009b84a54d21130659beddb717b6791ee1e6ef9f2e7c1f1797",
+      "sha256_after": "bf99ad17dc425bfd3f2b17bd555e6591cc290ef2b61fa7e58ebc747820a03e30",
+      "size_before": 237568,
+      "size_after": 241664,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\authbroker.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\authbroker.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 63,
+        "total_imports": 317,
+        "export_count": 12,
+        "function_count": 1009,
+        "string_count": 713
+      },
+      "summary_after": {
+        "library_count": 63,
+        "total_imports": 317,
+        "export_count": 12,
+        "function_count": 1010,
+        "string_count": 713
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_033",
+      "kind": "binary_metadata",
+      "logical_name": "windows.graphics.printing.3d.dll",
+      "package_id": "amd64_microsoft-windows-printing3d-winrt-core_31bf3856ad364e35_10.0.20348.5020_none_3ec601efa809e520",
+      "version_before": "10.0.20348.3451 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "c85e91fe7e43141cd3ddc1378554f3a9045d6b7a9a7768f33b8d82683e7211d4",
+      "sha256_after": "654d78bf96f46fe6de02cbb1aee1a74a6e1dfff6d76e4cd64fa46010c5748afd",
+      "size_before": 2306048,
+      "size_after": 2306048,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.graphics.printing.3d.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.graphics.printing.3d.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 46,
+        "total_imports": 305,
+        "export_count": 4,
+        "function_count": 6516,
+        "string_count": 2725
+      },
+      "summary_after": {
+        "library_count": 46,
+        "total_imports": 305,
+        "export_count": 4,
+        "function_count": 6516,
+        "string_count": 2725
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_034",
+      "kind": "binary_metadata",
+      "logical_name": "pshed.dll",
+      "package_id": "amd64_microsoft-windows-pshed_31bf3856ad364e35_10.0.20348.5020_none_048a0f7e5f32eb2d",
+      "version_before": "10.0.20348.4647 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "127da5274e073e2ef7133f0172d34ed4c51f80f013295e803d0802eab2549b7a",
+      "sha256_after": "37dbd3090342e2406973967a71a6a0b1b8ac29b97d508eca557c6f9318ebec06",
+      "size_before": 116128,
+      "size_after": 116208,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\pshed.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\pshed.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 2,
+        "total_imports": 50,
+        "export_count": 32,
+        "function_count": 122,
+        "string_count": 242
+      },
+      "summary_after": {
+        "library_count": 2,
+        "total_imports": 50,
+        "export_count": 32,
+        "function_count": 122,
+        "string_count": 242
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_035",
+      "kind": "binary_metadata",
+      "logical_name": "windows.media.renewal.dll",
+      "package_id": "amd64_microsoft-windows-r..ndows-media-renewal_31bf3856ad364e35_10.0.20348.5020_none_a87869cbb387821d",
+      "version_before": "10.0.20348.3692 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "12a2c665153ce83e21a0aebffd6c1410d905d6c3982352feec43056020199c02",
+      "sha256_after": "3f5c5e0d3fee8813e9ee9ec21fee592c00b115a6ef8442047cff885fdf03ea60",
+      "size_before": 143360,
+      "size_after": 143360,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.media.renewal.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.media.renewal.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 42,
+        "total_imports": 163,
+        "export_count": 4,
+        "function_count": 365,
+        "string_count": 322
+      },
+      "summary_after": {
+        "library_count": 42,
+        "total_imports": 163,
+        "export_count": 4,
+        "function_count": 365,
+        "string_count": 322
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_036",
+      "kind": "binary_metadata",
+      "logical_name": "rasplap.dll",
+      "package_id": "amd64_microsoft-windows-rasplap_31bf3856ad364e35_10.0.20348.5020_none_bacda15fa9d0a398",
+      "version_before": "10.0.20348.4767 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "a16fe27217e56b9da2a97837cedf9a50f78b0244706216047603991e74abb10d",
+      "sha256_after": "b3902f4c07b28e19ffc763f9efd7bed3927634a9049e44e2bead0339fa68d845",
+      "size_before": 94208,
+      "size_after": 94208,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\rasplap.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\rasplap.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 14,
+        "total_imports": 120,
+        "export_count": 3,
+        "function_count": 226,
+        "string_count": 283
+      },
+      "summary_after": {
+        "library_count": 14,
+        "total_imports": 120,
+        "export_count": 3,
+        "function_count": 226,
+        "string_count": 283
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_037",
+      "kind": "binary_metadata",
+      "logical_name": "family.authentication.dll",
+      "package_id": "amd64_microsoft-windows-s..mily-authentication_31bf3856ad364e35_10.0.20348.5020_none_605751d2147e0155",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "8669ebc03f23566688ca0e77af922ff1d01fcfb9de9a0146d0cf9b2310a6485f",
+      "sha256_after": "abeee7be43a3ec18d0b375787bfd65585858dd22cccc85473a0737bbcbd0e1fc",
+      "size_before": 131072,
+      "size_after": 131072,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\family.authentication.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\family.authentication.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 14,
+        "total_imports": 144,
+        "export_count": 4,
+        "function_count": 527,
+        "string_count": 378
+      },
+      "summary_after": {
+        "library_count": 14,
+        "total_imports": 144,
+        "export_count": 4,
+        "function_count": 527,
+        "string_count": 378
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_038",
+      "kind": "binary_metadata",
+      "logical_name": "mediafoundation.defaultperceptionprovider.dll",
+      "package_id": "amd64_microsoft-windows-sensordataservice_31bf3856ad364e35_10.0.20348.5020_none_a69b13455c5a12c6",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "6cd06715ed7ef99411f61fad76b4da2464f976a28c1ad54be738b36ab6b3c8de",
+      "sha256_after": "851a32f4ed2448a06b198ab967dec1a65794b9cc85d86934f6e5bf2ce9639461",
+      "size_before": 163840,
+      "size_after": 163840,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\mediafoundation.defaultperceptionprovider.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\mediafoundation.defaultperceptionprovider.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 26,
+        "total_imports": 107,
+        "export_count": 4,
+        "function_count": 601,
+        "string_count": 342
+      },
+      "summary_after": {
+        "library_count": 26,
+        "total_imports": 107,
+        "export_count": 4,
+        "function_count": 601,
+        "string_count": 342
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_039",
+      "kind": "binary_metadata",
+      "logical_name": "windows.devices.sensors.dll",
+      "package_id": "amd64_microsoft-windows-sensors-universal_31bf3856ad364e35_10.0.20348.5020_none_05140c25c4c94b16",
+      "version_before": "10.0.20348.3451 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "bbeee7e1aac29d7f877d6f38e6b8d16e4c53c622853ec40dd903f728438b4179",
+      "sha256_after": "8338ccb3ee05527ba52f84232ebbc07e0924ca73c68066d9e2e7b88b1c2e51d2",
+      "size_before": 1410584,
+      "size_after": 1410560,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.devices.sensors.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.devices.sensors.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 52,
+        "total_imports": 299,
+        "export_count": 4,
+        "function_count": 6449,
+        "string_count": 1122
+      },
+      "summary_after": {
+        "library_count": 52,
+        "total_imports": 299,
+        "export_count": 4,
+        "function_count": 6450,
+        "string_count": 1122
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_040",
+      "kind": "binary_metadata",
+      "logical_name": "sapi_onecore.dll",
+      "package_id": "amd64_microsoft-windows-speechcommon-onecore_31bf3856ad364e35_10.0.20348.5020_none_1bf042a34fe2780a",
+      "version_before": "5.3.20348.4647 (WinBuild.160101.0800)",
+      "version_after": "5.3.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "a49bbcee249e34a3906cdc61e43c9712dcb1cf18b67ec49d8f72d6d3058d78b7",
+      "sha256_after": "82ebdd4385262683d8bff3ec2ce379efc0750628d5eb9337055fcc4381658ff9",
+      "size_before": 4960256,
+      "size_after": 4960256,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\sapi_onecore.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\sapi_onecore.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 97,
+        "total_imports": 602,
+        "export_count": 5,
+        "function_count": 15312,
+        "string_count": 10571
+      },
+      "summary_after": {
+        "library_count": 97,
+        "total_imports": 602,
+        "export_count": 5,
+        "function_count": 15313,
+        "string_count": 10571
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_041",
+      "kind": "binary_metadata",
+      "logical_name": "switcherdatamodel.dll",
+      "package_id": "amd64_microsoft-windows-switcherdatamodel_31bf3856ad364e35_10.0.20348.5020_none_0399f9ea1d46e931",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "7193da22eac169f75675deced6e479ac59f049a8029ad5edb62af2399783cf96",
+      "sha256_after": "0fe490a95551526d83d1d345f851cfec8b2cd1e3cbcd83b8328ac9a313aa6449",
+      "size_before": 229376,
+      "size_after": 229376,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\switcherdatamodel.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\switcherdatamodel.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 30,
+        "total_imports": 127,
+        "export_count": 4,
+        "function_count": 1051,
+        "string_count": 489
+      },
+      "summary_after": {
+        "library_count": 30,
+        "total_imports": 127,
+        "export_count": 4,
+        "function_count": 1051,
+        "string_count": 489
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_042",
+      "kind": "binary_metadata",
+      "logical_name": "windows.system.systemmanagement.dll",
+      "package_id": "amd64_microsoft-windows-systemmanagement_31bf3856ad364e35_10.0.20348.5020_none_0a2beb14fe83b741",
+      "version_before": "10.0.20348.3692 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "57bbf35f300e7a517860eec321bcc95437d50b028f2b05065a3166b2b09e085d",
+      "sha256_after": "c7ff6172500ace74d6e4ed602c9dc840c2221f00ec25637bdadb1414a26b056f",
+      "size_before": 352256,
+      "size_after": 352256,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.system.systemmanagement.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.system.systemmanagement.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 56,
+        "total_imports": 286,
+        "export_count": 4,
+        "function_count": 1586,
+        "string_count": 843
+      },
+      "summary_after": {
+        "library_count": 56,
+        "total_imports": 286,
+        "export_count": 4,
+        "function_count": 1586,
+        "string_count": 843
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_043",
+      "kind": "binary_metadata",
+      "logical_name": "chatapis.dll",
+      "package_id": "amd64_microsoft-windows-u..access-userdataapis_31bf3856ad364e35_10.0.20348.5020_none_b27500dbf350f3fd",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "89227040f447d4ba910968c49703ff97e1b441925b446c4bd51df72ef1095c5a",
+      "sha256_after": "6a104e1019dda3b87caa8550f589713c2ab95928d3cafb2ade1a41d814a54292",
+      "size_before": 917504,
+      "size_after": 917504,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\chatapis.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\chatapis.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 45,
+        "total_imports": 197,
+        "export_count": 4,
+        "function_count": 4157,
+        "string_count": 764
+      },
+      "summary_after": {
+        "library_count": 45,
+        "total_imports": 197,
+        "export_count": 4,
+        "function_count": 4157,
+        "string_count": 764
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_044",
+      "kind": "binary_metadata",
+      "logical_name": "contactapis.dll",
+      "package_id": "amd64_microsoft-windows-u..access-userdataapis_31bf3856ad364e35_10.0.20348.5020_none_b27500dbf350f3fd",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "1c3fd2f5202b09f479051459b497d77146fcae539bc526dde42a0ceada540782",
+      "sha256_after": "12d640a0cc9a9447bc519168fcfcb45b3b285487d4d33f2fc63e661d52661911",
+      "size_before": 1179648,
+      "size_after": 1183744,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\contactapis.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\contactapis.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 48,
+        "total_imports": 194,
+        "export_count": 4,
+        "function_count": 6201,
+        "string_count": 785
+      },
+      "summary_after": {
+        "library_count": 48,
+        "total_imports": 194,
+        "export_count": 4,
+        "function_count": 6198,
+        "string_count": 785
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_045",
+      "kind": "binary_metadata",
+      "logical_name": "emailapis.dll",
+      "package_id": "amd64_microsoft-windows-u..access-userdataapis_31bf3856ad364e35_10.0.20348.5020_none_b27500dbf350f3fd",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "d871f81e48a6a845826c951ee47ec86d533d04107a1d40c151daa0910db015fc",
+      "sha256_after": "7baf0f409aa1a24e45c883688a8ec8c972caf6b653d3006f5e07e884958bdc61",
+      "size_before": 1318912,
+      "size_after": 1318912,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\emailapis.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\emailapis.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 49,
+        "total_imports": 213,
+        "export_count": 4,
+        "function_count": 5615,
+        "string_count": 998
+      },
+      "summary_after": {
+        "library_count": 49,
+        "total_imports": 213,
+        "export_count": 4,
+        "function_count": 5611,
+        "string_count": 998
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_046",
+      "kind": "binary_metadata",
+      "logical_name": "userdataaccountapis.dll",
+      "package_id": "amd64_microsoft-windows-u..access-userdataapis_31bf3856ad364e35_10.0.20348.5020_none_b27500dbf350f3fd",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "2038522571963d78bf2dd6bd7de166a8308f8fee1243a19802b29eff567adbba",
+      "sha256_after": "81f96ec19dc1a8c60c1c6026732c8589fdebcb7f018321848bd072ecfedcd675",
+      "size_before": 532480,
+      "size_after": 532480,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\userdataaccountapis.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\userdataaccountapis.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 37,
+        "total_imports": 168,
+        "export_count": 4,
+        "function_count": 2230,
+        "string_count": 586
+      },
+      "summary_after": {
+        "library_count": 37,
+        "total_imports": 168,
+        "export_count": 4,
+        "function_count": 2230,
+        "string_count": 585
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_047",
+      "kind": "binary_metadata",
+      "logical_name": "upnphost.dll",
+      "package_id": "amd64_microsoft-windows-upnpdevicehost-server_31bf3856ad364e35_10.0.20348.5020_none_54efba7ac86bd08a",
+      "version_before": "10.0.20348.3932 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "72d92991cd433bcae5fb8979e8ad0063cc649955d706b3672aae908642659446",
+      "sha256_after": "311678f03285c18047caef0576a53e79f82b57448c1f667dfafd3ffb796808be",
+      "size_before": 503808,
+      "size_after": 536576,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\upnphost.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\upnphost.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 45,
+        "total_imports": 267,
+        "export_count": 6,
+        "function_count": 1350,
+        "string_count": 903
+      },
+      "summary_after": {
+        "library_count": 48,
+        "total_imports": 295,
+        "export_count": 6,
+        "function_count": 1505,
+        "string_count": 969
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_048",
+      "kind": "binary_metadata",
+      "logical_name": "nsi.dll",
+      "package_id": "amd64_microsoft-windows-usermodensi_31bf3856ad364e35_10.0.20348.5020_none_1af94f0df9923cbb",
+      "version_before": "10.0.20348.4648 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "f038e93dd91dacc44d67c1faf7d69015c2bbb08a89ad54647f5eb8360dacc05b",
+      "sha256_after": "0c623f94286dc51979b7115a7ec6a8b83477f6358c39d76a483a70f5625f2b65",
+      "size_before": 46944,
+      "size_after": 47064,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\nsi.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\nsi.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 8,
+        "total_imports": 18,
+        "export_count": 27,
+        "function_count": 47,
+        "string_count": 79
+      },
+      "summary_after": {
+        "library_count": 8,
+        "total_imports": 18,
+        "export_count": 27,
+        "function_count": 47,
+        "string_count": 79
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_049",
+      "kind": "binary_metadata",
+      "logical_name": "windows.ui.input.inking.dll",
+      "package_id": "amd64_microsoft-windows-w..indowsuiinputinking_31bf3856ad364e35_10.0.20348.5020_none_9805bbcd1544dfeb",
+      "version_before": "10.0.20348.3451 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "5bbef4d45e617c7561fc9321eb1346dc7e93c1e00f882baaf556780aa200c039",
+      "sha256_after": "7ac0fc3f1494a75afeb3e3b74745bffe3d08094f5bc9f2bafde142e6c3a30a8b",
+      "size_before": 1982464,
+      "size_after": 1982464,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.ui.input.inking.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.ui.input.inking.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 55,
+        "total_imports": 248,
+        "export_count": 5,
+        "function_count": 6773,
+        "string_count": 3885
+      },
+      "summary_after": {
+        "library_count": 55,
+        "total_imports": 248,
+        "export_count": 5,
+        "function_count": 6773,
+        "string_count": 3885
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_050",
+      "kind": "binary_metadata",
+      "logical_name": "windows.management.workplace.dll",
+      "package_id": "amd64_microsoft-windows-workplace_31bf3856ad364e35_10.0.20348.5020_none_06e1394f4f86ddb9",
+      "version_before": "10.0.20348.3692 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "edb7e5ea088037d393fb106b6406d2b8f18199bb84ee6f5d48f16b95ca169930",
+      "sha256_after": "b13d8e710537ab0130300f29b12a5bca30f903efa03624349a65e1fb9a424ef0",
+      "size_before": 259512,
+      "size_after": 259576,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.management.workplace.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.management.workplace.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 43,
+        "total_imports": 208,
+        "export_count": 4,
+        "function_count": 1095,
+        "string_count": 440
+      },
+      "summary_after": {
+        "library_count": 43,
+        "total_imports": 208,
+        "export_count": 4,
+        "function_count": 1095,
+        "string_count": 440
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_051",
+      "kind": "binary_metadata",
+      "logical_name": "wow64cpu.dll",
+      "package_id": "amd64_microsoft-windows-wow64_31bf3856ad364e35_10.0.20348.5020_none_10bcf438096d8de2",
+      "version_before": "10.0.20348.4648 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "08f05af1f7ccd0b45d4869fdb7d686ce4a5a2513767e778226382330fba00c87",
+      "sha256_after": "f9cce3742f8a0d12e436fcd9e6651020f3dda957a67de452203fe3d7bfbca40d",
+      "size_before": 46944,
+      "size_after": 47024,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\wow64cpu.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\wow64cpu.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 2,
+        "total_imports": 19,
+        "export_count": 10,
+        "function_count": 28,
+        "string_count": 57
+      },
+      "summary_after": {
+        "library_count": 2,
+        "total_imports": 19,
+        "export_count": 10,
+        "function_count": 28,
+        "string_count": 57
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_052",
+      "kind": "binary_metadata",
+      "logical_name": "windows.storage.applicationdata.dll",
+      "package_id": "amd64_windows-storage-applicationdata-winrt_31bf3856ad364e35_10.0.20348.5020_none_8d080dee08a2568f",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "b42260c86f3b5286bdd40a3c9417b93a67d6f20d54ebbf214f5c10606b3bd2b9",
+      "sha256_after": "931f45486ea3c89486e2160d8aa168d765ce09879c75088922892ccac136cdd3",
+      "size_before": 431256,
+      "size_after": 460200,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.storage.applicationdata.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.storage.applicationdata.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 42,
+        "total_imports": 266,
+        "export_count": 5,
+        "function_count": 1892,
+        "string_count": 791
+      },
+      "summary_after": {
+        "library_count": 42,
+        "total_imports": 275,
+        "export_count": 5,
+        "function_count": 2078,
+        "string_count": 808
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_053",
+      "kind": "binary_metadata",
+      "logical_name": "windows.applicationmodel.datatransfer.dll",
+      "package_id": "wow64_microsoft-onecore-a..nmodel-datatransfer_31bf3856ad364e35_10.0.20348.5020_none_d280ed0d835095b1",
+      "version_before": "10.0.20348.3451 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "d0cf229ef559227e4549d5ff450cc78f12193922ec20c2b79e728a311a19b098",
+      "sha256_after": "08419c6368aaee5c52be5d1bf9768555dacff507fb1fe376dd3e9de6a77f668f",
+      "size_before": 646848,
+      "size_after": 647400,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.applicationmodel.datatransfer.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.applicationmodel.datatransfer.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 87,
+        "total_imports": 332,
+        "export_count": 4,
+        "function_count": 5273,
+        "string_count": 865
+      },
+      "summary_after": {
+        "library_count": 87,
+        "total_imports": 332,
+        "export_count": 4,
+        "function_count": 5273,
+        "string_count": 865
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_054",
+      "kind": "binary_metadata",
+      "logical_name": "cloudexperiencehostuser.dll",
+      "package_id": "wow64_microsoft-onecore-c..experiencehost-user_31bf3856ad364e35_10.0.20348.5020_none_6fee4f1bb89bedbd",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "3c0281c852cc2d76f4f186d1fef5adda7f2c4ca1e4ce50d66ddf863750a2a481",
+      "sha256_after": "1e742272512846a4b381ffd0d229098bd27ff88fe1758a02faa6ab8e362d6521",
+      "size_before": 215032,
+      "size_after": 215064,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\cloudexperiencehostuser.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\cloudexperiencehostuser.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 44,
+        "total_imports": 198,
+        "export_count": 4,
+        "function_count": 1397,
+        "string_count": 1117
+      },
+      "summary_after": {
+        "library_count": 44,
+        "total_imports": 198,
+        "export_count": 4,
+        "function_count": 1397,
+        "string_count": 1117
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_055",
+      "kind": "binary_metadata",
+      "logical_name": "usermgrproxy.dll",
+      "package_id": "wow64_microsoft-system-user-component_31bf3856ad364e35_10.0.20348.5020_none_1825958ea1276229",
+      "version_before": "10.0.20348.4163 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "4e179f8a5b7fb87be8eef3aee46e0f2ab3135c94c7b91937cce371f4ebdd819a",
+      "sha256_after": "b6344e65fc290b3a9b5e6889ba1bf913119197c5deaf4b2c723086d36bbf3b1c",
+      "size_before": 239104,
+      "size_after": 239616,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\usermgrproxy.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\usermgrproxy.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 44,
+        "total_imports": 239,
+        "export_count": 4,
+        "function_count": 1435,
+        "string_count": 663
+      },
+      "summary_after": {
+        "library_count": 44,
+        "total_imports": 239,
+        "export_count": 4,
+        "function_count": 1438,
+        "string_count": 663
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_056",
+      "kind": "binary_metadata",
+      "logical_name": "windows.applicationmodel.lockscreen.dll",
+      "package_id": "wow64_microsoft-windows-a..ionmodel-lockscreen_31bf3856ad364e35_10.0.20348.5020_none_6c224dbecdae6a85",
+      "version_before": "10.0.20348.4647 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "1f3423b4284a4c59cf61b57d861a0ba30bd4285ad0dbe2770923b82d40cafdd5",
+      "sha256_after": "39a588acf49494cb66c61c8a672e3453692cf09c406f2fcaa490f8af4653977f",
+      "size_before": 429056,
+      "size_after": 429568,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.applicationmodel.lockscreen.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.applicationmodel.lockscreen.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 42,
+        "total_imports": 242,
+        "export_count": 4,
+        "function_count": 3763,
+        "string_count": 1152
+      },
+      "summary_after": {
+        "library_count": 42,
+        "total_imports": 242,
+        "export_count": 4,
+        "function_count": 3764,
+        "string_count": 1152
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_057",
+      "kind": "binary_metadata",
+      "logical_name": "bcrypt.dll",
+      "package_id": "wow64_microsoft-windows-bcrypt-dll_31bf3856ad364e35_10.0.20348.5020_none_a17869ed55e4c6a3",
+      "version_before": "10.0.20348.4648 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "3e362ab12692feafe5769862aa0b1537cb70245ac63acc4aaae25b59b1455b1d",
+      "sha256_after": "bea8c67bb22d16c01ceecea5e11ab6ce0fb152accd3734d559cdbeae9529872c",
+      "size_before": 99200,
+      "size_after": 99288,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\bcrypt.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\bcrypt.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 16,
+        "total_imports": 83,
+        "export_count": 59,
+        "function_count": 283,
+        "string_count": 297
+      },
+      "summary_after": {
+        "library_count": 16,
+        "total_imports": 83,
+        "export_count": 59,
+        "function_count": 283,
+        "string_count": 297
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_058",
+      "kind": "binary_metadata",
+      "logical_name": "cameracaptureui.dll",
+      "package_id": "wow64_microsoft-windows-cameracaptureui_31bf3856ad364e35_10.0.20348.5020_none_20ac23a8e99ea1fb",
+      "version_before": "10.0.20348.3451 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "e6495f6095e4358e14adf934dab51c49831cdd993d9ffec9ca1985c3c531a55d",
+      "sha256_after": "eb8bafce4b0b255510091ebb5af3e617edb4bbf861c9cbe230f8ab9909d97d39",
+      "size_before": 99840,
+      "size_after": 99840,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\cameracaptureui.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\cameracaptureui.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 28,
+        "total_imports": 134,
+        "export_count": 4,
+        "function_count": 756,
+        "string_count": 250
+      },
+      "summary_after": {
+        "library_count": 28,
+        "total_imports": 134,
+        "export_count": 4,
+        "function_count": 756,
+        "string_count": 250
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_059",
+      "kind": "binary_metadata",
+      "logical_name": "dataexchange.dll",
+      "package_id": "wow64_microsoft-windows-dataexchange-api_31bf3856ad364e35_10.0.20348.5020_none_9b5895c0cfc20972",
+      "version_before": "10.0.20348.4647 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "e361197ff8f0fcc34ce550cc01ae1e7a23188d02eb92e920eebad782d9440201",
+      "sha256_after": "580debad397731565f65ae90ba9a7d9ad9a060660a3411b50f85d183be37fb27",
+      "size_before": 296448,
+      "size_after": 296448,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\dataexchange.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\dataexchange.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 56,
+        "total_imports": 195,
+        "export_count": 4,
+        "function_count": 2343,
+        "string_count": 853
+      },
+      "summary_after": {
+        "library_count": 56,
+        "total_imports": 195,
+        "export_count": 4,
+        "function_count": 2343,
+        "string_count": 853
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_060",
+      "kind": "binary_metadata",
+      "logical_name": "dialclient.dll",
+      "package_id": "wow64_microsoft-windows-dial-client-dll_31bf3856ad364e35_10.0.20348.5020_none_6108ede1cd15ed77",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "5aa7803e3b2f9b07ba3632ac914ae70a1bd1c98c07c8f761b0f0654b9bbdb39c",
+      "sha256_after": "6863a06655dca1916dd541a7bb8f7bfe98c33ad0784e293688d8cba39edca13f",
+      "size_before": 179712,
+      "size_after": 180224,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\dialclient.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\dialclient.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 47,
+        "total_imports": 220,
+        "export_count": 4,
+        "function_count": 1377,
+        "string_count": 515
+      },
+      "summary_after": {
+        "library_count": 47,
+        "total_imports": 220,
+        "export_count": 4,
+        "function_count": 1378,
+        "string_count": 515
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_061",
+      "kind": "binary_metadata",
+      "logical_name": "msasn1.dll",
+      "package_id": "wow64_microsoft-windows-msasn1_31bf3856ad364e35_10.0.20348.5020_none_7a45ec4b0be0813f",
+      "version_before": "10.0.20348.4648 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "11f63ff38c787026d2d30afb88c6c957239dd817eec0234b3f4dc9ee14e65123",
+      "sha256_after": "072aa6e4e0e933f32e3ba22c714df87ff9e480537c3830407a2e774593114d6a",
+      "size_before": 52240,
+      "size_after": 52368,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\msasn1.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\msasn1.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 10,
+        "total_imports": 33,
+        "export_count": 129,
+        "function_count": 200,
+        "string_count": 237
+      },
+      "summary_after": {
+        "library_count": 10,
+        "total_imports": 33,
+        "export_count": 129,
+        "function_count": 200,
+        "string_count": 237
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_062",
+      "kind": "binary_metadata",
+      "logical_name": "windows.networking.backgroundtransfer.dll",
+      "package_id": "wow64_microsoft-windows-n..-backgroundtransfer_31bf3856ad364e35_10.0.20348.5020_none_bed0fc3c44769b3e",
+      "version_before": "10.0.20348.3692 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "bbf9ca1d515ea3733f63497d1a6cfafa9df2603252e46160e712faabd33daadb",
+      "sha256_after": "bb26e06561deb8e96ebebddd8f250c8dcf852c0f3e439f7598229cf7954ede01",
+      "size_before": 984064,
+      "size_after": 984576,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.networking.backgroundtransfer.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.networking.backgroundtransfer.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 60,
+        "total_imports": 293,
+        "export_count": 7,
+        "function_count": 6209,
+        "string_count": 2219
+      },
+      "summary_after": {
+        "library_count": 60,
+        "total_imports": 293,
+        "export_count": 7,
+        "function_count": 6214,
+        "string_count": 2219
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_063",
+      "kind": "binary_metadata",
+      "logical_name": "windows.networking.dll",
+      "package_id": "wow64_microsoft-windows-networking_31bf3856ad364e35_10.0.20348.5020_none_d4ebe903e100d616",
+      "version_before": "10.0.20348.4405 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "091c7821c8f2dd92de4f05c8774ededea2a6da4cb884bc363c958bb18e8927de",
+      "sha256_after": "492557fbef239290ed896438c5a859a5709c1a9ffcb65b4e80ad505efea73c49",
+      "size_before": 788480,
+      "size_after": 789504,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.networking.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.networking.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 55,
+        "total_imports": 372,
+        "export_count": 9,
+        "function_count": 5117,
+        "string_count": 1328
+      },
+      "summary_after": {
+        "library_count": 55,
+        "total_imports": 372,
+        "export_count": 9,
+        "function_count": 5126,
+        "string_count": 1328
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_064",
+      "kind": "binary_metadata",
+      "logical_name": "windows.networking.proximity.dll",
+      "package_id": "wow64_microsoft-windows-p..mitymessaging-rtapi_31bf3856ad364e35_10.0.20348.5020_none_08c843409af87a14",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "476341d929cb8e648dc6d36fe522714739b48e78da7ef6a410829351a0439347",
+      "sha256_after": "9975fedc24ba8fbae2cc29b4e8274c65f33aac723aaea510165d5701f45f69fa",
+      "size_before": 305664,
+      "size_after": 305664,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.networking.proximity.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.networking.proximity.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 35,
+        "total_imports": 152,
+        "export_count": 5,
+        "function_count": 1140,
+        "string_count": 284
+      },
+      "summary_after": {
+        "library_count": 35,
+        "total_imports": 152,
+        "export_count": 5,
+        "function_count": 1140,
+        "string_count": 284
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_065",
+      "kind": "binary_metadata",
+      "logical_name": "windows.payments.dll",
+      "package_id": "wow64_microsoft-windows-payments_31bf3856ad364e35_10.0.20348.5020_none_070ae5274753f84d",
+      "version_before": "10.0.20348.3207 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "cad6a1b975ab661b75b143c02f458dfc627210829cf700572ae919c3e213690c",
+      "sha256_after": "a719f87a1d286e52039e6c2fa4a0b468eb8e9365f94910a3b85216b36e3bbcdb",
+      "size_before": 446976,
+      "size_after": 447488,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.payments.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.payments.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 43,
+        "total_imports": 233,
+        "export_count": 4,
+        "function_count": 3295,
+        "string_count": 970
+      },
+      "summary_after": {
+        "library_count": 43,
+        "total_imports": 233,
+        "export_count": 4,
+        "function_count": 3295,
+        "string_count": 970
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_066",
+      "kind": "binary_metadata",
+      "logical_name": "playtomanager.dll",
+      "package_id": "wow64_microsoft-windows-playtomanager_31bf3856ad364e35_10.0.20348.5020_none_59a6429663083e3c",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "b1f196843ced729cb437a2353df73d5e83b873b92a08ebd9d7b06675af66846e",
+      "sha256_after": "d42b6a4ec240f080bcd3b297476060055ccc8c2647888587a6be2cd086f7bbd5",
+      "size_before": 421376,
+      "size_after": 421376,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\playtomanager.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\playtomanager.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 49,
+        "total_imports": 259,
+        "export_count": 4,
+        "function_count": 3402,
+        "string_count": 581
+      },
+      "summary_after": {
+        "library_count": 49,
+        "total_imports": 259,
+        "export_count": 4,
+        "function_count": 3403,
+        "string_count": 581
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_067",
+      "kind": "binary_metadata",
+      "logical_name": "fvecerts.dll",
+      "package_id": "wow64_microsoft-windows-s..ertificates-utility_31bf3856ad364e35_10.0.20348.5020_none_3be982b29128f992",
+      "version_before": "10.0.20348.4647 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "6b5fd57cea9be48ff470f19eb0d77e75c4c864fa8ffc37e9c758d43b2dbb0c37",
+      "sha256_after": "b4d87798518f8afa5587c69e553734c8f6c770c9c08545aa9d657f9e1cc5a2d5",
+      "size_before": 22016,
+      "size_after": 33280,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\fvecerts.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\fvecerts.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 17,
+        "total_imports": 79,
+        "export_count": 16,
+        "function_count": 68,
+        "string_count": 144
+      },
+      "summary_after": {
+        "library_count": 21,
+        "total_imports": 101,
+        "export_count": 16,
+        "function_count": 150,
+        "string_count": 192
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_068",
+      "kind": "binary_metadata",
+      "logical_name": "windows.security.authentication.onlineid.dll",
+      "package_id": "wow64_microsoft-windows-s..on-onlineid-runtime_31bf3856ad364e35_10.0.20348.5020_none_fb74c78a22d187ef",
+      "version_before": "10.0.20348.3451 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "076a58195d7d8fc831aae15ea2362177b446b93a4c470ea7c5c63d358e14e368",
+      "sha256_after": "d77e82935ca844c4b852957653ccdaf5926a241720b8109192cf8bdc41aa0ae6",
+      "size_before": 793600,
+      "size_after": 794112,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.security.authentication.onlineid.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.security.authentication.onlineid.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 77,
+        "total_imports": 373,
+        "export_count": 4,
+        "function_count": 4965,
+        "string_count": 1879
+      },
+      "summary_after": {
+        "library_count": 77,
+        "total_imports": 373,
+        "export_count": 4,
+        "function_count": 4968,
+        "string_count": 1879
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_069",
+      "kind": "binary_metadata",
+      "logical_name": "scrobj.dll",
+      "package_id": "wow64_microsoft-windows-scripting_31bf3856ad364e35_10.0.20348.5020_none_fb54299666d90f8f",
+      "version_before": "10.0.20348.4294",
+      "version_after": "10.0.20348.5020",
+      "sha256_before": "b3946aa0d6ca9b3b8bf8a20724f8bb637f53f42c85a8fc681086e14683765714",
+      "sha256_after": "18cb018749b66eddac85eda37037206c2527bfee068808b3cf8f465e892354c4",
+      "size_before": 197120,
+      "size_after": 197120,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\scrobj.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\scrobj.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 6,
+        "total_imports": 152,
+        "export_count": 11,
+        "function_count": 861,
+        "string_count": 492
+      },
+      "summary_after": {
+        "library_count": 6,
+        "total_imports": 152,
+        "export_count": 11,
+        "function_count": 861,
+        "string_count": 492
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_070",
+      "kind": "binary_metadata",
+      "logical_name": "wshcon.dll",
+      "package_id": "wow64_microsoft-windows-scripting_31bf3856ad364e35_10.0.20348.5020_none_fb54299666d90f8f",
+      "version_before": "10.0.20348.4294",
+      "version_after": "10.0.20348.5020",
+      "sha256_before": "2cad0dbecbabfe0883696296916dc02da25c122846845c1f170e0a1f044a14ff",
+      "sha256_after": "80f1f3c41bb7cc1605fb49ee93b7a874ad98167180d051a67da80f30e9f527c5",
+      "size_before": 22016,
+      "size_after": 22016,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\wshcon.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\wshcon.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 5,
+        "total_imports": 52,
+        "export_count": 6,
+        "function_count": 82,
+        "string_count": 92
+      },
+      "summary_after": {
+        "library_count": 5,
+        "total_imports": 52,
+        "export_count": 6,
+        "function_count": 82,
+        "string_count": 92
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_071",
+      "kind": "binary_metadata",
+      "logical_name": "ntlmshared.dll",
+      "package_id": "wow64_microsoft-windows-security-ntlmshared_31bf3856ad364e35_10.0.20348.5020_none_7043c9f8d8251f4f",
+      "version_before": "10.0.20348.4767 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "43989656652b36a6b12a949d546ae97b483350dfbc69969e6d1bb6c763dd5c6d",
+      "sha256_after": "6dbd012b784f6b5556adba18638c258fa9ebeba8a0237a6e7375741509fb9bd9",
+      "size_before": 37288,
+      "size_after": 37368,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\ntlmshared.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\ntlmshared.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 18,
+        "total_imports": 69,
+        "export_count": 29,
+        "function_count": 82,
+        "string_count": 168
+      },
+      "summary_after": {
+        "library_count": 18,
+        "total_imports": 69,
+        "export_count": 29,
+        "function_count": 82,
+        "string_count": 168
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_072",
+      "kind": "binary_metadata",
+      "logical_name": "vaultcli.dll",
+      "package_id": "wow64_microsoft-windows-security-vault_31bf3856ad364e35_10.0.20348.5020_none_a454e737a1882d65",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "a76ee8b8f07c80efc4efc82540e0cd770cffe7f7d146a21f8ce49fbfa3998dca",
+      "sha256_after": "c8eceffc53e79cf6c23f6c57dc43d234f8aad856fea3886eac3c8f7651eff905",
+      "size_before": 253952,
+      "size_after": 254464,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\vaultcli.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\vaultcli.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 36,
+        "total_imports": 191,
+        "export_count": 25,
+        "function_count": 2024,
+        "string_count": 649
+      },
+      "summary_after": {
+        "library_count": 36,
+        "total_imports": 191,
+        "export_count": 25,
+        "function_count": 2026,
+        "string_count": 649
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_073",
+      "kind": "binary_metadata",
+      "logical_name": "phoneom.dll",
+      "package_id": "wow64_microsoft-windows-telephony-phoneom_31bf3856ad364e35_10.0.20348.5020_none_9c4440cfa4abdacb",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "f8cfe396b421f03661c5e68da3c16b86e9d339a04356fb5d68fbae37c146cf9a",
+      "sha256_after": "fb6190f91663f214b5218665281ac3d190143ef391f0bb7aeeb8fec3ed4d8535",
+      "size_before": 475136,
+      "size_after": 475136,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\phoneom.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\phoneom.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 45,
+        "total_imports": 213,
+        "export_count": 149,
+        "function_count": 3919,
+        "string_count": 1119
+      },
+      "summary_after": {
+        "library_count": 45,
+        "total_imports": 213,
+        "export_count": 149,
+        "function_count": 3920,
+        "string_count": 1119
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_074",
+      "kind": "binary_metadata",
+      "logical_name": "tbs.dll",
+      "package_id": "wow64_microsoft-windows-tpm-tbs_31bf3856ad364e35_10.0.20348.5020_none_a1a3ab75ded36c3b",
+      "version_before": "10.0.20348.4648 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "8ccf3c482bb2b649711dba54b520cf026d102f63d68658ecc42b908f290fc256",
+      "sha256_after": "9a1668f5987f4c489ef95c842dc5917d0ecf16339f8bd3c576c02decf8036153",
+      "size_before": 80184,
+      "size_after": 80224,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\tbs.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\tbs.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 24,
+        "total_imports": 110,
+        "export_count": 22,
+        "function_count": 330,
+        "string_count": 259
+      },
+      "summary_after": {
+        "library_count": 24,
+        "total_imports": 110,
+        "export_count": 22,
+        "function_count": 330,
+        "string_count": 259
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_075",
+      "kind": "binary_metadata",
+      "logical_name": "twinapi.appcore.dll",
+      "package_id": "wow64_microsoft-windows-twinapi-appcore_31bf3856ad364e35_10.0.20348.5020_none_6687d28624608981",
+      "version_before": "10.0.20348.3692 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "78bd34dd8c54df98555bb600f247acc3f2d75572f93cf11c652e46866bc8551e",
+      "sha256_after": "1bb181c7f2f3237dbd7ffcf00c3e254a132980ac57fa005d8522b64166fa4962",
+      "size_before": 1843424,
+      "size_after": 1844056,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\twinapi.appcore.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\twinapi.appcore.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 103,
+        "total_imports": 510,
+        "export_count": 128,
+        "function_count": 15256,
+        "string_count": 3556
+      },
+      "summary_after": {
+        "library_count": 103,
+        "total_imports": 510,
+        "export_count": 128,
+        "function_count": 15259,
+        "string_count": 3555
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_076",
+      "kind": "binary_metadata",
+      "logical_name": "peopleapis.dll",
+      "package_id": "wow64_microsoft-windows-u..access-userdataapis_31bf3856ad364e35_10.0.20348.5020_none_bcc9ab2e27b1b5f8",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "62c5590ae5ca614fe56b08d15a04f23770d95c028bce5eb47b439d2533cd9107",
+      "sha256_after": "aa3ccd1da85e72cb03da9747aabd94bd624761cdde4a2b59f5112cb28ecec765",
+      "size_before": 98304,
+      "size_after": 98304,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\peopleapis.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\peopleapis.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 28,
+        "total_imports": 104,
+        "export_count": 4,
+        "function_count": 834,
+        "string_count": 309
+      },
+      "summary_after": {
+        "library_count": 28,
+        "total_imports": 104,
+        "export_count": 4,
+        "function_count": 834,
+        "string_count": 309
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_077",
+      "kind": "binary_metadata",
+      "logical_name": "taskapis.dll",
+      "package_id": "wow64_microsoft-windows-u..access-userdataapis_31bf3856ad364e35_10.0.20348.5020_none_bcc9ab2e27b1b5f8",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "55fff1c4342f6cd4b037755fa004b5f78cb4274b191d8cb6e13798c91e7a260e",
+      "sha256_after": "e56a962e0d6d207d2e3f81698cf03740fd18a4ad8d12d867ee30a61284b20556",
+      "size_before": 312320,
+      "size_after": 312320,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\taskapis.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\taskapis.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 34,
+        "total_imports": 159,
+        "export_count": 4,
+        "function_count": 2261,
+        "string_count": 472
+      },
+      "summary_after": {
+        "library_count": 34,
+        "total_imports": 159,
+        "export_count": 4,
+        "function_count": 2257,
+        "string_count": 472
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_078",
+      "kind": "binary_metadata",
+      "logical_name": "msvcp_win.dll",
+      "package_id": "wow64_microsoft-windows-ucrt_31bf3856ad364e35_10.0.20348.5020_none_5ead0bc77fff079c",
+      "version_before": "10.0.20348.4648 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "fe672d5590a1c93173ae76b20e3400c2b302edbb03b84243baa6ed9821036aca",
+      "sha256_after": "3a712bfe5ee127221dbe3b7a2e15aebe0c2307afb40ad346ef1f86b6b206590f",
+      "size_before": 509912,
+      "size_after": 509992,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\msvcp_win.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\msvcp_win.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 30,
+        "total_imports": 188,
+        "export_count": 1121,
+        "function_count": 2532,
+        "string_count": 1980
+      },
+      "summary_after": {
+        "library_count": 30,
+        "total_imports": 188,
+        "export_count": 1121,
+        "function_count": 2532,
+        "string_count": 1980
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_079",
+      "kind": "binary_metadata",
+      "logical_name": "ucrtbase.dll",
+      "package_id": "wow64_microsoft-windows-ucrt_31bf3856ad364e35_10.0.20348.5020_none_5ead0bc77fff079c",
+      "version_before": "10.0.20348.4648 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "10fcd4fd0b7aea204b330a68028dbaae5a70e2fb37843097d1590fdfadefcf8e",
+      "sha256_after": "50b84449ab7da14752bac22e4b366c4c3f84e71c5ecd99845dfac1b615da5b3f",
+      "size_before": 1128096,
+      "size_after": 1128184,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\ucrtbase.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\ucrtbase.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 25,
+        "total_imports": 131,
+        "export_count": 2404,
+        "function_count": 5249,
+        "string_count": 3246
+      },
+      "summary_after": {
+        "library_count": 25,
+        "total_imports": 131,
+        "export_count": 2404,
+        "function_count": 5249,
+        "string_count": 3246
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_080",
+      "kind": "binary_metadata",
+      "logical_name": "windows.ui.xaml.maps.dll",
+      "package_id": "wow64_microsoft-windows-ui-xaml-maps_31bf3856ad364e35_10.0.20348.5020_none_4a39838e309d068d",
+      "version_before": "10.0.20348.4767 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "8f3ffeee0e9215beea1629555424f832a5abf102e42c79d1d229b704566e7cce",
+      "sha256_after": "f23dfda64322340a1c6e58a643493157821b509267c3429beb28d878dfe4312b",
+      "size_before": 1260032,
+      "size_after": 1260544,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.ui.xaml.maps.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.ui.xaml.maps.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 38,
+        "total_imports": 167,
+        "export_count": 6,
+        "function_count": 8763,
+        "string_count": 898
+      },
+      "summary_after": {
+        "library_count": 38,
+        "total_imports": 167,
+        "export_count": 6,
+        "function_count": 8763,
+        "string_count": 898
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_081",
+      "kind": "binary_metadata",
+      "logical_name": "windows.web.diagnostics.dll",
+      "package_id": "wow64_microsoft-windows-w..ows-web-diagnostics_31bf3856ad364e35_10.0.20348.5020_none_a5c3120418df34ba",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "d2105c4ddf928654a2d8aa6b611a10d2fa15ad4e9df694ebda9eb2586538250b",
+      "sha256_after": "45d822f0c6c06be4990046f8e2a76afecbf2c97ff8affe92d43b81121d696773",
+      "size_before": 183808,
+      "size_after": 184320,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.web.diagnostics.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.web.diagnostics.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 28,
+        "total_imports": 171,
+        "export_count": 4,
+        "function_count": 1435,
+        "string_count": 519
+      },
+      "summary_after": {
+        "library_count": 28,
+        "total_imports": 171,
+        "export_count": 4,
+        "function_count": 1435,
+        "string_count": 519
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_082",
+      "kind": "binary_metadata",
+      "logical_name": "windows.web.http.dll",
+      "package_id": "wow64_microsoft-windows-web-http_31bf3856ad364e35_10.0.20348.5020_none_ad4985d816a8b7c1",
+      "version_before": "10.0.20348.3451 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "988dc2c291a430ce38dcb4a970ba51b81658ef9f560eba643da1a3361a865fc8",
+      "sha256_after": "87eb9d58976d826f914c8223b55271c289b9b8be325dc7058c075224243c645f",
+      "size_before": 1177088,
+      "size_after": 1177600,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.web.http.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\windows.web.http.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 44,
+        "total_imports": 276,
+        "export_count": 7,
+        "function_count": 8882,
+        "string_count": 1803
+      },
+      "summary_after": {
+        "library_count": 44,
+        "total_imports": 276,
+        "export_count": 7,
+        "function_count": 8884,
+        "string_count": 1804
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_083",
+      "kind": "binary_metadata",
+      "logical_name": "appextension.dll",
+      "package_id": "wow64_windows-application..-appextension-winrt_31bf3856ad364e35_10.0.20348.5020_none_c6bbcb071751f83c",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "294f8629f3838e427b7f690a3d8af0df82b851aefb6c91879477fc52887c0be0",
+      "sha256_after": "fd32011c77fcbcea853923e5427a2f5ecd51587933c9d2a05cfacf1e7198330c",
+      "size_before": 145408,
+      "size_after": 145408,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\appextension.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\appextension.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 45,
+        "total_imports": 171,
+        "export_count": 4,
+        "function_count": 1093,
+        "string_count": 421
+      },
+      "summary_after": {
+        "library_count": 45,
+        "total_imports": 171,
+        "export_count": 4,
+        "function_count": 1093,
+        "string_count": 421
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_084",
+      "kind": "binary_metadata",
+      "logical_name": "clipboardserver.dll",
+      "package_id": "wow64_windows-applicationmodel-clipboardserver_31bf3856ad364e35_10.0.20348.5020_none_416b185c48ed0f68",
+      "version_before": "10.0.20348.4647 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "fa35136c683bd69d05304fa4a7e989645ce9136610a506a1a18e5861c8795d6c",
+      "sha256_after": "6f6b56cb954bc49dcc38f9d57ef0787e69bca5fb2bffee630fc943941b3fb4c9",
+      "size_before": 204800,
+      "size_after": 187904,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\clipboardserver.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\clipboardserver.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 44,
+        "total_imports": 179,
+        "export_count": 4,
+        "function_count": 1537,
+        "string_count": 955
+      },
+      "summary_after": {
+        "library_count": 44,
+        "total_imports": 171,
+        "export_count": 4,
+        "function_count": 1386,
+        "string_count": 939
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    },
+    {
+      "evidence_id": "ev_bin_085",
+      "kind": "binary_metadata",
+      "logical_name": "wimprovider.dll",
+      "package_id": "x86_microsoft-windows-d..-winproviders-local_31bf3856ad364e35_10.0.20348.5020_none_70a57d34ff3fe294",
+      "version_before": "10.0.20348.2849 (WinBuild.160101.0800)",
+      "version_after": "10.0.20348.5020 (WinBuild.160101.0800)",
+      "sha256_before": "6366106a3ba117edcffb4f0cfa7b9092d8bb8e6fee6b089937b8ca046e65593c",
+      "sha256_after": "d892cc1b0fd2c0d59a4b455c4d880b16ebbb2c281115ff0280c807870094eedc",
+      "size_before": 506872,
+      "size_after": 506904,
+      "before_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\wimprovider.dll.before.facts.json",
+      "after_artifact": "<runner>\\thanos-oana\\pipeline\\output\\2026-04-patch-tuesday-full-oana\\facts\\wimprovider.dll.after.facts.json",
+      "summary_before": {
+        "library_count": 10,
+        "total_imports": 228,
+        "export_count": 6,
+        "function_count": 2353,
+        "string_count": 1636
+      },
+      "summary_after": {
+        "library_count": 10,
+        "total_imports": 228,
+        "export_count": 6,
+        "function_count": 2353,
+        "string_count": 1636
+      },
+      "notes": "Reconstructed via msdelta apply on baseline; analyzed by Ghidra headless."
+    }
+  ],
+  "changes": [
+    {
+      "change_id": "chg_001",
+      "binary": "microsoft.bluetooth.service.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_001"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 2,
+        "after_export_count": 2
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_002",
+      "binary": "iumsdk.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_002"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 0,
+        "after_function_count": 0,
+        "before_export_count": 199,
+        "after_export_count": 199
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_003",
+      "binary": "windowmanagement.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_003"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 3,
+        "after_export_count": 3
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_004",
+      "binary": "windows.devices.alljoyn.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_004"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 7,
+        "after_export_count": 7
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_005",
+      "binary": "windows.media.mediacontrol.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_005"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 12,
+        "after_export_count": 12
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_006",
+      "binary": "windows.cortana.desktop.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_006"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [
+          "Unwind@18000f5d4"
+        ],
+        "functions_removed": [
+          "Unwind@18000f5c4"
+        ],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "1 fn added, 1 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_007",
+      "binary": "coreshell.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_007"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_008",
+      "binary": "windows.ui.creddialogcontroller.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_008"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 3,
+        "after_export_count": 3
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_009",
+      "binary": "cryptbase.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_009"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 49,
+        "after_function_count": 49,
+        "before_export_count": 12,
+        "after_export_count": 12
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_010",
+      "binary": "ffuprovider.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_010"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 6,
+        "after_export_count": 6
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_011",
+      "binary": "imagingprovider.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_011"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 6,
+        "after_export_count": 6
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_012",
+      "binary": "configmanager2.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_012"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 5,
+        "after_export_count": 5
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_013",
+      "binary": "windows.devices.smartcards.phone.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_013"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_014",
+      "binary": "dwmscene.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_014"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_015",
+      "binary": "windows.devices.custom.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_015"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_016",
+      "binary": "windows.devices.haptics.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_016"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_017",
+      "binary": "windows.devices.midi.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_017"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_018",
+      "binary": "windows.devices.radios.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_018"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 13,
+        "after_export_count": 13
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_019",
+      "binary": "d3d10warp.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_019"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 11,
+        "after_export_count": 11
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_020",
+      "binary": "drvstore.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_020"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 57,
+        "after_export_count": 57
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_021",
+      "binary": "windows.energy.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_021"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 6,
+        "after_export_count": 6
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_022",
+      "binary": "windows.graphics.display.brightnessoverride.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_022"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_023",
+      "binary": "windows.immersiveshell.serviceprovider.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_023"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 3,
+        "after_export_count": 3
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_024",
+      "binary": "diagnostic.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_024"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 118,
+        "after_export_count": 118
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_025",
+      "binary": "smiengine.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_025"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 14,
+        "after_export_count": 14
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_026",
+      "binary": "spprgrss.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_026"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 155,
+        "after_function_count": 155,
+        "before_export_count": 12,
+        "after_export_count": 12
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_027",
+      "binary": "w32uiimg.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_027"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 0,
+        "after_function_count": 0,
+        "before_export_count": 1,
+        "after_export_count": 1
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_028",
+      "binary": "wdsclient.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_028"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 8,
+        "after_export_count": 8
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_029",
+      "binary": "winsetup.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_029"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 67,
+        "after_export_count": 67
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_030",
+      "binary": "mbsmsapi.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_030"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_031",
+      "binary": "microsoftaccountextension.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_031"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_032",
+      "binary": "authbroker.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_032"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 12,
+        "after_export_count": 12
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_033",
+      "binary": "windows.graphics.printing.3d.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_033"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_034",
+      "binary": "pshed.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_034"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 122,
+        "after_function_count": 122,
+        "before_export_count": 32,
+        "after_export_count": 32
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_035",
+      "binary": "windows.media.renewal.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_035"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 365,
+        "after_function_count": 365,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_036",
+      "binary": "rasplap.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_036"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 226,
+        "after_function_count": 226,
+        "before_export_count": 3,
+        "after_export_count": 3
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_037",
+      "binary": "family.authentication.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_037"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_038",
+      "binary": "mediafoundation.defaultperceptionprovider.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_038"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_039",
+      "binary": "windows.devices.sensors.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_039"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_040",
+      "binary": "sapi_onecore.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_040"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 5,
+        "after_export_count": 5
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_041",
+      "binary": "switcherdatamodel.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_041"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_042",
+      "binary": "windows.system.systemmanagement.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_042"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_043",
+      "binary": "chatapis.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_043"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_044",
+      "binary": "contactapis.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_044"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_045",
+      "binary": "emailapis.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_045"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_046",
+      "binary": "userdataaccountapis.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_046"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_047",
+      "binary": "upnphost.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_047"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [
+          "ApiSetQueryApiSetPresence",
+          "DelayLoad_CryptStringToBinaryW",
+          "DelayLoad_FreeAddrInfoW",
+          "DelayLoad_GetAdaptersAddresses",
+          "DelayLoad_GetAddrInfoW",
+          "DelayLoad_GetHostNameW",
+          "DelayLoad_Ordinal_10",
+          "DelayLoad_Ordinal_104",
+          "DelayLoad_Ordinal_11",
+          "DelayLoad_Ordinal_15",
+          "DelayLoad_Ordinal_16",
+          "DelayLoad_Ordinal_17",
+          "DelayLoad_Ordinal_411",
+          "DelayLoad_QueryWin32SubsystemHost",
+          "DelayLoad_WSAAddressToStringA",
+          "DelayLoad_WinHttpCloseHandle",
+          "DelayLoad_WinHttpConnect",
+          "DelayLoad_WinHttpCrackUrl",
+          "DelayLoad_WinHttpOpen",
+          "DelayLoad_WinHttpOpenRequest",
+          "DelayLoad_WinHttpReceiveResponse",
+          "DelayLoad_WinHttpSendRequest",
+          "DelayLoad_WinHttpSetOption",
+          "DelayLoad_WinHttpSetStatusCallback",
+          "DelayLoad_WinHttpSetTimeouts"
+        ],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 6,
+        "after_export_count": 6
+      },
+      "notes": "25 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_048",
+      "binary": "nsi.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_048"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 47,
+        "after_function_count": 47,
+        "before_export_count": 27,
+        "after_export_count": 27
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_049",
+      "binary": "windows.ui.input.inking.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_049"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 5,
+        "after_export_count": 5
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_050",
+      "binary": "windows.management.workplace.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_050"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_051",
+      "binary": "wow64cpu.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_051"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 28,
+        "after_function_count": 28,
+        "before_export_count": 10,
+        "after_export_count": 10
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_052",
+      "binary": "windows.storage.applicationdata.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_052"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [
+          "DelayLoad_AcquireStateLock",
+          "DelayLoad_CloseStateChangeNotification",
+          "DelayLoad_CloseStateContainer",
+          "DelayLoad_CloseStateLock",
+          "DelayLoad_CommitStateAtom",
+          "DelayLoad_CreateStateChangeNotification",
+          "DelayLoad_CreateStateContainer",
+          "DelayLoad_CreateStateLock",
+          "DelayLoad_CreateStateSubcontainer",
+          "DelayLoad_DeleteStateAtomValue",
+          "DelayLoad_DeleteStateContainer",
+          "DelayLoad_DeleteStateContainerValue",
+          "DelayLoad_EnumerateStateAtomValues",
+          "DelayLoad_EnumerateStateContainerItems",
+          "DelayLoad_GetPublisherCacheFolder",
+          "DelayLoad_GetRoamingLastObservedChangeTime",
+          "DelayLoad_GetSerializedAtomBytes",
+          "DelayLoad_GetSharedLocalFolder",
+          "DelayLoad_GetStateFolder",
+          "DelayLoad_GetStateVersion",
+          "DelayLoad_OpenState",
+          "DelayLoad_OpenStateExplicit",
+          "DelayLoad_OpenStateExplicitForUserSidString",
+          "DelayLoad_OverrideRoamingDataModificationTimesInRange",
+          "DelayLoad_PublishStateChangeNotification",
+          "DelayLoad_QueryStateContainerCreatedNew",
+          "DelayLoad_ReleaseStateLock",
+          "DelayLoad_SetStateVersion",
+          "DelayLoad_SharedLocalIsEnabled",
+          "DelayLoad_SubscribeStateChangeNotification",
+          "DelayLoad_UnsubscribeStateChangeNotification",
+          "DelayLoad_WriteStateAtomValue"
+        ],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 5,
+        "after_export_count": 5
+      },
+      "notes": "0 fn added, 32 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_053",
+      "binary": "windows.applicationmodel.datatransfer.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_053"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [
+          "Catch@10018f9e",
+          "Catch@10019128",
+          "Catch@10019161",
+          "Catch@100191c1",
+          "Catch@100191fa",
+          "Catch@10019222"
+        ],
+        "functions_removed": [
+          "Catch@10018f7e",
+          "Catch@10019108",
+          "Catch@10019141",
+          "Catch@100191a1",
+          "Catch@100191da",
+          "Catch@10019202"
+        ],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "6 fn added, 6 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_054",
+      "binary": "cloudexperiencehostuser.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_054"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [
+          "Catch@1000ca4e",
+          "Catch@1000cbd8",
+          "Catch@1000cc11",
+          "Catch@1000cc71",
+          "Catch@1000ccaa",
+          "Catch@1000ccd2"
+        ],
+        "functions_removed": [
+          "Catch@1000ca2e",
+          "Catch@1000cbb8",
+          "Catch@1000cbf1",
+          "Catch@1000cc51",
+          "Catch@1000cc8a",
+          "Catch@1000ccb2"
+        ],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "6 fn added, 6 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_055",
+      "binary": "usermgrproxy.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_055"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [
+          "Catch@1001a5b3",
+          "Unwind@1001e710"
+        ],
+        "functions_removed": [
+          "Catch@1001a583",
+          "Unwind@1001e6e0"
+        ],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "2 fn added, 2 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_056",
+      "binary": "windows.applicationmodel.lockscreen.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_056"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [
+          "Unwind@10021730"
+        ],
+        "functions_removed": [
+          "Unwind@10021700"
+        ],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "1 fn added, 1 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_057",
+      "binary": "bcrypt.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_057"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 283,
+        "after_function_count": 283,
+        "before_export_count": 59,
+        "after_export_count": 59
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_058",
+      "binary": "cameracaptureui.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_058"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [
+          "`scalar_deleting_destructor'"
+        ],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 1 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_059",
+      "binary": "dataexchange.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_059"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [
+          "Unwind@10011c40"
+        ],
+        "functions_removed": [
+          "Unwind@10011c60"
+        ],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "1 fn added, 1 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_060",
+      "binary": "dialclient.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_060"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_061",
+      "binary": "msasn1.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_061"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 200,
+        "after_function_count": 200,
+        "before_export_count": 129,
+        "after_export_count": 129
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_062",
+      "binary": "windows.networking.backgroundtransfer.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_062"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 7,
+        "after_export_count": 7
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_063",
+      "binary": "windows.networking.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_063"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 9,
+        "after_export_count": 9
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_064",
+      "binary": "windows.networking.proximity.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_064"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 5,
+        "after_export_count": 5
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_065",
+      "binary": "windows.payments.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_065"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_066",
+      "binary": "playtomanager.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_066"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_067",
+      "binary": "fvecerts.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_067"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [
+          "DebugBreak",
+          "__alloca_probe",
+          "__dllonexit",
+          "_lock",
+          "_unlock"
+        ],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 68,
+        "after_function_count": 150,
+        "before_export_count": 16,
+        "after_export_count": 16
+      },
+      "notes": "5 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_068",
+      "binary": "windows.security.authentication.onlineid.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_068"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [
+          "Catch@10032ba0"
+        ],
+        "functions_removed": [
+          "Catch@10032b20"
+        ],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "1 fn added, 1 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_069",
+      "binary": "scrobj.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_069"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 11,
+        "after_export_count": 11
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_070",
+      "binary": "wshcon.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_070"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 82,
+        "after_function_count": 82,
+        "before_export_count": 6,
+        "after_export_count": 6
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_071",
+      "binary": "ntlmshared.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_071"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 82,
+        "after_function_count": 82,
+        "before_export_count": 29,
+        "after_export_count": 29
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_072",
+      "binary": "vaultcli.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_072"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [
+          "Unwind@10013b30"
+        ],
+        "functions_removed": [
+          "Unwind@10013b10"
+        ],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 25,
+        "after_export_count": 25
+      },
+      "notes": "1 fn added, 1 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_073",
+      "binary": "phoneom.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_073"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 149,
+        "after_export_count": 149
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_074",
+      "binary": "tbs.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_074"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 330,
+        "after_function_count": 330,
+        "before_export_count": 22,
+        "after_export_count": 22
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_075",
+      "binary": "twinapi.appcore.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_075"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 128,
+        "after_export_count": 128
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_076",
+      "binary": "peopleapis.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_076"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [
+          "Catch@10008465",
+          "Catch@100085e8",
+          "Catch@10008621",
+          "Catch@10008681",
+          "Catch@100086ba",
+          "Catch@100086e2"
+        ],
+        "functions_removed": [
+          "Catch@10008455",
+          "Catch@100085d8",
+          "Catch@10008611",
+          "Catch@10008671",
+          "Catch@100086aa",
+          "Catch@100086d2"
+        ],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "6 fn added, 6 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_077",
+      "binary": "taskapis.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_077"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_078",
+      "binary": "msvcp_win.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_078"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 209,
+        "after_export_count": 209
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_079",
+      "binary": "ucrtbase.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_079"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 512,
+        "after_export_count": 512
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_080",
+      "binary": "windows.ui.xaml.maps.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_080"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 6,
+        "after_export_count": 6
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_081",
+      "binary": "windows.web.diagnostics.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_081"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [
+          "Catch@1000d9f5",
+          "Catch@1000da02",
+          "Catch@1000da0f",
+          "Catch@1000da1c",
+          "Catch@1000da29"
+        ],
+        "functions_removed": [
+          "Catch@1000d9e5",
+          "Catch@1000d9f2",
+          "Catch@1000d9ff",
+          "Catch@1000da0c",
+          "Catch@1000da19"
+        ],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "5 fn added, 5 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_082",
+      "binary": "windows.web.http.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_082"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 7,
+        "after_export_count": 7
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_083",
+      "binary": "appextension.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_083"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_084",
+      "binary": "clipboardserver.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_084"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [
+          "Unwind@1000a570",
+          "Unwind@1000c690",
+          "Unwind@1000c698",
+          "Unwind@1000c6a3",
+          "Unwind@1000c6e0",
+          "Unwind@1000c7e0",
+          "Unwind@1000c820",
+          "Unwind@1000c828",
+          "Unwind@1000c833",
+          "Unwind@1000c83e",
+          "Unwind@1000c849",
+          "Unwind@1000c854",
+          "Unwind@1000c862",
+          "Unwind@1000c870",
+          "Unwind@1000c87e",
+          "Unwind@1000c88c",
+          "Unwind@1000c89a",
+          "Unwind@1000c8a8",
+          "Unwind@1000c8b6",
+          "Unwind@1000c9e0",
+          "Unwind@1000c9e8",
+          "Unwind@1000c9f0",
+          "Unwind@1000ca20",
+          "Unwind@1000cae6",
+          "Unwind@1000caf1",
+          "Unwind@1000cc59",
+          "Unwind@1000cc61",
+          "Unwind@1000ccbe",
+          "Unwind@1000ccd7",
+          "Unwind@1000cd11",
+          "Unwind@1000cd19",
+          "Unwind@1000cd49",
+          "Unwind@1000cd51",
+          "Unwind@1000cd59",
+          "Unwind@1000ce38",
+          "Unwind@1000ce68",
+          "Unwind@1000cede",
+          "Unwind@1000cf0e",
+          "Unwind@1000cf19",
+          "Unwind@1000cf24",
+          "Unwind@1000cf2f",
+          "Unwind@1000cf3a",
+          "Unwind@1000cf45",
+          "Unwind@1000cf85",
+          "Unwind@1000cf90",
+          "Unwind@1000cf9b",
+          "Unwind@1000cfdb",
+          "Unwind@1000cfe6",
+          "Unwind@1000cff1",
+          "Unwind@1000cffc",
+          "Unwind@1000d03c",
+          "Unwind@1000d06c",
+          "Unwind@1000d077",
+          "Unwind@1000d082",
+          "Unwind@1000d08d",
+          "Unwind@1000d0cd",
+          "Unwind@1000d0d8",
+          "Unwind@1000d0e3",
+          "Unwind@1000d0ee",
+          "Unwind@1000d12e",
+          "Unwind@1000d136",
+          "Unwind@1000d166",
+          "Unwind@1000d171",
+          "Unwind@1000d17c",
+          "Unwind@1000d187",
+          "Unwind@1000d192",
+          "Unwind@1000d1cf",
+          "Unwind@1000d1da",
+          "Unwind@1000d1e5",
+          "Unwind@1000d1f0",
+          "Unwind@1000d247",
+          "Unwind@1000d277",
+          "Unwind@1000d27f",
+          "Unwind@1000d287",
+          "Unwind@1000d28f",
+          "Unwind@1000d2bf",
+          "Unwind@1000d2ef",
+          "Unwind@1000d31f",
+          "Unwind@1000d338",
+          "Unwind@1000d340",
+          "Unwind@1000d393",
+          "Unwind@1000d39b",
+          "Unwind@1000d3d5",
+          "Unwind@1000d3dd",
+          "Unwind@1000d3e5",
+          "Unwind@1000d3ed",
+          "Unwind@1000d463",
+          "Unwind@1000d493",
+          "Unwind@1000d4e6",
+          "Unwind@1000d4f1",
+          "Unwind@1000d4fc",
+          "Unwind@1000d507",
+          "Unwind@1000d512",
+          "Unwind@1000d51d",
+          "Unwind@1000d55d",
+          "Unwind@1000d565",
+          "Unwind@1000d56d",
+          "Unwind@1000d575",
+          "Unwind@1000d57d",
+          "Unwind@1000d585",
+          "Unwind@1000d58d",
+          "Unwind@1000d649",
+          "Unwind@1000d689",
+          "Unwind@1000d694",
+          "Unwind@1000d69f",
+          "Unwind@1000d6aa",
+          "Unwind@1000d6b5",
+          "Unwind@1000d6c0",
+          "Unwind@1000d6cb",
+          "Unwind@1000d6d6",
+          "Unwind@1000d6e1",
+          "Unwind@1000d6ec",
+          "Unwind@1000d74f",
+          "Unwind@1000d757",
+          "Unwind@1000d75f",
+          "Unwind@1000d799",
+          "Unwind@1000d7a1",
+          "Unwind@1000d7a9",
+          "Unwind@1000d7b1",
+          "Unwind@1000d7b9",
+          "Unwind@1000d7c1",
+          "Unwind@1000d841",
+          "Unwind@1000d84c",
+          "Unwind@1000d857",
+          "Unwind@1000d8ba",
+          "Unwind@1000d8c5",
+          "Unwind@1000d8d0",
+          "Unwind@1000d8db",
+          "Unwind@1000d8e6",
+          "Unwind@1000d8f1",
+          "Unwind@1000d8fc",
+          "Unwind@1000d93c",
+          "Unwind@1000d947",
+          "Unwind@1000d952",
+          "Unwind@1000d95d",
+          "Unwind@1000d99d",
+          "Unwind@1000d9b6",
+          "Unwind@1000d9e6",
+          "Unwind@1000d9ee",
+          "Unwind@1000d9f6",
+          "Unwind@1000da6c",
+          "Unwind@1000da74",
+          "Unwind@1000daae",
+          "Unwind@1000dade",
+          "Unwind@1000daf7",
+          "Unwind@1000daff",
+          "Unwind@1000db0a",
+          "Unwind@1000db12",
+          "Unwind@1000db42",
+          "Unwind@1000db72",
+          "Unwind@1000dbc5",
+          "Unwind@1000dbcd",
+          "Unwind@1000dc07",
+          "Unwind@1000dc5a",
+          "Unwind@1000dc62",
+          "Unwind@1000dc6a",
+          "Unwind@1000dcca",
+          "Unwind@1000dcfa",
+          "Unwind@1000dd02",
+          "Unwind@1000dd55",
+          "Unwind@1000dd85",
+          "Unwind@1000dd8d",
+          "Unwind@1000ddbd",
+          "Unwind@1000ddc5",
+          "Unwind@1000ddcd",
+          "Unwind@1000ddfd"
+        ],
+        "functions_removed": [
+          "Unwind@1000ab10",
+          "Unwind@1000ffd0",
+          "Unwind@1000ffd8",
+          "Unwind@1000ffe3",
+          "Unwind@10010020",
+          "Unwind@10010120",
+          "Unwind@10010160",
+          "Unwind@10010168",
+          "Unwind@10010173",
+          "Unwind@1001017e",
+          "Unwind@10010189",
+          "Unwind@10010194",
+          "Unwind@100101a2",
+          "Unwind@100101b0",
+          "Unwind@100101be",
+          "Unwind@100101cc",
+          "Unwind@100101da",
+          "Unwind@100101e8",
+          "Unwind@100101f6",
+          "Unwind@10010320",
+          "Unwind@10010328",
+          "Unwind@10010330",
+          "Unwind@10010360",
+          "Unwind@10010426",
+          "Unwind@10010431",
+          "Unwind@100105bc",
+          "Unwind@100105c4",
+          "Unwind@100105fe",
+          "Unwind@10010617",
+          "Unwind@10010651",
+          "Unwind@10010659",
+          "Unwind@10010689",
+          "Unwind@10010691",
+          "Unwind@10010699",
+          "__allmul"
+        ],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 4,
+        "after_export_count": 4
+      },
+      "notes": "166 fn added, 35 fn removed, 0 exp added, 0 exp removed"
+    },
+    {
+      "change_id": "chg_085",
+      "binary": "wimprovider.dll",
+      "function_name": "*",
+      "change_type_guess": "unclassified",
+      "evidence_ids": [
+        "ev_bin_085"
+      ],
+      "snippet_ids": [],
+      "diff": {
+        "functions_added": [],
+        "functions_removed": [],
+        "exports_added": [],
+        "exports_removed": [],
+        "before_function_count": 512,
+        "after_function_count": 512,
+        "before_export_count": 6,
+        "after_export_count": 6
+      },
+      "notes": "0 fn added, 0 fn removed, 0 exp added, 0 exp removed"
+    }
+  ],
+  "analyst_notes": [
+    "Pair count discovered: 85; pairs with sha256 delta: 85.",
+    "Function/export deltas are name-set diffs; not a control-flow diff."
+  ],
+  "questions": [
+    "Which functions added/removed sit on externally reachable code paths?",
+    "Are added exports backed by new validation or new attack surface?",
+    "Do removed functions correlate with deprecated unsafe paths?"
+  ]
+}

@@ -1,0 +1,232 @@
+@prefix thanos: <https://thanos.evolve/ontology#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+# ============================================================================
+# Thanos ontology (TBox): Patch Tuesday patch triage catalog.
+#
+# Replaces the Neo4j graph from Practice 1 (P1). Being a Turtle file, it is
+# lightweight, versionable in git and has zero dependencies (queried with
+# rdflib + SPARQL, no server). It keeps the graph semantics: classes (nodes),
+# object properties (relationships) and datatype properties (attributes).
+# ============================================================================
+
+thanos: a owl:Ontology ;
+    rdfs:label "Thanos ontology: Windows Server 2022 patch triage" ;
+    rdfs:comment "Models Patch Tuesday cycles, KBs, MSUs, packages, binaries, CVEs and assessed vulnerabilities." .
+
+# ----------------------------------------------------------------------------
+# Classes (nodes)
+# ----------------------------------------------------------------------------
+
+thanos:PatchCycle a owl:Class ;
+    rdfs:label "Patch Tuesday cycle" ;
+    rdfs:comment "A monthly update cycle, e.g. '2026-04 Patch Tuesday'." .
+
+thanos:KB a owl:Class ;
+    rdfs:label "Knowledge Base update" ;
+    rdfs:comment "A cumulative update identified by its KB id (e.g. KB5078766)." .
+
+thanos:MSU a owl:Class ;
+    rdfs:label "MSU package" ;
+    rdfs:comment "The downloadable .msu file associated with a KB." .
+
+thanos:Package a owl:Class ;
+    rdfs:label "SXS package" ;
+    rdfs:comment "A component package (SXS folder) that groups binaries." .
+
+thanos:Binary a owl:Class ;
+    rdfs:label "Binary (DLL)" ;
+    rdfs:comment "A rebuilt binary whose content changes between two cycles." .
+
+thanos:CVE a owl:Class ;
+    rdfs:label "CVE" ;
+    rdfs:comment "A public vulnerability identifier (e.g. CVE-2026-1234)." .
+
+thanos:Vulnerability a owl:Class ;
+    rdfs:label "Assessed vulnerability" ;
+    rdfs:comment "Finding prioritized by Thanos Auditor for a binary (severity, priority, confidence)." .
+
+# ----------------------------------------------------------------------------
+# Object properties (relationships)
+# ----------------------------------------------------------------------------
+
+thanos:partOfCycle a owl:ObjectProperty ;
+    rdfs:label "part of cycle" ;
+    rdfs:domain thanos:KB ;
+    rdfs:range thanos:PatchCycle .
+
+thanos:supersedes a owl:ObjectProperty ;
+    rdfs:label "supersedes" ;
+    rdfs:comment "The AFTER KB supersedes the BEFORE KB of the cycle pair." ;
+    rdfs:domain thanos:KB ;
+    rdfs:range thanos:KB .
+
+thanos:hasMSU a owl:ObjectProperty ;
+    rdfs:label "has MSU" ;
+    rdfs:domain thanos:KB ;
+    rdfs:range thanos:MSU .
+
+thanos:containsPackage a owl:ObjectProperty ;
+    rdfs:label "contains package" ;
+    rdfs:domain thanos:MSU ;
+    rdfs:range thanos:Package .
+
+thanos:hasBinary a owl:ObjectProperty ;
+    rdfs:label "has binary" ;
+    rdfs:domain thanos:Package ;
+    rdfs:range thanos:Binary .
+
+thanos:changedInCycle a owl:ObjectProperty ;
+    rdfs:label "changed in cycle" ;
+    rdfs:comment "The binary has a different SHA-256 between BEFORE and AFTER in this cycle." ;
+    rdfs:domain thanos:Binary ;
+    rdfs:range thanos:PatchCycle .
+
+thanos:addressedBy a owl:ObjectProperty ;
+    rdfs:label "addressed by" ;
+    rdfs:comment "KB that fixes the CVE (the AFTER of the pair; BEFORE is the vulnerable version)." ;
+    rdfs:domain thanos:CVE ;
+    rdfs:range thanos:KB .
+
+thanos:affectsBinary a owl:ObjectProperty ;
+    rdfs:label "affects binary" ;
+    rdfs:domain thanos:CVE ;
+    rdfs:range thanos:Binary .
+
+thanos:hasVulnerability a owl:ObjectProperty ;
+    rdfs:label "has vulnerability" ;
+    rdfs:domain thanos:Binary ;
+    rdfs:range thanos:Vulnerability .
+
+thanos:concernsCVE a owl:ObjectProperty ;
+    rdfs:label "concerns CVE" ;
+    rdfs:domain thanos:Vulnerability ;
+    rdfs:range thanos:CVE .
+
+thanos:analyzedBy a owl:DatatypeProperty ;
+    rdfs:label "analyzed by" ;
+    rdfs:comment "Alias of the team member who produced the bundle the binary comes from." ;
+    rdfs:domain thanos:Binary ;
+    rdfs:range xsd:string .
+
+# ----------------------------------------------------------------------------
+# Datatype properties (attributes)
+# ----------------------------------------------------------------------------
+
+thanos:kbId a owl:DatatypeProperty ;
+    rdfs:domain thanos:KB ; rdfs:range xsd:string .
+
+thanos:guid a owl:DatatypeProperty ;
+    rdfs:comment "GUID resolved in the Microsoft Update Catalog." ;
+    rdfs:range xsd:string .
+
+thanos:msuUrl a owl:DatatypeProperty ;
+    rdfs:domain thanos:MSU ; rdfs:range xsd:anyURI .
+
+thanos:cycleLabel a owl:DatatypeProperty ;
+    rdfs:domain thanos:PatchCycle ; rdfs:range xsd:string .
+
+thanos:targetProduct a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+thanos:targetBuild a owl:DatatypeProperty ;
+    rdfs:comment "Target build, e.g. 20348.5020." ;
+    rdfs:range xsd:string .
+
+thanos:packageKey a owl:DatatypeProperty ;
+    rdfs:comment "Normalized package key (without the version segment)." ;
+    rdfs:domain thanos:Package ; rdfs:range xsd:string .
+
+thanos:logicalName a owl:DatatypeProperty ;
+    rdfs:domain thanos:Binary ; rdfs:range xsd:string .
+
+thanos:arch a owl:DatatypeProperty ;
+    rdfs:comment "Architecture of the SXS package (amd64, wow64, x86...). The same DLL may exist in several." ;
+    rdfs:domain thanos:Binary ; rdfs:range xsd:string .
+
+thanos:versionBefore a owl:DatatypeProperty ;
+    rdfs:domain thanos:Binary ; rdfs:range xsd:string .
+
+thanos:versionAfter a owl:DatatypeProperty ;
+    rdfs:domain thanos:Binary ; rdfs:range xsd:string .
+
+thanos:sha256Before a owl:DatatypeProperty ;
+    rdfs:domain thanos:Binary ; rdfs:range xsd:string .
+
+thanos:sha256After a owl:DatatypeProperty ;
+    rdfs:domain thanos:Binary ; rdfs:range xsd:string .
+
+thanos:sizeDelta a owl:DatatypeProperty ;
+    rdfs:comment "Size difference (bytes) between AFTER and BEFORE." ;
+    rdfs:domain thanos:Binary ; rdfs:range xsd:integer .
+
+thanos:functionDelta a owl:DatatypeProperty ;
+    rdfs:comment "Net change in the number of functions (FN +/-)." ;
+    rdfs:domain thanos:Binary ; rdfs:range xsd:integer .
+
+thanos:exportDelta a owl:DatatypeProperty ;
+    rdfs:comment "Net change in the number of exports (EXP +/-)." ;
+    rdfs:domain thanos:Binary ; rdfs:range xsd:integer .
+
+thanos:score a owl:DatatypeProperty ;
+    rdfs:comment "Aggregated criticality score of the binary in the dashboard." ;
+    rdfs:domain thanos:Binary ; rdfs:range xsd:integer .
+
+thanos:cveId a owl:DatatypeProperty ;
+    rdfs:domain thanos:CVE ; rdfs:range xsd:string .
+
+thanos:severity a owl:DatatypeProperty ;
+    rdfs:comment "critical | high | medium | low." ;
+    rdfs:domain thanos:Vulnerability ; rdfs:range xsd:string .
+
+thanos:priority a owl:DatatypeProperty ;
+    rdfs:comment "P1 | P2 | P3 | P4." ;
+    rdfs:domain thanos:Vulnerability ; rdfs:range xsd:string .
+
+thanos:confidence a owl:DatatypeProperty ;
+    rdfs:comment "high | medium | low." ;
+    rdfs:domain thanos:Vulnerability ; rdfs:range xsd:string .
+
+thanos:rationale a owl:DatatypeProperty ;
+    rdfs:comment "Textual rationale for the finding." ;
+    rdfs:domain thanos:Vulnerability ; rdfs:range xsd:string .
+
+# ----------------------------------------------------------------------------
+# CVE properties (MSRC CVRF) and CVE-to-binary candidates (RF-01)
+# ----------------------------------------------------------------------------
+
+thanos:title a owl:DatatypeProperty ;
+    rdfs:comment "Title published by MSRC." ;
+    rdfs:domain thanos:CVE ; rdfs:range xsd:string .
+
+thanos:msrcSeverity a owl:DatatypeProperty ;
+    rdfs:comment "MSRC severity: Critical | Important | Moderate | Low." ;
+    rdfs:domain thanos:CVE ; rdfs:range xsd:string .
+
+thanos:impact a owl:DatatypeProperty ;
+    rdfs:comment "MSRC impact (e.g. Elevation of Privilege, Remote Code Execution)." ;
+    rdfs:domain thanos:CVE ; rdfs:range xsd:string .
+
+thanos:cvssBaseScore a owl:DatatypeProperty ;
+    rdfs:domain thanos:CVE ; rdfs:range xsd:decimal .
+
+thanos:cvssVector a owl:DatatypeProperty ;
+    rdfs:domain thanos:CVE ; rdfs:range xsd:string .
+
+thanos:cwe a owl:DatatypeProperty ;
+    rdfs:domain thanos:CVE ; rdfs:range xsd:string .
+
+thanos:exploited a owl:DatatypeProperty ;
+    rdfs:comment "MSRC reports active exploitation (Exploited:Yes)." ;
+    rdfs:domain thanos:CVE ; rdfs:range xsd:boolean .
+
+thanos:fixedBuild a owl:DatatypeProperty ;
+    rdfs:comment "Build in which it is fixed (e.g. 10.0.20348.5020)." ;
+    rdfs:domain thanos:CVE ; rdfs:range xsd:string .
+
+thanos:priorityLabel a owl:DatatypeProperty ;
+    rdfs:comment "Review priority P1 to P4 computed by the core scoring." ;
+    rdfs:domain thanos:Binary ; rdfs:range xsd:string .

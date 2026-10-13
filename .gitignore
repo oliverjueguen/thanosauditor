@@ -1,0 +1,70 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+
+# --- Secrets and local config (NEVER commit) ---
+.env
+*.key
+*.pem
+*.pfx
+config.yaml
+
+# --- Heavy / pipeline-generated data (not committed) ---
+data/panel/
+downloads/
+baseline/
+reconstructed/
+staging/
+input/
+output/
+*.msu
+*.cab
+*.iso
+*.wim
+*.dll
+
+# --- Ghidra ---
+ghidra-projects/
+*.rep
+*.gpr
+
+# --- Operating system / editors ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# --- Local AI / editor tools (personal configuration) ---
+.claude/
+.mcp.json
+
+# --- Specific exceptions: we DO version the fixtures and the sample ontology ---
+# (listed by type so secrets or binaries inside fixtures/ are not re-included)
+!fixtures/README.md
+!fixtures/bundles/*.bundle.json
+!fixtures/synthetic/*.bundle.json
+!fixtures/msrc/*.json
+!fixtures/catalog/*.html
+!fixtures/catalog/README.md
+!data/ontology/*.ttl
+
+# --- Secrets: repeated at the end so no earlier exception re-includes them ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.pfx
