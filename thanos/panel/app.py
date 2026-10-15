@@ -81,7 +81,7 @@ async def lifespan(_app: FastAPI):
     s = get_store()
     if env("THANOS_PANEL_SEED", "1") != "0" and s.is_empty():
         try:
-            n = s.seed_from(resolve_path("fixtures/bundles"))
+            n = s.seed_from(resolve_path("fixtures/bundles/2026-04-patch-tuesday-full.bundle.json"))
             log.info("panel_seeded", extra={"fields": {"bundles": n}})
         except (OSError, ValueError) as exc:
             log.warning("panel_seed_failed", extra={"fields": {"error": str(exc)[:200]}})

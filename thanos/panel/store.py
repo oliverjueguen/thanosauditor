@@ -125,7 +125,8 @@ class PanelStore:
         """Load sample bundles (e.g. the real P1 fixtures)."""
         n = 0
         for p in paths:
-            for f in sorted(Path(p).glob("*.bundle.json")):
+            p = Path(p)
+            for f in [p] if p.is_file() else sorted(p.glob("*.bundle.json")):
                 self.add_bundle(json.loads(f.read_text(encoding="utf-8")))
                 n += 1
         return n

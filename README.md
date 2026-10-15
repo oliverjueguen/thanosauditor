@@ -124,7 +124,7 @@ docker run --rm -p 127.0.0.1:8000:8000 thanos      # http://127.0.0.1:8000
 # or: docker compose up --build
 ```
 
-Runs the panel as a non-root user, seeded with the real bundles and a heuristic report.
+Runs the panel as a non-root user, seeded with the real FULL bundle and a heuristic report (upload the second real bundle from `fixtures/bundles/`).
 </details>
 
 ---
@@ -175,7 +175,7 @@ Copy `.env.example` to `.env`. Every variable is optional.
 | `THANOS_PANEL_HOST` / `THANOS_PANEL_PORT` | `127.0.0.1` / `8000` | Panel address |
 | `THANOS_PANEL_TOKEN` | empty | When set, uploads require this token |
 | `THANOS_PANEL_MAX_UPLOAD_MB` | `5` | Max size per uploaded file |
-| `THANOS_PANEL_SEED` | `1` | Seed the empty panel with the real bundles |
+| `THANOS_PANEL_SEED` | `1` | Seed the empty panel with the real FULL bundle |
 | `THANOS_PANEL_REPORT` | `output/report.json` | Auditor report shown in the panel |
 | `THANOS_ONTOLOGY_CATALOG` | `data/ontology/catalog.ttl` | Ontology catalog |
 | `THANOS_MSRC_CVES` | `fixtures/msrc/2026-Apr.ws2022.json` | Offline MSRC extract (fallback) |
