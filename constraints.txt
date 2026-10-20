@@ -122,7 +122,7 @@ platformdirs==4.12.4 ; python_full_version < '3.11'
     # via pip-audit
 platformdirs==4.13.0 ; python_full_version >= '3.11'
     # via pip-audit
-pluggy==1.6.0
+pluggy==1.7.0
     # via pytest
 py-serializable==2.1.0
     # via cyclonedx-python-lib
