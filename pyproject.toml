@@ -29,7 +29,7 @@ dependencies = [
 [project.optional-dependencies]
 # Thanos Auditor: Claude via the Agent SDK, using the user's own Claude session.
 auditor = [
-    "claude-agent-sdk>=0.2.165,<0.3",
+    "claude-agent-sdk>=0.2.168,<0.3",
 ]
 # Development and tests. Starlette's TestClient uses httpx2 (Starlette >= 1.x,
 # Python >= 3.11) or httpx (older Starlette, Python 3.10): both are declared.
